@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  className="sm:sticky top-0 z-50 w-full text-gray-700 bg-white body-font shadow-bottom shadow-box"
+>
+  <div
+    className="flex max-w-screen-2xl px-8 mx-auto flex-col sm:flex-col lg:flex-row justify-between"
+  >
+    <div
+      className="flex flex-col lg:flex-row w-full"
+    >
+      <div
+        className="flex items-center mx-auto sm:mx-0 sm:justify-center lg:justify-start"
+      >
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          <img
+            alt="logo"
+            className="block max-w-full object-contain mx-h-4-6 lg:w-17-4"
+            src="logo.png"
+          />
+        </a>
+      </div>
+      <nav
+        className="flex items-center lg:w-full"
+      >
+        <div
+          className="relative w-full my-7 lg:ml-7"
+        >
+          <div
+            className="absolute inset-y-0 pl-3 flex items-center pointer-events-none"
+          >
+            <svg
+              className="w-5 h-5 text-gray-500"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clipRule="evenodd"
+                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              autoComplete="off"
+              className="bg-add text-gray-900 rounded-full block pl-10 pr-10 py-3.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white w-full"
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </form>
+          <div
+            className="absolute right-2 inset-y-0 flex items-center pointer-events-none"
+          >
+            <svg
+              className="h-5 w-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clipRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                fillRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div
+      className="relative sm:w-max sm:mx-auto lg:w-auto lg:mx-0 justify-center mb-4 gap-4 flex-col sm:flex-row lg:mb-0 lg:flex-row inline-flex items-center lg:justify-around lg:space-x-3"
+    >
+      <div
+        className="text-center w-1/2"
+      >
+        <a
+          className="inline-flex hover-scale items-center justify-center px-11 py-3.5 text-xl font-semibold leading-6 text-black whitespace-no-wrap"
+          href="/"
+          onClick={[Function]}
+        >
+          Inicio
+        </a>
+      </div>
+      <div
+        className="w-auto"
+      >
+        <a
+          className="inline-flex hover-scale items-center justify-center px-11 py-3.5 text-xl font-semibold leading-6 text-white whitespace-nowrap bg-black rounded-md shadow-button tracking-add"
+          href="/login"
+          onClick={[Function]}
+        >
+          Iniciar Sesión
+        </a>
+      </div>
+      <div
+        className="w-auto"
+      >
+        <a
+          className="inline-flex hover-scale items-center justify-center px-14 py-3.5 text-xl font-semibold leading-6 text-white whitespace-no-wrap add-color-icon rounded-md shadow-button"
+          href="/register"
+          onClick={[Function]}
+        >
+          Regístrate
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+`;

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  className="max-w-screen-2xl mx-auto bg-white px-5 lg:px-10 2xl:px-20 pb-10"
+>
+  <div
+    className="flex flex-col items-center justify-center space-y-8 lg:space-y-0 lg:space-x-4 xl:space-x-0 lg:flex-row gap-12"
+  >
+    <div>
+      <img
+        alt=""
+        className="block object-scale-down lg:w-80 lg:h36"
+        src="logo-2.png"
+      />
+    </div>
+    <div>
+      <img
+        alt=""
+        className="block object-scale-down lg:w-80 lg:h36"
+        src="logo.png"
+      />
+    </div>
+    <div>
+      <img
+        alt=""
+        className="block object-scale-down lg:w-80 lg:h36"
+        src="logo-3.png"
+      />
+    </div>
+  </div>
+</section>
+`;

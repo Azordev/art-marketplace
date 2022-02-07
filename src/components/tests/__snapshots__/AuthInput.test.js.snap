@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="relative"
+>
+  <input
+    className="block w-full px-4 py-3 mb-4 border border-1 border-black border-opacity-50 rounded-0 focus:ring focus:ring-blue-500 focus:outline-none placeholder-black text-2xl"
+    name="test"
+    placeholder="test"
+    type="text"
+  />
+</div>
+`;

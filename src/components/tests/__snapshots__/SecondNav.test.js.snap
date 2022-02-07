@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  className="relative w-full sm:px-9 text-gray-700 bg-white body-font"
+>
+  <div
+    className="max-w-screen-2xl container flex flex-col lg:flex-row justify-between py-5 px-0 mx-auto md:flex-row"
+  >
+    <div
+      className="flex items-center justify-center md:justify-start"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        <img
+          alt="logo"
+          className="block object-contain mx-w-17-4 mx-h-4-6 lg:w-17-4"
+          src="logo.png"
+        />
+      </a>
+    </div>
+    <div
+      className="relative flex-col lg:flex-row inline-flex items-center md:items-end lg:items-center lg:space-x-3"
+    >
+      <span
+        className="inline-flex items-center lg:justify-center px-14 md:px-0 lg:px-14 py-3.5 text-xl font-semibold leading-6 text-black whitespace-no-wrap"
+      >
+        ¿Ya tienes una cuenta?
+      </span>
+      <a
+        className="shadow-button hover-scale inline-flex items-center justify-center px-14 py-3.5 text-xl font-semibold leading-6 text-white whitespace-no-wrap bg-black rounded-md"
+        href="/login"
+        onClick={[Function]}
+      >
+        Iniciar Sesión
+      </a>
+    </div>
+  </div>
+</section>
+`;
