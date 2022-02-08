@@ -87,15 +87,15 @@ const Login = () => {
                     <form onSubmit={handleSubmit} className="flex flex-col">
                       <div className="flex flex-col lg:flex-row items-center mb-8 justify-between">
                         <div className="flex">
-                          <h2 className="mb-3 text-4xl sm:text-4xl font-bold">
+                          <h2 className="mb-3 text-4xl sm:text-4xl font-bold text-text">
                             Iniciar sesión
                           </h2>
                         </div>
                         <div className="flex">
-                          <p className="flex text-2xl text-black text-center lg:text-right">
+                          <p className="flex text-terciary text-2xl text-center lg:text-right">
                             <button
                               type="button"
-                              className="text-black underline text-right"
+                              className="text-terciary underline text-right"
                               onClick={() => setIsForgottenPassword(true)}
                             >
                               ¿Has olvidado tu contraseña?
@@ -107,7 +107,7 @@ const Login = () => {
                         <AuthInput
                           type="email"
                           name="email"
-                          className="block w-full px-4 py-3 mb-4 border-2 border-black border-opacity-50 rounded-0 focus:ring focus:ring-blue-500 focus:outline-none placeholder-black text-2xl"
+                          className="block w-full px-4 py-3 mb-4 border border-terciary border-opacity-100 bg-complementary rounded-lg focus:ring focus:ring-blue-500 focus:outline-none placeholder-black text-2xl"
                           placeholder="Correo Electrónico"
                           autocomplete="username"
                           value={email}
@@ -117,7 +117,7 @@ const Login = () => {
                         <AuthInput
                           type="password"
                           name="password"
-                          className="block w-full px-4 py-3 mb-4 border-2 border-black border-opacity-50 rounded-0 focus:ring focus:ring-blue-500 focus:outline-none placeholder-black text-2xl"
+                          className="block w-full px-4 py-3 mb-4 border border-terciary border-opacity-100 bg-complementary rounded-lg focus:ring focus:ring-blue-500 focus:outline-none placeholder-black text-2xl"
                           placeholder="Contraseña"
                           autocomplete="current-password"
                           value={password}
@@ -128,7 +128,7 @@ const Login = () => {
                       <div className="block">
                         <button
                           disabled={isLoading}
-                          className="w-full px-3 py-4 font-bold text-white bg-black rounded-lg text-3xl shadow-button"
+                          className="w-full px-3 py-4 font-bold text-white bg-primary rounded-lg text-3xl shadow-button"
                           type="submit"
                         >
                           Iniciar sesión
