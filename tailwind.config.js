@@ -21,7 +21,7 @@ module.exports = {
       black: "#000000",
       primary: "#19456B",
       secondary: "#96CEB4",
-      terciary: "#11698E",
+      tertiary: "#11698E",
       complementary: "#F8F1F1",
       text: "#414141"
     },

@@ -92,10 +92,10 @@ const Login = () => {
                           </h2>
                         </div>
                         <div className="flex">
-                          <p className="flex text-terciary text-2xl text-center lg:text-right">
+                          <p className="flex text-tertiary text-2xl text-center lg:text-right">
                             <button
                               type="button"
-                              className="text-terciary underline text-right"
+                              className="text-tertiary underline text-right"
                               onClick={() => setIsForgottenPassword(true)}
                             >
                               ¿Has olvidado tu contraseña?
@@ -107,7 +107,7 @@ const Login = () => {
                         <AuthInput
                           type="email"
                           name="email"
-                          className="block w-full px-4 py-3 mb-4 border border-terciary border-opacity-100 bg-complementary rounded-lg focus:ring focus:ring-blue-500 focus:outline-none placeholder-text text-2xl"
+                          className="block w-full px-4 py-3 mb-4 border border-tertiary border-opacity-100 bg-complementary rounded-lg focus:ring focus:ring-blue-500 focus:outline-none placeholder-text text-2xl"
                           placeholder="Correo Electrónico"
                           autocomplete="username"
                           value={email}
@@ -117,7 +117,7 @@ const Login = () => {
                         <AuthInput
                           type="password"
                           name="password"
-                          className="block w-full px-4 py-3 mb-4 border border-terciary border-opacity-100 bg-complementary rounded-lg focus:ring focus:ring-blue-500 focus:outline-none placeholder-text text-2xl"
+                          className="block w-full px-4 py-3 mb-4 border border-tertiary border-opacity-100 bg-complementary rounded-lg focus:ring focus:ring-blue-500 focus:outline-none placeholder-text text-2xl"
                           placeholder="Contraseña"
                           autocomplete="current-password"
                           value={password}
