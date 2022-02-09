@@ -1,4 +1,4 @@
-﻿# Sensico 
+﻿# Art Marketplace
 
 <!-- PROJECT SHIELDS -->
 
@@ -10,7 +10,7 @@
 
 <!-- PROJECT LOGO -->
 
-|                                                   Sencico                                                |
+|                                           Art Marketplace                                                |
 | :------------------------------------------------------------------------------------------------------: |
 |                                              ![app-icon][]                                               |
 |                             BIM objects library for the construction industry                            |
@@ -100,8 +100,8 @@ A place where you can find a download BIM objects
 - Run this:
 
 ```sh
-> git clone https://github.com/Azordev/sencico
-> cd sencico
+> git clone https://github.com/Azordev/art-marketplace/
+> cd art-marketplace
 > pnpm env use -g 16
 > pnpm i
 > docker-compose build
