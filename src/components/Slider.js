@@ -26,7 +26,7 @@ const Next = (props) => {
         ...style,
         display: "block",
         background:
-          "no-repeat center white url('https://img.icons8.com/material-rounded/24/ffffff/chevron-right.png')",
+          "no-repeat center #11698E url('https://img.icons8.com/material-rounded/24/ffffff/chevron-right.png')",
       }}
       onClick={onClick}
     />
@@ -61,17 +61,13 @@ const ProductSlider = ({ data, categories, itemClick, className, title }) => {
 
   function useQuery() {
     const { search } = useLocation();
-
     return useMemo(() => new URLSearchParams(search), [search]);
   }
-
   let query = useQuery();
-
   const standarelm = {
     backgroundColor: "#11698E",
     color: "#FFF"
   }
-
   const selectelm = {
     backgroundColor: "#FFF",
     color: "#000"
