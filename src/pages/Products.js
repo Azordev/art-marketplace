@@ -33,8 +33,6 @@ const Products = () => {
 
 	const filters = queryString.parse(search);
 
-
-
 	const getProductsAndCategories = async () => {
 		const data = await getProductsAsync();
 
@@ -122,7 +120,6 @@ const Products = () => {
 		}
 	};
 
-// ______________________________________
 	const [currentPage, setCurrentPage] = useState(1);
 	const [postsPerPage] = useState(10);
 
@@ -130,13 +127,19 @@ const Products = () => {
 	const indexOfFirstPost = indexOfLastPost - postsPerPage;
 	const currentPosts = currentProducts.slice(indexOfFirstPost, indexOfLastPost);
 
-	const paginateFront = () => setCurrentPage(currentPage + 1);
-	const paginateBack = () => setCurrentPage(currentPage - 1);
+	const paginateFront = e => {
+		e.preventDefault();
+		setCurrentPage(currentPage + 1)
+	}
+	const paginateBack = e => {
+		e.preventDefault();
+		setCurrentPage(currentPage - 1);
+	}
 
-	const paginate = (pageNumber) => {
-		setCurrentPage(pageNumber)
+	const paginate = (e, pageNumber) => {
+		e.preventDefault();
+		setCurrentPage(pageNumber);
 	};
-// ______________________________________
 
 	return (
 		<>

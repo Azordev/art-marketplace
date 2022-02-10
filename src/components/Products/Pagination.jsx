@@ -14,10 +14,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage, paginateF
         <ul className='flex pl-0 rounded list-none flex-nowrap'>
           <li>
             <a
-              onClick={(e) => {
-                e.preventDefault();
-                paginateBack();
-              }}
+              onClick={(e) => paginateBack(e)}
               href="#"
               className={
                 currentPage===1
@@ -31,10 +28,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage, paginateF
             {pageNumbers.map((number) => (
               <a
               	key={number}
-                onClick={(e) => {
-                  e.preventDefault();
-                  paginate(number);
-                }}
+                onClick={(e) => paginate(e, number)}
                 href='#'
                 className={
                   currentPage === number
@@ -48,10 +42,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage, paginateF
           </li>
           <li>
             <a
-              onClick={(e) => {
-                e.preventDefault();
-                paginateFront();
-              }}
+              onClick={(e) => paginateFront(e)}
               href="#"
               className={
                 currentPage === pageNumbers.length
