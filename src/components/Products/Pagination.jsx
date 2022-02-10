@@ -11,7 +11,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage, paginateF
   return (
     <div className='py-3 flex justify-center text-center'>
       <nav className='block'>
-        <ul className='flex pl-0 rounded list-none flex-wrap gap-x-1'>
+        <ul className='flex pl-0 rounded list-none flex-nowrap'>
           <li>
             <a
               onClick={(e) => {
@@ -30,6 +30,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage, paginateF
           <li>
             {pageNumbers.map((number) => (
               <a
+              	key={number}
                 onClick={(e) => {
                   e.preventDefault();
                   paginate(number);
