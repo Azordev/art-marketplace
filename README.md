@@ -1,4 +1,4 @@
-﻿# Sensico 
+﻿# Art Marketplace 
 
 <!-- PROJECT SHIELDS -->
 
@@ -10,14 +10,14 @@
 
 <!-- PROJECT LOGO -->
 
-|                                                   Sencico                                                |
+|                                                   Art Marketplace                                                |
 | :------------------------------------------------------------------------------------------------------: |
 |                                              ![app-icon][]                                               |
-|                             BIM objects library for the construction industry                            |
+|Azordev's art markeplace|
 |                          [🐞 Report a bug or 🙋‍♂️ request a feature][issues-url]                           |
 | [![contributions welcome][contributions-welcome]][issues-url] [![License][badge-apache]][apache-license] |
 
-- [Sencico - BIM objects library](#sensico---BIM-objects-library)
+- [Azordev Art Marketplace](#azordev-art-marketplace)
   - [The Project](#the-project)
     - [Features](#features)
     - [Built With](#built-with)
@@ -100,8 +100,8 @@ A place where you can find a download BIM objects
 - Run this:
 
 ```sh
-> git clone https://github.com/Azordev/sencico
-> cd sencico
+> git clone https://github.com/Azordev/art-marketplace
+> cd art-marketplace
 > pnpm env use -g 16
 > pnpm i
 > docker-compose build
@@ -121,8 +121,8 @@ We used `create-react-app` to initialize this project, so it is configurated to 
 Now that you are set up, open a terminal and:
 
 ```sh
-git clone https://github.com/Azordev/sencico
-cd sencico
+git clone https://github.com/Azordev/art-marketplace
+cd art-marketplace
 pnpm i && pnpm start
 ```
 
@@ -167,8 +167,8 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 |        ![author-pic][]         |                                                             ![banner][]                                                             |
 |  [Victor Peña][victor-github]  |  ![email-icon][] Email me to [victordev2002@gmail.com][victor-email] / ![linkedin-icon][] Connect to [my Linkedin][victor-linkedin]    |
 |        ![victor-pic][]         |                                                             ![banner][]                                                             |
-|[Emanuel Azocar][emanuel-github]|                          ![email-icon][] Email me to [azocarmel@gmail.com][emanuel-email]                                       |
-|        ![emanuel-pic][]        |                                                             ![banner][]                                                             |
+|[Emmanuel Azócar][emmanuel-github]|                          ![email-icon][] Email me to [azocarmel@gmail.com][emmanuel-email]                                       |
+|        ![emmanuel-pic][]        |                                                             ![banner][]                                                             |
 | [Angelica Molina][ange-github] |                              ![email-icon][] Email me to [angeli.molina1@gmail.com][ange-email]                                     |
 |         ![ange-pic][]         |                                                             ![banner][]                                                             |
 |[Roman Rodriguez][roman-github] |                            ![email-icon][] Email me to [romanrodri192@gmail.com][roman-email]                                       |
@@ -195,7 +195,6 @@ Feel free to check the [issues page][issues-url].
 - <https://blog.logrocket.com/deep-dive-into-lefthook-react-native/>
 - <https://blog.logrocket.com/build-robust-react-app-husky-pre-commit-hooks-github-actions/>
 - Favicon from [favicon.io](https://favicon.io/emoji-favicons/)
-- Production deployment using [Netlify](https://app.netlify.com/sites/sencico/overview)
 - <https://www.seoptimer.com/meta-tag-generator>
 - <https://dev.to/nitzano/linting-docker-containers-2lo6?utm_source=lefthook>
 
@@ -213,9 +212,9 @@ Feel free to fork this project and improve it!
 [victor-email]: mailto:victordev2002@gmail.com
 [victor-linkedin]: https://www.linkedin.com/in/v%C3%ADctor-pe%C3%B1a-348a3918a/
 
-[emanuel-github]: https://github.com/e-azocar
-[emanuel-pic]: https://avatars.githubusercontent.com/u/61360270?v=4
-[emanuel-email]: mailto:azocarmel@gmail.com
+[emmanuel-github]: https://github.com/e-azocar
+[emmanuel-pic]: https://avatars.githubusercontent.com/u/61360270?v=4
+[emmanuel-email]: mailto:azocarmel@gmail.com
 
 [roman-github]: https://github.com/romanrguez192
 [roman-pic]: https://avatars.githubusercontent.com/u/69876913?s=200&v=4
@@ -234,19 +233,23 @@ Feel free to fork this project and improve it!
 [ild-email]: mailto:ildebrandoefrain@gmail.com
 
 
-[contributors-shield]: https://img.shields.io/github/contributors/Azordev/sencico?style=for-the-badge
-[contributors-url]: https://github.com/Azordev/sencico/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Azordev/sencico?style=for-the-badge
-[forks-url]: https://github.com/Azordev/sencico/network/members
-[stars-shield]: https://img.shields.io/github/stars/Azordev/sencico?style=for-the-badge
-[stars-url]: https://github.com/Azordev/sencico/stargazers
-[issues-open-shield]: https://img.shields.io/github/issues/Azordev/sencico?style=for-the-badge
-[issues-closed-shield]: https://img.shields.io/github/issues-closed/Azordev/sencico?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/Azordev/art-marketplace?style=for-the-badge
+[contributors-url]: https://github.com/Azordev/art-marketplace/graphs/contributors
+
+[forks-shield]: https://img.shields.io/github/forks/Azordev/art-marketplace?style=for-the-badge 
+[forks-url]: https://github.com/Azordev/art-marketplace/network/members
+
+[stars-shield]: https://img.shields.io/github/stars/Azordev/art-marketplace?style=for-the-badge
+[stars-url]: https://github.com/Azordev/art-marketplace/stargazers
+
+[issues-open-shield]: https://img.shields.io/github/issues/Azordev/art-marketplace?style=for-the-badge
+[issues-closed-shield]: https://img.shields.io/github/issues-closed/Azordev/art-marketplace?style=for-the-badge
+
 [react]: https://img.shields.io/badge/React-16+-61DAFB?style=for-the-badge&logo=react
 [javascript]: https://img.shields.io/badge/JAVASCRIPT-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript
 [css]: https://img.shields.io/badge/style-CSS-1572B6?style=for-the-badge&logo=css3
 [contributions-welcome]: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=for-the-badge
-[issues-url]: https://github.com/Azordev/sencico/issues
+[issues-url]: https://github.com/Azordev/art-marketplace/issues
 [badge-apache]: https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=for-the-badge
 [apache-license]: https://opensource.org/licenses/Apache-2.0
 [author-pic]: https://avatars2.githubusercontent.com/u/36519478?s=460&v=4
@@ -257,7 +260,7 @@ Feel free to fork this project and improve it!
 [email-icon]: https://img.icons8.com/color/20/000000/message-squared.png
 [banner]: https://github.com/Israel-Laguan/Israel-Laguan/raw/master/docs/banner.jpg
 [app-banner]: docs/app-banner.png
-[app-icon]: public/ms-icon-310x310.png
+[app-icon]: public/logo.png
 [icons8]: https://icons8.com/
 [icons8-logo]: https://img.icons8.com/fluent/20/000000/icons8-new-logo.png
 [api-logo]: https://spoonacular.com/images/spoonacular-logo-b.svg
