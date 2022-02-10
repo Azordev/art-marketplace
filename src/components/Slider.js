@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useMemo} from "react";
 import Slider from "react-slick";
+import { useLocation } from 'react-router-dom';
 
 const Prev = (props) => {
 	const { className, style, onClick } = props;
@@ -10,7 +11,7 @@ const Prev = (props) => {
         ...style,
         display: "block",
         background:
-          "no-repeat center white url('https://img.icons8.com/material-rounded/24/000000/chevron-left.png')",
+          "no-repeat center #11698E url('https://img.icons8.com/material-rounded/24/ffffff/chevron-left.png')",
       }}
       onClick={onClick}
     />
@@ -25,7 +26,7 @@ const Next = (props) => {
         ...style,
         display: "block",
         background:
-          "no-repeat center white url('https://img.icons8.com/material-rounded/24/000000/chevron-right.png')",
+          "no-repeat center white url('https://img.icons8.com/material-rounded/24/ffffff/chevron-right.png')",
       }}
       onClick={onClick}
     />
@@ -58,6 +59,24 @@ const ProductSlider = ({ data, categories, itemClick, className, title }) => {
     ]
 	};
 
+  function useQuery() {
+    const { search } = useLocation();
+
+    return useMemo(() => new URLSearchParams(search), [search]);
+  }
+
+  let query = useQuery();
+
+  const standarelm = {
+    backgroundColor: "#11698E",
+    color: "#FFF"
+  }
+
+  const selectelm = {
+    backgroundColor: "#FFF",
+    color: "#000"
+  }
+
 	return (
     <div className={`${className} px-8`}>
 			{title && (
@@ -72,10 +91,14 @@ const ProductSlider = ({ data, categories, itemClick, className, title }) => {
 							className="block mx-2 w-auto hover-scale--min overflow-hidden rounded-lg shadow-slider cursor-pointer"
 							onClick={(e) => itemClick(e, item.id, categories)}
 						>
-							<div className="flex flex-col flex-1 justify-between py-4 px-10 bg-white">
+							<div
+                style={
+                 item.id !== parseInt(query.get("subcategory"))?standarelm:selectelm
+                 }
+                className="flex flex-col flex-1 justify-between py-4 px-10">
 								<div className="flex-1">
 									<div className="block text-center">
-										<span className="text-xl font-normal leading-7 text-black">
+										<span className="text-xl font-bold leading-7">
 											{item.name}
 										</span>
 									</div>
