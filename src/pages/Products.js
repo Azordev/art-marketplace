@@ -207,14 +207,13 @@ const Products = () => {
 							<div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 w-full p-0 justify-evenly xl:justify-around">
 								{
 									currentPosts.map((product) => (
-										<ProductItem data={product} key={product.id} />
+										<ProductItem data={product} key={`product-item-${product.id}`} />
 									))
 								}
 							</div>
 
 							{currentProducts.length <= 10
-								? null
-								:
+								||
 								<Pagination
 									postsPerPage={postsPerPage}
 									totalPosts={currentProducts.length}

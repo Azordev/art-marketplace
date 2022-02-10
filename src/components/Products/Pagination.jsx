@@ -2,11 +2,7 @@ import React from "react";
 const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage, paginateFront, paginateBack}) =>
 {
 
-  const pageNumbers = [];
-
-  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
-    pageNumbers.push(i);
-  }
+  const pageNumbers = [...Array(Math.ceil(totalPosts / postsPerPage)+1).keys()].slice(1);
 
   return (
     <div className='py-3 flex justify-center text-center'>
@@ -14,12 +10,13 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage, paginateF
         <ul className='flex pl-0 rounded list-none flex-nowrap'>
           <li>
             <a
-              onClick={(e) => paginateBack(e)}
+              onClick={paginateBack}
               href="#"
+              style={{backgroundColor: "#F8F1F1"}}
               className={
                 currentPage===1
-                ?"bg-red-300 hover:bg-blue-200 relative inline-flex items-center px-4 py-2 border text-sm font-medium pointer-events-none"
-                :"bg-red-300 hover:bg-blue-200 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                ?"hover:bg-blue-200 relative inline-flex items-center px-4 py-2 text-sm font-medium pointer-events-none"
+                :"hover:bg-blue-200 relative inline-flex items-center px-4 py-2 text-sm font-medium"
               }
 
             >Anterior</a>
@@ -27,14 +24,11 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage, paginateF
           <li>
             {pageNumbers.map((number) => (
               <a
-              	key={number}
+              	key={`page-item-${number}`}
                 onClick={(e) => paginate(e, number)}
                 href='#'
-                className={
-                  currentPage === number
-                    ? "mx-0.5 bg-blue bg-red-300 hover:bg-blue-200 relative inline-flex items-center px-4 py-2 text-sm font-medium"
-                    : "mx-0.5 bg-white bg-red-100 text-gray-500 hover:bg-blue-200 relative inline-flex items-center px-4 py-2 text-sm font-medium"
-                }
+                style={{backgroundColor: currentPage===number||"#F8F1F1"}}
+                className= "mx-0.5 bg-white bg-red-300 hover:bg-blue-200 relative inline-flex items-center px-4 py-2 text-sm font-medium"
               >
                 {number}
               </a>
@@ -42,12 +36,13 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage, paginateF
           </li>
           <li>
             <a
-              onClick={(e) => paginateFront(e)}
+              onClick={paginateFront}
               href="#"
+              style={{backgroundColor: "#F8F1F1"}}
               className={
                 currentPage === pageNumbers.length
-                ?"bg-red-300 hover:bg-blue-200 relative inline-flex items-center px-4 py-2 border text-sm font-medium pointer-events-none"
-                :"bg-red-300 hover:bg-blue-200 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+                ?"hover:bg-blue-200 relative inline-flex items-center px-4 py-2 text-sm font-medium pointer-events-none"
+                :"hover:bg-blue-200 relative inline-flex items-center px-4 py-2 text-sm font-medium"
               }
               >Siguiente</a>
           </li>
