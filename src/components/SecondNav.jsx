@@ -25,7 +25,7 @@ const SecondNav = ({ isLogin }) => {
 								</span>
 								<Link
 									to="/register"
-									className="inline-flex hover-scale items-center justify-center px-14 py-3.5 text-xl font-semibold leading-6 text-white whitespace-no-wrap bg-primary rounded-md shadow-button"
+									className="inline-flex hover-scale items-center justify-center px-14 py-3.5 text-xl font-semibold leading-6 text-white whitespace-no-wrap bg-black rounded-md shadow-button"
 								>
 									Regístrate aquí
 								</Link>
@@ -37,7 +37,7 @@ const SecondNav = ({ isLogin }) => {
 								</span>
 							<Link
 								to="/login"
-								className="shadow-button hover-scale inline-flex items-center justify-center px-14 py-3.5 text-xl font-semibold leading-6 text-white whitespace-no-wrap bg-primary rounded-md"
+								className="shadow-button hover-scale inline-flex items-center justify-center px-14 py-3.5 text-xl font-semibold leading-6 text-white whitespace-no-wrap bg-black rounded-md"
 								>
 								Iniciar Sesión
 							</Link>
