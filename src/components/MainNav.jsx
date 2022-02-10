@@ -17,7 +17,7 @@ const MainNav = ({ page, query }) => {
 					<div className="text-center w-1/2">
 						<Link
 							to="/"
-							className="inline-flex hover-scale items-center justify-center px-11 py-3.5 text-xl font-semibold leading-6 text-black whitespace-no-wrap"
+							className="inline-flex hover-scale items-center justify-center px-11 py-3.5 text-xl font-semibold leading-6 text-text whitespace-no-wrap"
 						>
 							Inicio
 						</Link>
@@ -26,7 +26,7 @@ const MainNav = ({ page, query }) => {
 				<div className="w-auto">
 					<Link
 						to="/login"
-						className="inline-flex hover-scale items-center justify-center px-11 py-3.5 text-xl font-semibold leading-6 text-white whitespace-nowrap bg-black rounded-md shadow-button tracking-add"
+						className="inline-flex hover-scale items-center justify-center px-11 py-3.5 text-xl font-semibold leading-6 text-white whitespace-nowrap bg-primary rounded-normal shadow-button tracking-add"
 					>
 						Iniciar Sesión
 					</Link>
@@ -34,7 +34,7 @@ const MainNav = ({ page, query }) => {
 				<div className="w-auto">
 					<Link
 						to="/register"
-						className="inline-flex hover-scale items-center justify-center px-14 py-3.5 text-xl font-semibold leading-6 text-white whitespace-no-wrap add-color-icon rounded-md shadow-button"
+						className="inline-flex hover-scale items-center justify-center px-14 py-3.5 text-xl font-semibold leading-6 text-white whitespace-no-wrap bg-tertiary rounded-normal shadow-button"
 					>
 						Regístrate
 					</Link>
