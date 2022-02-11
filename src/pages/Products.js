@@ -160,7 +160,7 @@ const Products = () => {
 						</p>
 					)}
 					{selectedFilter === "generic" && (
-						<div className="bg-add md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
+						<div style={{backgroundColor: "#11698E"}} className="bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
 							<h2 className="text-4xl px-4 py-2 font-bold">Genéricos</h2>
 						</div>
 					)}
@@ -176,7 +176,7 @@ const Products = () => {
 									</div>
 								</div>
 							</div>
-							<div className="bg-add md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
+							<div style={{backgroundColor: "#11698E"}} className="bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
 								<h2 className="text-4xl px-4 py-2 font-bold">
 									{selectedCategory.name}{" "}
 									{!!selectedSubcategory?.name &&
@@ -193,7 +193,7 @@ const Products = () => {
 						</>
 					)}
 					{selectedFilter === "manufacturer" && (
-						<div className="bg-add md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
+						<div style={{backgroundColor: "#11698E"}} className="bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
 							<h2 className="text-4xl max-w-full block overflow-hidden text-ellipsis px-4 py-2 font-bold">
 								Fabricantes
 							</h2>
