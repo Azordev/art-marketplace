@@ -193,8 +193,8 @@ const Products = () => {
 						</>
 					)}
 					{selectedFilter === "manufacturer" && (
-						<div className="bg-add border md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
-							<h2 className="text-4xl max-w-full block overflow-hidden text-ellipsis border py-2 font-bold">
+						<div className="bg-add md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
+							<h2 className="text-4xl max-w-full block overflow-hidden text-ellipsis px-4 py-2 font-bold">
 								Fabricantes
 							</h2>
 						</div>
