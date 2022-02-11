@@ -4,7 +4,7 @@ import { MainNav, Footer } from "../components";
 import { getProductoByIdAsync } from "../actions/productosActions";
 import { isAuthenticated } from "../utils/isAuthenticated";
 import { PUBLIC_URL } from "../config/constants";
-import "../colormodificado.css";
+
 
 const Product = () => {
   const [product, setProduct] = useState(null);
@@ -99,56 +99,56 @@ const Product = () => {
         <div className="flex flex-col w-full px-2 sm:px-8 xl:px-5 2xl:px-11">
           <div className="relative flex flex-col w-full mt-16 lg:flex-row">
             <div className="relative lg:w-1/2 space-y-3 lg:space-y-5 2xl:pr-20">
-              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none" id="spancolorfon">
-                <summary className="cursor-pointer" id="spancolor">
+              <details className="relative shadow-lg w-[36rem] pr-4 overflow-hidden text-black bg-[#F8F1F1] rounded-lg select-none">
+                <summary className="cursor-pointer">
                   <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
-                    <span className="colorspan">Información General</span>                    
+                    <span className="text-[#11698E] pl-4">Información General</span>
                   </h4>
                 </summary>
-                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
+                <p className="px-1 bg-white w-[36rem] pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
                   {product?.technical_specifications}
                 </p>
               </details>
-              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none" id="spancolorfon">
-                <summary className="cursor-pointer" id="spancolor">
+              <details className="relative shadow-lg w-[36rem] pr-4 overflow-hidden text-black bg-[#F8F1F1] rounded-lg select-none">
+                <summary className="cursor-pointer">
                   <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
-                    <span className="colorspan">Links</span>
+                    <span className="text-[#11698E] pl-4">Links</span>
                   </h4>
                 </summary>
-                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
+                <p className="px-1 bg-white w-[36rem] pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
                   {product?.links}
                 </p>
               </details>
 
-              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none" id="spancolorfon">
-                <summary className="cursor-pointer" id="spancolor">
+              <details className="relative shadow-lg w-[36rem] pr-4 overflow-hidden text-black bg-[#F8F1F1] rounded-lg select-none">
+                <summary className="cursor-pointer">
                   <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
-                    <span className="colorspan">Información relacionada</span>
+                    <span className="text-[#11698E] pl-4">Información relacionada</span>
                   </h4>
                 </summary>
-                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
+                <p className="px-1 bg-white w-[36rem] pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
                   {product?.related_information}
                 </p>
               </details>
 
-              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none" id="spancolorfon">
-                <summary className="cursor-pointer" id="spancolor">
+              <details className="relative shadow-lg w-[36rem] pr-4 overflow-hidden text-black bg-[#F8F1F1] rounded-lg select-none">
+                <summary className="cursor-pointer">
                   <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
-                    <span className="colorspan">Clasificación</span>
+                    <span className="text-[#11698E] pl-4">Clasificación</span>
                   </h4>
                 </summary>
-                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
+                <p className="px-1 bg-white w-[36rem] pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
                   {product?.classification}
                 </p>
               </details>
 
-              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none" id="spancolorfon">
-                <summary className="cursor-pointer" id="spancolor">
+              <details className="relative shadow-lg w-[36rem] pr-4 overflow-hidden text-black bg-[#F8F1F1] rounded-lg select-none">
+                <summary className="cursor-pointer bg-[#F8F1F1] rounded-lg">
                   <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
-                    <span className="colorspan">Propiedades</span>
+                    <span className="text-[#11698E] pl-4">Propiedades</span>
                   </h4>
                 </summary>
-                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
+                <p className="px-1 bg-white w-[36rem] pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
                   {product?.properties}
                 </p>
               </details>
