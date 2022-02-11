@@ -10,7 +10,7 @@ const Prev = (props) => {
       className={`${className} arrow-custom-circle`}
       style={{
         ...style,
-        color: pathname !== '/' ? "#FFF" : "#000",
+        color: pathname !== '/' ? "#FFF" : "#11698E",
         background: pathname !=='/' ? "no-repeat center #11698E" : "no-repeat center #FFF"
         }}
       onClick={onClick}
@@ -32,7 +32,7 @@ const Next = (props) => {
       className={`${className} arrow-custom-circle`}
       style={{
         ...style,
-        color: pathname !== '/' ? "#FFF" : "#000",
+        color: pathname !== '/' ? "#FFF" : "#11698E",
         background: pathname !=='/' ? "no-repeat center #11698E" : "no-repeat center #FFF"
       }}
       onClick={onClick}
