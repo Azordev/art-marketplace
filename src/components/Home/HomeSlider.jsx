@@ -7,7 +7,7 @@ const HomeSlider = () => {
 				<div className="w-full flex justify-center md:justify-start items-end ">
 					<p className="text-4xl text-white">Categorías</p>
 				</div>
-				<section className="w-full ">
+				<section className="w-full">
 					<div className="flex items-center justify-center mx-auto w-full space-x-8">
 						<div className="relative flex flex-col items-start justify-center w-auto">
 							<div className="relative flex">

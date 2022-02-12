@@ -47,12 +47,13 @@ const Home = () => {
 		<>
 			<MainNav page="home" />
 				<Hero />
-				<div className="bg-add-back-img-1 bg-cover">
+				<div className="bg-add-back-img-2 bg-cover">
 					<Slider
 						data={categories}
 						itemClick={categoryClicked}
 						className="max-w-screen-2xl mx-auto pt-0 pb-2 mb-16 px-4 md:px-20 font-bold bg-cover"
 						title="Categorías"
+						home
 					/>
 				</div>
 				<div className="max-w-screen-2xl mx-auto">
