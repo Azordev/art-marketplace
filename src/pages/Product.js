@@ -48,14 +48,6 @@ const Product = () => {
                     {product?.description || "Description"}
                   </p>
                 </div>
-                <div className="flex flex-col justify-center">
-                  <button
-                    onClick={token ? () => setDownload(true) : () => redirect()}
-                    className="py-3.5 hover-scale text-xl font-semibold leading-6 text-white whitespace-nowrap add-color-icon rounded-md tracking-add shadow-button"
-                  >
-                    Descargar
-                  </button>
-                </div>
                 {download && (
                   <ul className="p-1">
                     {product?.files.map((f, i) => (
@@ -98,57 +90,43 @@ const Product = () => {
         <div className="flex flex-col w-full px-2 sm:px-8 xl:px-5 2xl:px-11">
           <div className="relative flex flex-col w-full mt-16 lg:flex-row">
             <div className="relative lg:w-1/2 space-y-3 lg:space-y-5 2xl:pr-20">
-              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
+            <div className="relative flex flex-col justify-center">
+                  <button
+                    onClick={token ? () => setDownload(true) : () => redirect()}
+                    className="py-3.5 hover-scale text-xl font-semibold leading-6 text-white whitespace-nowrap bg-primary rounded-md tracking-add shadow-button"
+                  >
+                    Descargar
+                  </button>
+                </div>
+              <details className="relative px-6 py-2 overflow-hidden text-black bg-complementary rounded-lg select-none">
                 <summary className="cursor-pointer">
-                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
-                    <span>Información General</span>
+                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-tertiary cursor-pointer lg:text-2xl">
+                    <span>Especificaciones</span>
                   </h4>
                 </summary>
-                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
+                <p className="px-1 pt-0 mt-1 text-text font-semibold lg:text-xl py-7">
                   {product?.technical_specifications}
                 </p>
               </details>
-              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
+              <details className="relative px-6 py-2 overflow-hidden text-black bg-complementary rounded-lg select-none">
                 <summary className="cursor-pointer">
-                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
-                    Links
+                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-tertiary cursor-pointer lg:text-2xl">
+                    <span> Links </span>
                   </h4>
                 </summary>
-                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
-                  {product?.links}
+                <p className="px-1 pt-0 mt-1 text-text font-semibold lg:text-xl py-7">
+                  {product?.links || "Description"}
                 </p>
               </details>
 
-              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
+              <details className="relative px-6 py-2 overflow-hidden text-black bg-complementary rounded-lg select-none">
                 <summary className="cursor-pointer">
-                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
-                    <span>Información relacionada</span>
+                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-tertiary cursor-pointer lg:text-2xl">
+                    <span>Historial</span>
                   </h4>
                 </summary>
-                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
+                <p className="px-1 pt-0 mt-1 text-text font-semibold lg:text-xl py-7">
                   {product?.related_information}
-                </p>
-              </details>
-
-              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
-                <summary className="cursor-pointer">
-                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
-                    <span>Clasificación</span>
-                  </h4>
-                </summary>
-                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
-                  {product?.classification}
-                </p>
-              </details>
-
-              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
-                <summary className="cursor-pointer">
-                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
-                    <span>Propiedades</span>
-                  </h4>
-                </summary>
-                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
-                  {product?.properties}
                 </p>
               </details>
             </div>
