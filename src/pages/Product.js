@@ -98,34 +98,34 @@ const Product = () => {
                     Descargar
                   </button>
                 </div>
-              <details className="relative px-6 py-2 overflow-hidden text-black bg-complementary rounded-lg select-none">
+              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
                 <summary className="cursor-pointer">
-                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-tertiary cursor-pointer lg:text-2xl">
+                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
                     <span>Especificaciones</span>
                   </h4>
                 </summary>
-                <p className="px-1 pt-0 mt-1 text-text font-semibold lg:text-xl py-7">
+                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
                   {product?.technical_specifications}
                 </p>
               </details>
-              <details className="relative px-6 py-2 overflow-hidden text-black bg-complementary rounded-lg select-none">
+              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
                 <summary className="cursor-pointer">
-                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-tertiary cursor-pointer lg:text-2xl">
+                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
                     <span> Links </span>
                   </h4>
                 </summary>
                 <p className="px-1 pt-0 mt-1 text-text font-semibold lg:text-xl py-7">
-                  {product?.links || "Description"}
+                  {product?.links}
                 </p>
               </details>
 
-              <details className="relative px-6 py-2 overflow-hidden text-black bg-complementary rounded-lg select-none">
+              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
                 <summary className="cursor-pointer">
-                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-tertiary cursor-pointer lg:text-2xl">
+                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
                     <span>Historial</span>
                   </h4>
                 </summary>
-                <p className="px-1 pt-0 mt-1 text-text font-semibold lg:text-xl py-7">
+                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
                   {product?.related_information}
                 </p>
               </details>
