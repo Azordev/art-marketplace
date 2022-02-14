@@ -23,7 +23,8 @@ module.exports = {
       secondary: "#96CEB4",
       tertiary: "#11698E",
       complementary: "#F8F1F1",
-      text: "#414141"
+      text: "#414141",
+      grayed: "#F8F1F1"
     },
     extend: {
       maxWidth: {
