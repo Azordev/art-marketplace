@@ -72,14 +72,14 @@ const Product = () => {
             </div>
             <div className="flex xl:w-1/2 h-full items-center justify-center xl:justify-start px-2 sm:px-0 xl:pr-5 2xl:pr-0">
               <div className="flex w-full h-full overflow-hidden rounded-md sm:rounded-xl justify-center">
-                {
-                  product && (<img
+                {product && (
+                  <img
                     alt="Producto"
                     style={{ maxHeight: "450px" }}
                     src={`${PUBLIC_URL}${product?.images[0]?.path}`}
                     className="block object-contain h-96 md:h-full"
-                  />)
-                }
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -90,14 +90,14 @@ const Product = () => {
         <div className="flex flex-col w-full px-2 sm:px-8 xl:px-5 2xl:px-11">
           <div className="relative flex flex-col w-full mt-16 lg:flex-row">
             <div className="relative lg:w-1/2 space-y-3 lg:space-y-5 2xl:pr-20">
-            <div className="relative flex flex-col justify-center">
-                  <button
-                    onClick={token ? () => setDownload(true) : () => redirect()}
-                    className="py-3.5 hover-scale text-xl font-semibold leading-6 text-white whitespace-nowrap bg-primary rounded-md tracking-add shadow-button"
-                  >
-                    Descargar
-                  </button>
-                </div>
+              <div className="relative flex flex-col justify-center">
+                <button
+                  onClick={token ? () => setDownload(true) : () => redirect()}
+                  className="py-3.5 hover-scale text-xl font-semibold leading-6 text-white whitespace-nowrap bg-primary rounded-md tracking-add shadow-button"
+                >
+                  Descargar
+                </button>
+              </div>
               <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
                 <summary className="cursor-pointer">
                   <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
