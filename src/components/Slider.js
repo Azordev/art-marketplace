@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import Slider from "react-slick";
 
 const ArrowLeft = () => {
@@ -55,7 +55,7 @@ const Prev = (props) => {
 				color: !home ? "#FFF" : "#11698E",
 				background: !home
 					? "no-repeat center #11698E"
-					: "no-repeat center #FFF",
+					: "no-repeat center #F8F1F1",
 			}}
 			onClick={onClick}
 		>
@@ -73,7 +73,7 @@ const Next = (props) => {
 				color: !home ? "#FFF" : "#11698E",
 				background: !home
 					? "no-repeat center #11698E"
-					: "no-repeat center #FFF",
+					: "no-repeat center #F8F1F1",
 			}}
 			onClick={onClick}
 		>
@@ -120,7 +120,7 @@ const ProductSlider = ({
 		color: "#FFF",
 	};
 	const whiteElement = {
-		backgroundColor: "#FFF",
+		backgroundColor: "#F8F1F1",
 		color: "#000",
 	};
 
@@ -128,7 +128,7 @@ const ProductSlider = ({
 		<div className={`${className} px-8`}>
 			{title && (
 				<div className="w-full pb-4 flex justify-center md:justify-start items-end">
-					<p className={`text-4xl ${home && "text-white"}`}>{title}</p>
+					<p className={`text-4xl mt-4 ${home && "text-white"}`}>{title}</p>
 				</div>
 			)}
 			<Slider {...settings}>
