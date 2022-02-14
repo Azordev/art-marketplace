@@ -101,7 +101,7 @@ const Product = () => {
               <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
                 <summary className="cursor-pointer">
                   <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
-                    <span>Especificaciones</span>
+                    <span>Información General</span>
                   </h4>
                 </summary>
                 <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
@@ -111,10 +111,10 @@ const Product = () => {
               <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
                 <summary className="cursor-pointer">
                   <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
-                    <span> Links </span>
+                    Links
                   </h4>
                 </summary>
-                <p className="px-1 pt-0 mt-1 text-text font-semibold lg:text-xl py-7">
+                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
                   {product?.links}
                 </p>
               </details>
@@ -122,11 +122,33 @@ const Product = () => {
               <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
                 <summary className="cursor-pointer">
                   <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
-                    <span>Historial</span>
+                    <span>Información relacionada</span>
                   </h4>
                 </summary>
                 <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
                   {product?.related_information}
+                </p>
+              </details>
+
+              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
+                <summary className="cursor-pointer">
+                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
+                    <span>Clasificación</span>
+                  </h4>
+                </summary>
+                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
+                  {product?.classification}
+                </p>
+              </details>
+
+              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
+                <summary className="cursor-pointer">
+                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
+                    <span>Propiedades</span>
+                  </h4>
+                </summary>
+                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
+                  {product?.properties}
                 </p>
               </details>
             </div>
