@@ -32,7 +32,7 @@ const Product = () => {
             <p className="text-black text-xl sm:text-2xl font-normal">
               <Link to="/"> Inicio / </Link>
               <Link to="/products"> Catálogo / </Link>
-              <Link to={`/products?category=${product?.categories.id}` }> {product?.categories.name || "Categoría"} </Link>
+              <Link to={`/products?category=${product?.categories.id}` }> {product?.categories.name || "Categoría"} / </Link>
               {product?.name || "Producto"}
             </p>
           </div>
