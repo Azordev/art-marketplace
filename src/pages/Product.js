@@ -93,61 +93,62 @@ const Product = () => {
               <div className="relative flex flex-col justify-center">
                 <button
                   onClick={token ? () => setDownload(true) : () => redirect()}
-                  className="py-3.5 hover-scale text-xl font-semibold leading-6 text-white whitespace-nowrap bg-primary rounded-md tracking-add shadow-button"
+                  className="mb-6 py-3.5 hover-scale text-xl font-semibold leading-6 text-white whitespace-nowrap bg-primary rounded-md tracking-add shadow-button"
                 >
                   Descargar
                 </button>
               </div>
-              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
-                <summary className="cursor-pointer">
-                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
-                    <span>Información General</span>
+              <details className="relative overflow-hidden text-black bg-white rounded-lg">
+                <summary className="px-6 py-2 border border-complementary bg-complementary rounded-lg cursor-pointer">
+                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-bold text-tertiary cursor-pointer lg:text-2xl">
+                    <span >Información General</span>
                   </h4>
                 </summary>
-                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
+                <p className="px-4 py-6 mt-1 text-black font-semibold lg:text-xl">
                   {product?.technical_specifications}
+                  When the user clicks the specifications button found on the product-detail page, the user can read the specifications that exist, in this case concerning the Lorem font. When the user clicks it on, the specification text is cleared below the button, which gives more visual content to the product-detail section.
                 </p>
               </details>
-              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
-                <summary className="cursor-pointer">
-                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
+              <details className="relative overflow-hidden text-black bg-white rounded-lg">
+                <summary className="px-6 py-2 border border-complementary bg-complementary rounded-lg cursor-pointer">
+                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-bold text-tertiary cursor-pointer lg:text-2xl">
                     Links
                   </h4>
                 </summary>
-                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
+                <p className="px-4 py-6 mt-1 text-black font-semibold lg:text-xl">
                   {product?.links}
                 </p>
               </details>
 
-              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
-                <summary className="cursor-pointer">
-                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
+              <details className="relative overflow-hidden text-black bg-white rounded-lg">
+                <summary className="px-6 py-2 border border-complementary bg-complementary rounded-lg cursor-pointer">
+                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-bold text-tertiary cursor-pointer lg:text-2xl">
                     <span>Información relacionada</span>
                   </h4>
                 </summary>
-                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
+                <p className="px-4 py-6 mt-1 text-black font-semibold lg:text-xl">
                   {product?.related_information}
                 </p>
               </details>
 
-              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
-                <summary className="cursor-pointer">
-                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
+              <details className="relative overflow-hidden text-black bg-white rounded-lg">
+                <summary className="px-6 py-2 border border-complementary bg-complementary rounded-lg cursor-pointer">
+                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-bold text-tertiary cursor-pointer lg:text-2xl">
                     <span>Clasificación</span>
                   </h4>
                 </summary>
-                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
+                <p className="px-4 py-6 mt-1 text-black font-semibold lg:text-xl">
                   {product?.classification}
                 </p>
               </details>
 
-              <details className="relative px-6 py-2 overflow-hidden text-black bg-add rounded-lg select-none">
-                <summary className="cursor-pointer">
-                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-medium text-black cursor-pointer lg:text-2xl">
+              <details className="relative overflow-hidden text-black bg-white rounded-lg open:bg-red-500">
+                <summary className="px-6 py-2 border border-complementary bg-complementary rounded-lg cursor-pointer">
+                  <h4 className="inline-flex items-center justify-between py-4 text-xl font-bold text-tertiary cursor-pointer lg:text-2xl">
                     <span>Propiedades</span>
                   </h4>
                 </summary>
-                <p className="px-1 pt-0 mt-1 text-black font-semibold lg:text-xl py-7">
+                <p className="px-4 py-6  mb-0 text-black font-semibold lg:text-xl">
                   {product?.properties}
                 </p>
               </details>
