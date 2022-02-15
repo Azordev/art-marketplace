@@ -106,7 +106,6 @@ const Product = () => {
                 </summary>
                 <p className="px-4 py-6 mt-1 text-black font-semibold lg:text-xl">
                   {product?.technical_specifications}
-                  When the user clicks the specifications button found on the product-detail page, the user can read the specifications that exist, in this case concerning the Lorem font. When the user clicks it on, the specification text is cleared below the button, which gives more visual content to the product-detail section.
                 </p>
               </details>
               <details className="relative overflow-hidden text-black bg-white rounded-lg">
