@@ -21,7 +21,7 @@ const SearchInput = ({ page, query }) => {
 					<input
 						type="text"
 						autoComplete="off"
-						className="bg-secondComplementary text-gray-900 rounded-normal block pl-5 pr-10 py-3.5 w-full"
+						className="bg-secondComplementary text-gray-900 rounded-normal block pl-5 pr-10 py-3.5 w-full focus:outline-1 focus:outline-primary"
 						value={searchValue}
 						onChange={changeHandler}
 					/>
