@@ -19,12 +19,13 @@ module.exports = {
 		colors: {
 			white: "#FFFFFF",
 			black: "#000000",
-			primary: "#19456B",
-			secondary: "#96CEB4",
-			tertiary: "#11698E",
-			complementary: "#F8F1F1",
-			secondComplementary: "#E5E5E5",
-			text: "#414141",
+			lightblack: "#242323",
+      primary: "#19456B",
+      secondary: "#96CEB4",
+      tertiary: "#11698E",
+      complementary: "#F8F1F1",
+      text: "#414141",
+      grayed: "#F8F1F1"
 		},
 		borderRadius: {
 			none: "0",

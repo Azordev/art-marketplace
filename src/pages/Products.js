@@ -120,6 +120,27 @@ const Products = () => {
 		}
 	};
 
+	const [currentPage, setCurrentPage] = useState(1);
+	const [postsPerPage] = useState(10);
+
+	const indexOfLastPost = currentPage * postsPerPage;
+	const indexOfFirstPost = indexOfLastPost - postsPerPage;
+	const currentPosts = currentProducts.slice(indexOfFirstPost, indexOfLastPost);
+
+	const paginateFront = e => {
+		e.preventDefault();
+		setCurrentPage(currentPage + 1)
+	}
+	const paginateBack = e => {
+		e.preventDefault();
+		setCurrentPage(currentPage - 1);
+	}
+
+	const paginate = (e, pageNumber) => {
+		e.preventDefault();
+		setCurrentPage(pageNumber);
+	};
+
 	return (
 		<>
 			<MainNav query={queryString.parse(search).q} />
@@ -139,7 +160,7 @@ const Products = () => {
 						</p>
 					)}
 					{selectedFilter === "generic" && (
-						<div className="bg-add md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
+						<div style={{backgroundColor: "#11698E"}} className="bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
 							<h2 className="text-4xl px-4 py-2 font-bold">Genéricos</h2>
 						</div>
 					)}
@@ -155,7 +176,7 @@ const Products = () => {
 									</div>
 								</div>
 							</div>
-							<div className="bg-add md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
+							<div style={{backgroundColor: "#11698E"}} className="bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
 								<h2 className="text-4xl px-4 py-2 font-bold">
 									{selectedCategory.name}{" "}
 									{!!selectedSubcategory?.name &&
@@ -172,24 +193,40 @@ const Products = () => {
 						</>
 					)}
 					{selectedFilter === "manufacturer" && (
-						<div className="bg-add border md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
-							<h2 className="text-4xl max-w-full block overflow-hidden text-ellipsis border py-2 font-bold">
+						<div style={{backgroundColor: "#11698E"}} className="bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
+							<h2 className="text-4xl max-w-full block overflow-hidden text-ellipsis px-4 py-2 font-bold">
 								Fabricantes
 							</h2>
 						</div>
 					)}
-					<div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 w-full p-0 justify-evenly xl:justify-around">
-						{currentProducts?.length ? (
-							currentProducts.map((product) => (
-								<ProductItem data={product} key={product.id} />
-							))
-						) : (
-							<h1>No hay productos usando estos argumentos</h1>
-						)}
-					</div>
+					{
+						currentProducts.length === 0
+						? <h1 className="text-center">No hay productos usando estos argumentos</h1>
+						:
+						<>
+							<div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 w-full p-0 justify-evenly xl:justify-around">
+								{
+									currentPosts.map((product) => (
+										<ProductItem data={product} key={`product-item-${product.id}`} />
+									))
+								}
+							</div>
+
+							{currentProducts.length <= 10
+								||
+								<Pagination
+									postsPerPage={postsPerPage}
+									totalPosts={currentProducts.length}
+									paginate={paginate}
+									currentPage={currentPage}
+									paginateFront={paginateFront}
+									paginateBack={paginateBack}
+								/>
+							}
+						</>
+					}
 				</div>
 			</div>
-			{products > 16 && <Pagination />}
 			<Footer />
 		</>
 	);

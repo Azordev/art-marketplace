@@ -12,7 +12,7 @@ const Filters = ({ categoryClicked, categories, currentFilter, setFilter }) => {
 		e.preventDefault();
 
 		push("/products/");
-		
+
 		if (currentFilter === filter) {
 			return setFilter("none");
 		}
@@ -33,30 +33,39 @@ const Filters = ({ categoryClicked, categories, currentFilter, setFilter }) => {
 					</div>
 					<Link
 						to="#"
-						className="text-center block w-full py-3.5 text-xl font-semibold leading-6 text-black whitespace-no-wrap bg-add rounded-md shadow-sm"
-						style={currentFilter === 'category' ? { backgroundColor: '#000', color: '#FFF' } : {}}
+						className="text-center block w-full py-3.5 text-xl font-bold leading-6 text-black whitespace-no-wrap bg-add rounded-md shadow-sm"
+						style={
+							currentFilter === 'category'
+							? { backgroundColor: '#11698E', color: '#FFF' }
+							: { backgroundColor: '#F8F1F1', color: '#000' }}
 						onClick={(e) => handleClick(e, "category")}
 					>
 						Categorías
 					</Link>
 					{
-						currentFilter === 'category' &&	
+						currentFilter === 'category' &&
 							<div className="border border-black rounded-md w-full pl-2">
 								{categories.map(category => <div key={category.id} onClick={(e) => categoryClicked(e, category)} className="py-2 cursor-pointer text-black underline hover:no-underline">{category.name}</div>)}
 							</div>
 					}
 					<Link
 						to="#"
-						className="text-center block w-full py-3.5 text-xl font-semibold leading-6 text-black whitespace-no-wrap bg-add rounded-md shadow-sm"
-						style={currentFilter === 'generic' ? { backgroundColor: '#000', color: '#FFF' } : {}}
+						className="text-center block w-full py-3.5 text-xl font-bold leading-6 text-black whitespace-no-wrap bg-add rounded-md shadow-sm"
+						style={
+							currentFilter === 'generic'
+							? { backgroundColor: '#11698E', color: '#FFF' }
+							: { backgroundColor: '#F8F1F1', color: '#000' }}
 						onClick={(e) => handleClick(e, "generic")}
 					>
 						Genéricos
 					</Link>
 					<Link
 						to="#"
-						className="text-center block w-full py-3.5 text-xl font-semibold leading-6 text-black whitespace-no-wrap bg-add rounded-md shadow-sm"
-						style={currentFilter === 'manufacturer' ? { backgroundColor: '#000', color: '#FFF' } : {}}
+						className="text-center block w-full py-3.5 text-xl font-bold leading-6 text-black whitespace-no-wrap bg-add rounded-md shadow-sm"
+						style={
+							currentFilter === 'manufacturer'
+							? { backgroundColor: '#11698E', color: '#FFF' }
+							: { backgroundColor: '#F8F1F1', color: '#000' }}
 						onClick={(e) => handleClick(e, "manufacturer")}
 					>
 						Fabricante
