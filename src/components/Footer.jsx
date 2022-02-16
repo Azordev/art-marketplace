@@ -21,7 +21,6 @@ const notLoggedButtons = () => {
           >
             Regístrate
           </Link>
-
         </div>
       </div>
     );
