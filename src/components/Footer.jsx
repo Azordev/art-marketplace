@@ -7,16 +7,16 @@ import { isAuthenticated } from "../utils/isAuthenticated";
 const notLoggedButtons = () => {
   if (!isAuthenticated()) {
     return (
-      <div className="col-span1 sm:col-span-2 space-x-0 sm:space-x-10 xl:flex-row 2xl:flex-col items-center justify-center xl:justify-between xl:px-10 2xl:px-0 2xl:justify-center">
+      <div className="col-span1 sm:col-span-2 space-x-5 sm:space-x-10 2xl:flex-col items-center justify-center xl:justify-between xl:px-10 2xl:px-0 2xl:justify-center contents">
         <Link
           to="/login"
-          className="inline-flex items-end justify-center px-20 py-3.5 mb-7 xl:mb-0 2xl:mb-7 text-xl font-semibold leading-6 text-white whitespace-nowrap bg-primary rounded-md shadow-button hover-scale tracking-add mt-5"
+          className="flex inline-flex items-end justify-center px-20 py-3.5 mb-5  md:inline-flex xl:inline-flex 2xl:mb-7  md:mb-7 text-xl font-semibold leading-6 text-white whitespace-nowrap bg-primary rounded-md shadow-button hover-scale tracking-add mt-5"
         >
           Iniciar Sesión
         </Link>
         <Link
           to="/register"
-          className="inline-flex shadow-button items-end justify-center px-20 py-3.5 text-xl font-semibold leading-6 text-white whitespace-no-wrap bg-tertiary hover-scale rounded-md"
+          className="flex inline-flex shadow-button items-end justify-center px-20 py-3.5 mb-5  text-xl font-semibold leading-6  xl:mb-8 md:mb-7 text-white whitespace-no-wrap bg-tertiary hover-scale rounded-md md:inline-flex xl:inline-flex mt-5 md:mt-4 xl:mt-4"
         >
           Regístrate
         </Link>
