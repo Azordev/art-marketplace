@@ -11,13 +11,13 @@ const notLoggedButtons = () => {
         <div className="flex flex-col sm:flex-inle sm:space-x-8 2xl:flex-col contents">
           <Link
             to="/login"
-            className="flex space-x-4  sm:inline-flex items-end justify-center px-20 py-3.5 mb-5  md:inline-flex xl:inline-flex 2xl:mb-7  md:mb-7  text-xl font-semibold leading-6 text-white whitespace-nowrap bg-primary rounded-md shadow-button hover-scale tracking-add mt-5 xl:mt-5"
+            className="flex space-x-4 sm:inline-flex items-end justify-center px-20 py-3.5 mb-5 md:inline-flex xl:inline-flex 2xl:mb-7 md:mb-7  text-xl font-semibold leading-6 text-white whitespace-nowrap bg-primary rounded-md shadow-button hover-scale tracking-add mt-5 xl:mt-5"
           >
             Iniciar Sesión
           </Link>
           <Link
             to="/register"
-            className="flex space-x-4  sm:inline-flex shadow-button items-end justify-center px-20 py-3.5 mb-5  text-xl font-semibold leading-6  xl:mb-8 md:mb-7 text-white whitespace-no-wrap bg-tertiary hover-scale rounded-md md:inline-flex xl:inline-flex mt-5 md:mt-4 mt-5 xl:mt-5"
+            className="flex space-x-4 sm:inline-flex shadow-button items-end justify-center px-20 py-3.5 mb-5 text-xl font-semibold leading-6  xl:mb-8 md:mb-7 text-white whitespace-no-wrap bg-tertiary hover-scale rounded-md md:inline-flex xl:inline-flex mt-5 md:mt-4 mt-5 xl:mt-5"
           >
             Regístrate
           </Link>
