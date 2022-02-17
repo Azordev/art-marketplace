@@ -169,7 +169,7 @@ const Products = () => {
 							<div className="pl-8 lg:pl-2">
 								<div className="container items-center">
 									<div className="w-full">
-										<p className="text-black text-xl sm:text-2xl font-normal">
+										<p className="text-text text-xl sm:text-2xl font-normal">
 										<Link to="/"> Inicio / </Link>
 										<Link to="/products"> Productos / </Link>
 										<Link to={`products?category=${selectedCategory.id}` }> {selectedCategory?.name} </Link>
