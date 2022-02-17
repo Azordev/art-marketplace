@@ -17,30 +17,31 @@
 |                          [🐞 Report a bug or 🙋‍♂️ request a feature][issues-url]                           |
 | [![contributions welcome][contributions-welcome]][issues-url] [![License][badge-apache]][apache-license] |
 
-- [Azordev Art Marketplace](#azordev-art-marketplace)
-  - [The Project](#the-project)
+- [Art Marketplace](#art-marketplace)
+  - [Art Marketplace Docs](#art-marketplace-docs)
     - [Features](#features)
     - [Built With](#built-with)
+  - [Pre requirements](#pre-requirements)
+  - [How to run the project:](#how-to-run-the-project)
   - [Create a .env file](#create-a-env-file)
-  - [Advantages Of Styled-Components](#advantages-of-styled-components)
-  - [Using the App](#using-the-app)
-  - [How to run this project](#how-to-run-this-project)
-    - [Prerequisites](#prerequisites)
-    - [Run it (Quickstart with docker)](#run-it-quickstart-with-docker)
-    - [Installing the project](#installing-the-project)
+  - [Technologies:](#technologies)
+  - [Advantages Of TailwindCSS](#advantages-of-tailwindcss)
+  - [File Structure:](#file-structure)
+  - [GIT USE:](#git-use)
+  - [FAQ:](#faq)
     - [Available Scripts](#available-scripts)
       - [`npm start`](#npm-start)
       - [`npm run build`](#npm-run-build)
     - [Learn More](#learn-more)
   - [Potential Features](#potential-features)
-  - [Author](#author)
+  - [Collaborators](#collaborators)
   - [Contributing](#contributing)
   - [Show your support](#show-your-support)
   - [License](#license)
 
-## The Project
+## Art Marketplace Docs
 
-A place where you can find a download BIM objects
+A place where you can find a download Art images
 
 ### Features
 
@@ -67,72 +68,168 @@ A place where you can find a download BIM objects
 - Linux/GNU, macOS, Windows
 - Love and Passion for code
 
+## Pre requirements
+
+Before to start you need have some requirements:
+
+1. [Node.js](https://nodejs.org/) > v14.0.0
+
+   Node.js is a runtime environment for Javascript that allows us to use the language outside of the browser, in this case we use it to configure and run the development server.
+
+2. [npm](https://www.npmjs.com/) > v6.0.0
+
+   npm is a package manager for Node.js and comes installed with it, we use it to install and manage application dependencies.
+
+3. [Git](https://git-scm.com/) > v2.0.0
+
+   Git is a version control system for code, we use it to manage the different branches of the code.
+
+4. Connection to internet
+
+5. [Visual Studio Code](https://code.visualstudio.com/) or another code editor (optional)
+
+## How to run the project:
+
+1. Clone the repository
+
+```
+git clone https://github.com/Azordev/art-marketplace.git
+```
+
+2. Go to the project folder
+
+```
+cd art-marketplace
+```
+
+3. Install dependencies
+
+```
+npm install
+```
+
+or
+
+```
+yarn install
+```
+
+4. Run
+
+```
+npm start
+```
+
+or
+
+```
+yarn start
+```
+
+After executing any of the above commands, a development server will start; generally on port 3000. You must go to your browser and enter [localhost:3000](localhost:3000) and you will have access to the project.
+
 ## Create a .env file
 
-- Create a .env file.
-- Put correct key.
+- Copy the `.env.example` file in a new `.env.development` or `.env.production` file
+- Put the correct values at the example. If you don't know about the correct keys, ask to the project leader about it
 
-## Advantages Of Styled-Components
+## Technologies:
 
-- Easier management of CSS: With every bit of styling tied to a specific component, it is easier to know which CSS is applied This makes it easy to delete unused component styles.
-- Using styled components if we change a variable value then it can change all the value.
-- We can reuse same style component where we need and also we can use it conditionaly.
-- Simple and dynamic styling: Through props and global themes supported in styled-components, styling is simple without manually managing dozens of classes.
+The project has been developed using various technologies. Some of them are:
 
-## Using the App
+**React:**
+For the front, React has been used, which is a powerful framework that allows us to interact dynamically with the DOM and encapsulate tons of functionalities through components. [React Docs](https://reactjs.org/docs/getting-started.html).
 
-- Open it in your browser.
+**TailwindCSS:**
+Too we have used TailwindCSS, which is a CSS framework that help a lot with the CSS giving utilities classes and other tools to do the CSS more friendly for developers. [Tailwind Docs](https://tailwindcss.com/docs/installation) 
 
-## How to run this project
+**Axios:**
+Axios is a library that serves to create HTTP requests that are present externally. This ease the way to get data that isn't at the website else that is get from some API.
 
-### Prerequisites
+**EsLint:**
 
-- `npm` 6.13 +
-= `pnpm` 6.20.3 +
-- `node` 14.17 +
-- `docker` and `docker-compose` (optional)
-- A Text Editor like VSCode
-- A browser like Firefox or Chrome
+We like that our projects handle a clean code; that's why every time you commit & push, EsLint will analyze your input to make sure it complies with best practices.
 
-### Run it (Quickstart with docker)
+## Advantages Of TailwindCSS
 
-- Be sure to setup `docker-compose` and have `git` and `npm` working.
-- Run this:
+- Control Over Styling: Tailwind is a unique CSS framework when it comes to styling web applications, meaning that Tailwind does not have a default theme that you have to use like other CSS frameworks. For example, you can give each project a different look even if you use the same elements (color palette, size, etc.). Therefore, it’s one of the few CSS frameworks that is not opinionated on how you should style your project.
+- Faster CSS Styling Process: There is no faster framework than Tailwind when it comes to styling HTML. As a result, you can easily create good-looking layouts by styling elements directly. This is possible because Tailwind offers thousands of built-in classes that do not require you to create designs from scratch.
+- Minimum size of file: Tailwind CSS works in the front end of a website. For this reason, it is reasonable for developers to demand ultimate responsiveness. Well, Tailwind provides the ability to create responsive themes for your web applications and remove all unused CSS classes. With PurgeCSS, Tailwind helps you keep your final CSS as small as possible.
 
-```sh
-> git clone https://github.com/Azordev/art-marketplace
-> cd art-marketplace
-> pnpm env use -g 16
-> pnpm i
-> docker-compose build
-> docker-compose up frontend
+## File Structure:
+
+The magic of the project happens inside the src folder. It is there where you will find all the components, pages and styles.
+
+<table border="0">
+    <td width="300px">
+        <img src="./docs/assets/folderstructure.png">
+    </td>
+    <td>
+        <b>assets:</b> In this folder we place all the graphic resources. If you need to add / use a new image, this is the site.<br/><br/>
+        <b>components:</b> The components are functionalities that we can reuse in many parts of our project. For example, if we need a button; we develop it only once and then we can call it as many times as we need it. We like to separate styles from logic and structure. That is why in this folder you will find styled components that are then used in the layout file.<br/><br/>
+        <b>pages:</b> Here we place the structure of each section of the project and it is where we mostly use the components<br/><br/>
+        <b>actions:</b> Axios work using instances, is here where the axios instances are used to call the data from the API server and is returned processed to the FrontEnd.<br/><br/>
+        <b>config:</b> Is here where the instances of axios are configured.<br/><br/>
+        <b>mock:</b> At this folder we save the mock data used for test.<br/><br/>
+        <b>styles:</b> Here we get the global styles that we can use throughout the project.    
+    </td>
+</table>
+
+## GIT USE:
+
+There are some rules that apply when interacting with the project repository. This will allow us to have a standard that any developer can understand. It is important to comply with these rules so that the linting tool allows us to use the repository.
+
+**Branch:**
+
+Every time an issue is assigned to you, you must create a new branch. This can be done through the command:
+
+```
+git branch <name of branch>
 ```
 
-- Enter [localhost:3000](http://localhost:3000/) in a browser for the frontend.
+For convenience, the branches should have a defined structure. For example, if the issue is about adding a new feature, the branch should be:
 
-You can also test using docker, run `docker-compose up test` or `docker-compose run --rm test`
-
-Not a fan of Docker or need more information? Continue for instructions to learn more about how to setup your PC for run the frontend!
-
-We used `create-react-app` to initialize this project, so it is configurated to be easy to run. Just follow the following instructions.
-
-### Installing the project
-
-Now that you are set up, open a terminal and:
-
-```sh
-git clone https://github.com/Azordev/art-marketplace
-cd art-marketplace
-pnpm i && pnpm start
+```
+feature/#issuenumber-brief-description-of-the-feature
 ```
 
-Then open [http://localhost:3000/](http://localhost:3000/) to see the app.
+Suppose we have issue #12 that asks us to add a header to the main page. Then, the branch would be as follows:
+
+```
+feature/#12-add-header-to-main-page
+```
+
+If it is about solving a bug, we just have to put the word "fix" in front of it. For example:
+
+```
+fix/#14-remove-bad-media-queries-in-rating-component
+```
+
+**Commits:**
+
+Like branches, commits must also follow a format. Notice how the commit message varies if it is a feature or a bug fix.
+
+**feat**: added header to main page
+
+**fix**: removed bad media queries in rating component
+
+**Pull Request (PR):**
+
+The PR’s are requests that as developers we make once the solution of an issue is completed and we want the code to be integrated into the master branch of the project. Before that, we must ensure that our code is fully functional and adhering to best practices.
+
+Once we have done a commit & push in our branch, a notification with a yellow background will appear in the github repository and will ask us to continue with the PR. In the TextArea to perform the PR you will find several sections that you want to complete: A brief description of what you did, a snapshot (if applicable), the tasks that were completed and the steps to view them.
+
+## FAQ:
+
+**How do I create a new component?**
+
+In the component folder, create a new file with the .jsx extension. Make sure to put an appropriate name to the functionality that you are going to develop.
 
 ### Available Scripts
 
 In the project directory, you can run:
 
-#### `pnpm start`
+#### `npm start`
 
 Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -140,7 +237,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.
 You will also see any lint errors in the console.
 
-#### `pnpm run build`
+#### `npm run build`
 
 Builds the app for production to the `build` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -160,21 +257,21 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 - [ ] \<Insert your great idea here!>.
 
-## Colaboradores
+## Collaborators
 
 | [Israel Laguan][author-github] | ![email-icon][] Email me to [contact@israellaguan.com][author-email] / ![linkedin-icon][] Connect to [my Linkedin][author-linkedin] |
 | :----------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
-|        ![author-pic][]         |                                                             ![banner][]                                                             |
+|        ![author-pic][]         |                                                                                                                          |
 |  [Victor Peña][victor-github]  |  ![email-icon][] Email me to [victordev2002@gmail.com][victor-email] / ![linkedin-icon][] Connect to [my Linkedin][victor-linkedin]    |
-|        ![victor-pic][]         |                                                             ![banner][]                                                             |
+|        ![victor-pic][]         |                                                                                                                          |
 |[Emmanuel Azócar][emmanuel-github]|                          ![email-icon][] Email me to [azocarmel@gmail.com][emmanuel-email]                                       |
-|        ![emmanuel-pic][]        |                                                             ![banner][]                                                             |
+|        ![emmanuel-pic][]        |                                                                                                                          |
 | [Angelica Molina][ange-github] |                              ![email-icon][] Email me to [angeli.molina1@gmail.com][ange-email]                                     |
-|         ![ange-pic][]         |                                                             ![banner][]                                                             |
+|         ![ange-pic][]         |                                                                                                                          |
 |[Roman Rodriguez][roman-github] |                            ![email-icon][] Email me to [romanrodri192@gmail.com][roman-email]                                       |
-|         ![roman-pic][]          |                                                             ![banner][]                                                             |
+|         ![roman-pic][]          |                                                                                                                          |
 |    [Tony Tarco][tony-github]   |                              ![email-icon][] Email me to [tonytarco@hotmail.com][tony-email]                                        |
-|          ![tony-pic][]         |                                                             ![banner][]                                                             |
+|          ![tony-pic][]         |                                                                                                                          |
 |[Ildebrando Quinchoa][ild-github]|                           ![email-icon][] Email me to [ildebrandoefrain@gmail.com][ild-email]                                      |
 |          ![ild-pic][]          |                                                             ![banner][]                                                             |
 |  [Eghinner Hernandez][eghinner-github]  |  ![email-icon][] Email me to [eghinner@gmail.com][eghinner-email] / ![linkedin-icon][] Connect to [my Linkedin][eghinner-linkedin]    |
