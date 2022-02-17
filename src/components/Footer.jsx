@@ -7,7 +7,7 @@ import { isAuthenticated } from "../utils/isAuthenticated";
 const notLoggedButtons = () => {
   if (!isAuthenticated()) {
     return (
-      <div className="sm:col-span-2 sm:space-x-8 2xl:flex-col items-center justify-center xl:justify-between xl:px-10 2xl:px-0 2xl:justify-center sm:contents xl:contents 2xl:contents">
+      <div className="mx-20 sm:mx-12 md:mx-12 xl:mx-12 container mx-auto sm:col-span-2 sm:space-x-8 2xl:flex-col items-center justify-center xl:justify-between xl:px-10 2xl:px-0 2xl:justify-center sm:contents xl:contents 2xl:contents">
         <div className="flex flex-col sm:flex-inle sm:space-x-8 2xl:flex-col contents">
           <Link
             to="/login"
