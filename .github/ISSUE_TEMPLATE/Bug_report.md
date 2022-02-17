@@ -1,6 +1,6 @@
 ---
 name: "\U0001F41B Bug report"
-about: Create a report to help us improve The Project
+about: Create a report to help us improve Art Marketplace
 
 ---
 
