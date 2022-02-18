@@ -1,4 +1,4 @@
-﻿# Art Marketplace 
+﻿# Art Marketplace
 
 <!-- PROJECT SHIELDS -->
 
@@ -177,11 +177,13 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 |          ![tony-pic][]         |                                                             ![banner][]                                                             |
 |[Ildebrando Quinchoa][ild-github]|                           ![email-icon][] Email me to [ildebrandoefrain@gmail.com][ild-email]                                      |
 |          ![ild-pic][]          |                                                             ![banner][]                                                             |
+|  [Eghinner Hernandez][eghinner-github]  |  ![email-icon][] Email me to [eghinner@gmail.com][eghinner-email] / ![linkedin-icon][] Connect to [my Linkedin][eghinner-linkedin]    |
+|        ![eghinner-pic][]         |                                                             ![banner-eghinner][]                                                             |
 
 
 
 
-## Contributing 
+## Contributing
 
 [![contributions welcome][contributions-welcome]][issues-url]
 
@@ -232,11 +234,16 @@ Feel free to fork this project and improve it!
 [ild-pic]: https://avatars.githubusercontent.com/u/73916430?v=4
 [ild-email]: mailto:ildebrandoefrain@gmail.com
 
+[eghinner-github]: https://github.com/Eghinner
+[eghinner-pic]: https://avatars.githubusercontent.com/u/71513679?v=4
+[eghinner-email]: mailto:eghinner@gmail.com
+[eghinner-linkedin]: https://www.linkedin.com/in/eghinner
+
 
 [contributors-shield]: https://img.shields.io/github/contributors/Azordev/art-marketplace?style=for-the-badge
 [contributors-url]: https://github.com/Azordev/art-marketplace/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/Azordev/art-marketplace?style=for-the-badge 
+[forks-shield]: https://img.shields.io/github/forks/Azordev/art-marketplace?style=for-the-badge
 [forks-url]: https://github.com/Azordev/art-marketplace/network/members
 
 [stars-shield]: https://img.shields.io/github/stars/Azordev/art-marketplace?style=for-the-badge
@@ -259,6 +266,7 @@ Feel free to fork this project and improve it!
 [linkedin-icon]: https://img.icons8.com/color/20/000000/linkedin.png
 [email-icon]: https://img.icons8.com/color/20/000000/message-squared.png
 [banner]: https://github.com/Israel-Laguan/Israel-Laguan/raw/master/docs/banner.jpg
+[banner-eghinner]: https://github.com/Eghinner/Eghinner/blob/main/docs/Banner-EghinnerDev.png
 [app-banner]: docs/app-banner.png
 [app-icon]: public/logo.png
 [icons8]: https://icons8.com/
