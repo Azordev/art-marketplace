@@ -41,7 +41,7 @@
 
 ## Art Marketplace Docs
 
-A place where you can find a download Art images
+A place where you can find a download Art images. We have adapted and implemented the Cleveland public API to get the examples of art images for this project.
 
 ### Features
 
