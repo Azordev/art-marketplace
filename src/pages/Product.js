@@ -4,6 +4,7 @@ import { MainNav, Footer } from "../components";
 import { getProductoByIdAsync } from "../actions/productosActions";
 import { isAuthenticated } from "../utils/isAuthenticated";
 import { PUBLIC_URL } from "../config/constants";
+import { Link } from "react-router-dom";
 
 const Product = () => {
   const [product, setProduct] = useState(null);
@@ -28,8 +29,10 @@ const Product = () => {
       <section className="max-w-screen-2xl mx-auto px-20 pt-16">
         <div className="container items-center">
           <div className="w-full 2xl:pl-11">
-            <p className="text-black text-xl sm:text-2xl font-normal">
-              Inicio / Catálogo / {product?.categories.name || "Categoría"} /{" "}
+            <p className="text-text text-xl sm:text-2xl font-bold">
+              <Link to="/"> Inicio / </Link>
+              <Link to="/products"> Catálogo / </Link>
+              <Link to={`/products?category=${product?.categories.id}` }> {product?.categories.name || "Categoría"} / </Link>
               {product?.name || "Producto"}
             </p>
           </div>
