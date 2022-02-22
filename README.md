@@ -273,7 +273,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 |    [Tony Tarco][tony-github]   |                              ![email-icon][] Email me to [tonytarco@hotmail.com][tony-email]                                        |
 |          ![tony-pic][]         |                                                                                                                          |
 |[Ildebrando Quinchoa][ild-github]|                           ![email-icon][] Email me to [ildebrandoefrain@gmail.com][ild-email]                                      |
-|          ![ild-pic][]          |                                                             ![banner][]                                                             |
+|          ![ild-pic][]          |                                                                                                                          |
 |  [Eghinner Hernandez][eghinner-github]  |  ![email-icon][] Email me to [eghinner@gmail.com][eghinner-email] / ![linkedin-icon][] Connect to [my Linkedin][eghinner-linkedin]    |
 |        ![eghinner-pic][]         |                                                             ![banner-eghinner][]                                                             |
 
@@ -363,7 +363,7 @@ Feel free to fork this project and improve it!
 [linkedin-icon]: https://img.icons8.com/color/20/000000/linkedin.png
 [email-icon]: https://img.icons8.com/color/20/000000/message-squared.png
 [banner]: https://github.com/Israel-Laguan/Israel-Laguan/raw/master/docs/banner.jpg
-[banner-eghinner]: https://github.com/Eghinner/Eghinner/blob/main/docs/Banner-EghinnerDev.png
+[banner-eghinner]: https://github.com/Eghinner/Eghinner/raw/main/docs/Banner-EghinnerDev.png
 [app-banner]: docs/app-banner.png
 [app-icon]: public/logo.png
 [icons8]: https://icons8.com/
