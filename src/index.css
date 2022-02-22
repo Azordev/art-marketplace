@@ -43,7 +43,7 @@
 
 @layer components {
   .arrow-custom-circle {
-    @apply shadow-slider z-10 p-4 bg-no-repeat bg-center rounded-full bg-white;
+    @apply shadow-slider p-5 z-10 rounded-full;
     @apply xl:p-6;
   }
 }
