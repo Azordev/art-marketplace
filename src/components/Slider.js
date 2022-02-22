@@ -2,26 +2,6 @@ import React, { useMemo } from "react";
 import Slider from "react-slick";
 import { useLocation } from 'react-router-dom';
 
-const ArrowLeft = () => {
-  return (
-    <svg style={{
-      position: "absolute",
-      transform: "translate(-50%, -50%)"
-      }} xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
-    </svg>
-  )
-}
-const ArrowRight = () => {
-  return (
-    <svg style={{
-      position: "absolute",
-      transform: "translate(-50%, -50%)"
-      }} xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7"  />
-    </svg>
-  )
-}
 const Prev = (props) => {
   const { pathname } = useLocation()
   const { className, style, onClick } = props;
@@ -30,12 +10,13 @@ const Prev = (props) => {
       className={`${className} arrow-custom-circle`}
       style={{
         ...style,
-        color: pathname !== '/' ? "#FFF" : "#11698E",
-        background: pathname !=='/' ? "no-repeat center #11698E" : "no-repeat center #FFF"
+        background:
+        pathname === '/'
+        ? "center no-repeat #FFF url('https://img.icons8.com/material-rounded/24/11698E/chevron-left.png')"
+        : "center no-repeat #11698E url('https://img.icons8.com/material-rounded/24/FFFFFF/chevron-left.png')"
         }}
         onClick={onClick}
         >
-        <ArrowLeft />
     </div>
   );
 };
@@ -47,12 +28,13 @@ const Next = (props) => {
       className={`${className} arrow-custom-circle`}
       style={{
         ...style,
-        color: pathname !== '/' ? "#FFF" : "#11698E",
-        background: pathname !=='/' ? "no-repeat center #11698E" : "no-repeat center #FFF"
+        background:
+        pathname === '/'
+        ? "center no-repeat #FFF url('https://img.icons8.com/material-rounded/24/11698E/chevron-right.png')"
+        : "center no-repeat #11698E url('https://img.icons8.com/material-rounded/24/FFFFFF/chevron-right.png')"
         }}
       onClick={onClick}
     >
-        <ArrowRight />
     </div>
   );
 };
