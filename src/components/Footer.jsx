@@ -41,8 +41,8 @@ const Footer = () => {
             </div>
           </div>
           <div className="flex flex-col sm:flex-row xl:flex-col 2xl:flex-row w-full sm:w-full xl:w-1/2">
-            <div className="grid w-full grid-cols-2 xl:pl-10 mb-10 sm:mb-0 xl:mb-10 2xl:mb-0">
-              <div className="p-0">
+            <div className="grid w-full grid-cols-1 sm:grid-cols-2 mb-10 sm:mb-0 xl:mb-10 2xl:mb-0 justify-center">
+              <div className="p-0 max-w-full w-60 mx-auto sm:w-full sm:mx-none">
                 <h5 className="text-lg font-bold text-primary">
                   Sobre nosotros
                 </h5>
@@ -71,7 +71,7 @@ const Footer = () => {
                   </ul>
                 </nav>
               </div>
-              <div className="p-0">
+              <div className="p-0 max-w-full w-60 mx-auto sm:w-full sm:mx-none">
                 <h5 className="text-lg font-bold text-primary">
                   Página principal
                 </h5>
