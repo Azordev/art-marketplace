@@ -29,7 +29,7 @@ const Product = () => {
       <section className="max-w-screen-2xl mx-auto px-20 pt-16">
         <div className="container items-center">
           <div className="w-full 2xl:pl-11">
-            <p className="text-text text-xl sm:text-2xl font-normal">
+            <p className="text-text text-xl sm:text-2xl font-bold">
               <Link to="/"> Inicio / </Link>
               <Link to="/products"> Catálogo / </Link>
               <Link to={`/products?category=${product?.categories.id}` }> {product?.categories.name || "Categoría"} / </Link>
