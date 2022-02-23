@@ -95,13 +95,14 @@ const ProductSlider = ({ data, categories, itemClick, className, title }) => {
               onClick={(e) => itemClick(e, item.id, categories)}
             >
               <div
+                title={item.name}
                 style={
                  item.id === parseInt(query.get("subcategory")) || pathname==='/'
                   ?whiteElement:blueElement
                  }
                 className="flex flex-col flex-1 justify-between py-4 px-10">
                 <div className="flex-1">
-                  <div className="block text-center">
+                  <div className="block text-center truncate">
                     <span className="text-xl font-bold leading-7">
                       {item.name}
                     </span>
