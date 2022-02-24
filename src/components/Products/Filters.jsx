@@ -39,7 +39,7 @@ const Filters = ({ categoryClicked, categories, currentFilter, setFilter }) => {
             }
             onClick={(e) => handleClick(e, "category")}
           >
-            Categorías
+            Por departamento
           </Link>
           {currentFilter === "category" && (
             <div className="border border-black rounded-md w-full pl-2">
@@ -49,7 +49,7 @@ const Filters = ({ categoryClicked, categories, currentFilter, setFilter }) => {
                   onClick={(e) => categoryClicked(e, category)}
                   className="py-2 cursor-pointer text-black underline hover:no-underline"
                 >
-                  {category.name}
+                  {category}
                 </div>
               ))}
             </div>
@@ -64,7 +64,7 @@ const Filters = ({ categoryClicked, categories, currentFilter, setFilter }) => {
             }
             onClick={(e) => handleClick(e, "generic")}
           >
-            Genéricos
+            Por tipo
           </Link>
           <Link
             to="#"
@@ -76,7 +76,7 @@ const Filters = ({ categoryClicked, categories, currentFilter, setFilter }) => {
             }
             onClick={(e) => handleClick(e, "manufacturer")}
           >
-            Fabricante
+            Por fecha
           </Link>
         </div>
       </div>

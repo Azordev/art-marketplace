@@ -1,10 +1,9 @@
 import authAxios from "../config/authAxios";
 import { STATUS_OK } from "../config/constants";
-import response from "../config/network/response";
 
 export const getMarcaById = async (id) => {
   try {
-    const res = await authAxios.get(`/brand/${id}`);
+    const res = await authAxios.get(`/artworks/?type=${id}`);
 
     if (res.data.status === STATUS_OK) {
       return res.data.body;
@@ -16,31 +15,76 @@ export const getMarcaById = async (id) => {
   }
 };
 
-export const getMarcas = async () => {
-  try {
-    const res = await authAxios.get("/brand");
+const types = [
+  "Amulets",
+  "Apparatus",
+  "Arms and Armor",
+  "Basketry",
+  "Book Binding",
+  "Bound Volume",
+  "Calligraphy",
+  "Carpet",
+  "Ceramic",
+  "Coins",
+  "Cosmetic Objects",
+  "Drawing",
+  "Embroidery",
+  "Enamel",
+  "Forgery",
+  "Frame",
+  "Funerary Equipment",
+  "Furniture and woodwork",
+  "Garment",
+  "Glass",
+  "Glyptic",
+  "Illumination",
+  "Implements",
+  "Inlays",
+  "Ivory",
+  "Jade",
+  "Jewelry",
+  "Knitting",
+  "Lace",
+  "Lacquer",
+  "Leather",
+  "Linoleum Block",
+  "Lithographic Stone",
+  "Manuscript",
+  "Metalwork",
+  "Miniature",
+  "Miscellaneous",
+  "Mixed Media",
+  "Monotype",
+  "Mosaic",
+  "Musical Instrument",
+  "Netsuke",
+  "Painting",
+  "Papyri",
+  "Photograph",
+  "Plaque",
+  "Plate",
+  "Portfolio",
+  "Portrait Miniature",
+  "Print",
+  "Relief",
+  "Rock crystal",
+  "Rubbing",
+  "Sampler",
+  "Scarabs",
+  "Sculpture",
+  "Seals",
+  "Silver",
+  "Spindle Whorl",
+  "Stencil",
+  "Stone",
+  "Tapestry",
+  "Textile",
+  "Time-based Media",
+  "Tool",
+  "Velvet",
+  "Vessels",
+  "Wood",
+  "Woodblock",
+];
 
-    if (res.data.status === STATUS_OK) {
-      return res.data.body.data;
-    } else {
-      return false;
-    }
-  } catch (error) {
-    response.error(error);
-    return false;
-  }
-};
-
-export const getMarcasAsync = async (resolve) => {
-  try {
-    const res = await authAxios.get("/brand");
-
-    if (res.data.status === STATUS_OK) {
-      resolve(res.data.body.data);
-    } else {
-      resolve(false);
-    }
-  } catch (error) {
-    resolve(false);
-  }
-};
+export const getMarcas = async () => types;

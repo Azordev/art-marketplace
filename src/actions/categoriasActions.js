@@ -1,13 +1,12 @@
 import authAxios from "../config/authAxios";
 import { STATUS_OK } from "../config/constants";
-import response from "../config/network/response";
 
 export const getCategoryById = async (id) => {
   try {
-    const res = await authAxios.get(`/category/${id}`);
+    const res = await authAxios.get(`/artworks/?department=${id}`);
 
-    if (res.data.status === STATUS_OK) {
-      return res.data.body;
+    if (res.status === STATUS_OK) {
+      return res.data.data;
     } else {
       return null;
     }
@@ -16,31 +15,28 @@ export const getCategoryById = async (id) => {
   }
 };
 
-export const getCategories = async () => {
-  try {
-    const res = await authAxios.get("/category");
+const categories = [
+  "African Art",
+  "American Painting and Sculpture",
+  "Art of the Americas",
+  "Chinese Art",
+  "Contemporary Art",
+  "Decorative Art and Design",
+  "Drawings",
+  "Egyptian and Ancient Near Eastern Art",
+  "European Painting and Sculpture",
+  "Greek and Roman Art",
+  "Indian and South East Asian Art",
+  "Islamic Art",
+  "Japanese Art",
+  "Korean Art",
+  "Medieval Art",
+  "Modern European Painting and Sculpture",
+  "Oceania",
+  "Performing Arts, Music, & Film",
+  "Photography",
+  "Prints",
+  "Textiles",
+];
 
-    if (res.data.status === STATUS_OK) {
-      return res.data.body.data;
-    } else {
-      return false;
-    }
-  } catch (error) {
-    response.error(error);
-    return false;
-  }
-};
-
-export const getCategoriasAsync = async (resolve) => {
-  try {
-    const res = await authAxios.get("/category");
-
-    if (res.data.status === STATUS_OK) {
-      resolve(res.data.body.data);
-    } else {
-      resolve(false);
-    }
-  } catch (error) {
-    resolve(false);
-  }
-};
+export const getCategories = async () => categories;

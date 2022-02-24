@@ -13,7 +13,7 @@ export const filterBySubcategory = (products, subcategoryId) => {
  * @returns Returns all products with the category selected
  */
 export const filterByCategory = (products, categoryId) => {
-  return products.filter((product) => product.category_id === categoryId);
+  return products.filter((product) => product.department === categoryId);
 };
 
 /**

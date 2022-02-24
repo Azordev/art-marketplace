@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LogoFooter from "../assets/img/logo.png";
-import LogosFooter from "./LogosFooter";
 import { isAuthenticated } from "../utils/isAuthenticated";
 
 const notLoggedButtons = () => {
@@ -28,7 +27,6 @@ const notLoggedButtons = () => {
 const Footer = () => {
   return (
     <>
-      <LogosFooter />
       <section className="bg-complementary px-5 lg:px-10 2xl:px-20 py-10 xl:py-16">
         <div className="max-w-screen-2xl mx-auto flex flex-col xl:flex-row px-0 pb-16 w-full border-solid border-black border-opacity-50">
           <div className="w-full xl:w-1/2">

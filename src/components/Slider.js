@@ -141,11 +141,11 @@ const ProductSlider = ({ data, categories, itemClick, className, title }) => {
           <div className="p-1" key={item}>
             <div
               className="block mx-2 w-auto hover-scale--min overflow-hidden rounded-lg shadow-slider cursor-pointer"
-              onClick={(e) => itemClick(e, item.id, categories)}
+              onClick={(e) => itemClick(e, item, categories)}
             >
               <div
                 style={
-                  item.id === parseInt(query.get("subcategory")) ||
+                  item === parseInt(query.get("subcategory")) ||
                   pathname === "/"
                     ? whiteElement
                     : blueElement
@@ -154,9 +154,7 @@ const ProductSlider = ({ data, categories, itemClick, className, title }) => {
               >
                 <div className="flex-1">
                   <div className="block text-center">
-                    <span className="text-xl font-bold leading-7">
-                      {item.name}
-                    </span>
+                    <span className="text-xl font-bold leading-7">{item}</span>
                   </div>
                 </div>
               </div>

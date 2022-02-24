@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ObjectList, Hero, PartnersSlider } from "../components/Home";
+import { ObjectList, Hero } from "../components/Home";
 import {
   getLatestProducts,
   getGenericProducts,
@@ -25,6 +25,7 @@ const Home = () => {
 
   const getAllCategories = async () => {
     const res = await getCategories();
+    console.log(res);
     if (res) setCategories(res);
   };
 
@@ -52,21 +53,20 @@ const Home = () => {
       </div>
       <div className="max-w-screen-2xl mx-auto">
         <ObjectList
-          title="Objetos genéricos"
+          title="Arte por artistas femeninas"
           seeMore="/products"
           items={genericProducts}
         />
         <ObjectList
-          title="Objetos de fabricante"
+          title="En exhibición"
           seeMore="/products"
           items={manufacturerProducts}
         />
         <ObjectList
-          title="Objetos nuevos"
+          title="Obras nuevas"
           seeMore="/products"
           items={newProducts}
         />
-        <PartnersSlider />
       </div>
       <Footer />
     </>

@@ -1,180 +1,149 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-Array [
-  <section
-    className="max-w-screen-2xl mx-auto bg-white px-5 lg:px-10 2xl:px-20 pb-10"
+<section
+  className="bg-complementary px-5 lg:px-10 2xl:px-20 py-10 xl:py-16"
+>
+  <div
+    className="max-w-screen-2xl mx-auto flex flex-col xl:flex-row px-0 pb-16 w-full border-solid border-black border-opacity-50"
   >
     <div
-      className="flex flex-col items-center justify-center space-y-8 lg:space-y-0 lg:space-x-4 xl:space-x-0 lg:flex-row gap-12"
+      className="w-full xl:w-1/2"
     >
-      <div>
+      <div
+        className="flex items-start justify-center xl:justify-start"
+      >
         <img
-          alt=""
-          className="block object-scale-down lg:w-80 lg:h36"
-          src="logo-2.png"
-        />
-      </div>
-      <div>
-        <img
-          alt=""
+          alt="logo"
           className="block object-scale-down lg:w-80 lg:h36"
           src="logo.png"
         />
       </div>
-      <div>
-        <img
-          alt=""
-          className="block object-scale-down lg:w-80 lg:h36"
-          src="logo-3.png"
-        />
-      </div>
     </div>
-  </section>,
-  <section
-    className="bg-complementary px-5 lg:px-10 2xl:px-20 py-10 xl:py-16"
-  >
     <div
-      className="max-w-screen-2xl mx-auto flex flex-col xl:flex-row px-0 pb-16 w-full border-solid border-black border-opacity-50"
+      className="flex flex-col sm:flex-row xl:flex-col 2xl:flex-row w-full sm:w-full xl:w-1/2"
     >
       <div
-        className="w-full xl:w-1/2"
+        className="grid w-full grid-cols-1 sm:grid-cols-2 mb-10 sm:mb-0 xl:mb-10 2xl:mb-0 justify-center"
       >
         <div
-          className="flex items-start justify-center xl:justify-start"
+          className="p-0 max-w-full w-60 mx-auto sm:w-full sm:mx-none"
         >
-          <img
-            alt="logo"
-            className="block object-scale-down lg:w-80 lg:h36"
-            src="logo.png"
-          />
+          <h5
+            className="text-lg font-bold text-primary"
+          >
+            Sobre nosotros
+          </h5>
+          <nav
+            className="mt-4"
+          >
+            <ul
+              className="leading-6"
+            >
+              <li>
+                <a
+                  className="text-lg font-normal opacity-80"
+                  href="/#"
+                >
+                  Quiénes Somos
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-lg font-normal opacity-80"
+                  href="/#"
+                >
+                  Historia
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-lg font-normal opacity-80"
+                  href="/#"
+                >
+                  Misión
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-lg font-normal opacity-80"
+                  href="/#"
+                >
+                  Base Legal
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
-      </div>
-      <div
-        className="flex flex-col sm:flex-row xl:flex-col 2xl:flex-row w-full sm:w-full xl:w-1/2"
-      >
         <div
-          className="grid w-full grid-cols-1 sm:grid-cols-2 mb-10 sm:mb-0 xl:mb-10 2xl:mb-0 justify-center"
+          className="p-0 max-w-full w-60 mx-auto sm:w-full sm:mx-none"
         >
-          <div
-            className="p-0 max-w-full w-60 mx-auto sm:w-full sm:mx-none"
+          <h5
+            className="text-lg font-bold text-primary"
           >
-            <h5
-              className="text-lg font-bold text-primary"
-            >
-              Sobre nosotros
-            </h5>
-            <nav
-              className="mt-4"
-            >
-              <ul
-                className="leading-6"
-              >
-                <li>
-                  <a
-                    className="text-lg font-normal opacity-80"
-                    href="/#"
-                  >
-                    Quiénes Somos
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-lg font-normal opacity-80"
-                    href="/#"
-                  >
-                    Historia
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-lg font-normal opacity-80"
-                    href="/#"
-                  >
-                    Misión
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-lg font-normal opacity-80"
-                    href="/#"
-                  >
-                    Base Legal
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div
-            className="p-0 max-w-full w-60 mx-auto sm:w-full sm:mx-none"
+            Página principal
+          </h5>
+          <nav
+            className="mt-4"
           >
-            <h5
-              className="text-lg font-bold text-primary"
+            <ul
+              className="leading-6"
             >
-              Página principal
-            </h5>
-            <nav
-              className="mt-4"
-            >
-              <ul
-                className="leading-6"
-              >
-                <li>
-                  <a
-                    className="text-lg font-normal opacity-80"
-                    href="/#"
-                  >
-                    Nosotros
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-lg font-normal opacity-80"
-                    href="/#"
-                  >
-                    Formación y capacitación
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-lg font-normal opacity-80"
-                    href="/#"
-                  >
-                    Investigación y normalización
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="text-lg font-normal opacity-80"
-                    href="/#"
-                  >
-                    Contribución al SENCICO
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div
-            className="justify-items-center sm:justify-items-start grid grid-cols-1 mx-auto sm:grid-cols-2 sm:col-span-2"
+              <li>
+                <a
+                  className="text-lg font-normal opacity-80"
+                  href="/#"
+                >
+                  Nosotros
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-lg font-normal opacity-80"
+                  href="/#"
+                >
+                  Formación y capacitación
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-lg font-normal opacity-80"
+                  href="/#"
+                >
+                  Investigación y normalización
+                </a>
+              </li>
+              <li>
+                <a
+                  className="text-lg font-normal opacity-80"
+                  href="/#"
+                >
+                  Contribución al SENCICO
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div
+          className="justify-items-center sm:justify-items-start grid grid-cols-1 mx-auto sm:grid-cols-2 sm:col-span-2"
+        >
+          <a
+            className="w-60 max-w-full sm:max-w-none text-center py-3.5 mb-5 md:mb-7 text-xl font-semibold leading-6 text-white whitespace-nowrap bg-primary rounded-md shadow-button hover-scale tracking-add mt-5 xl:mt-5"
+            href="/login"
+            onClick={[Function]}
           >
-            <a
-              className="w-60 max-w-full sm:max-w-none text-center py-3.5 mb-5 md:mb-7 text-xl font-semibold leading-6 text-white whitespace-nowrap bg-primary rounded-md shadow-button hover-scale tracking-add mt-5 xl:mt-5"
-              href="/login"
-              onClick={[Function]}
-            >
-              Iniciar Sesión
-            </a>
-            <a
-              className="w-60 max-w-full sm:max-w-none text-center py-3.5 mb-5 md:mb-7 text-xl font-semibold leading-6 text-white whitespace-nowrap bg-tertiary rounded-md shadow-button hover-scale tracking-add mt-5 xl:mt-5"
-              href="/register"
-              onClick={[Function]}
-            >
-              Regístrate
-            </a>
-          </div>
+            Iniciar Sesión
+          </a>
+          <a
+            className="w-60 max-w-full sm:max-w-none text-center py-3.5 mb-5 md:mb-7 text-xl font-semibold leading-6 text-white whitespace-nowrap bg-tertiary rounded-md shadow-button hover-scale tracking-add mt-5 xl:mt-5"
+            href="/register"
+            onClick={[Function]}
+          >
+            Regístrate
+          </a>
         </div>
       </div>
     </div>
-  </section>,
-]
+  </div>
+</section>
 `;

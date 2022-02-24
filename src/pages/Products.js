@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 import queryString from "query-string";
-import { Link } from "react-router-dom";
 import { MainNav, Footer } from "../components";
 import ProductItem from "../components/ProductItem";
-import Slider from "../components/Slider";
 import Filters from "../components/Products/Filters";
 
 import { getProductsAsync } from "../actions/productosActions";
@@ -25,11 +23,7 @@ const Products = () => {
   const [currentProducts, setCurrentProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState("none");
-  const [selectedCategory, setSelectedCategory] = useState({
-    name: "Todas",
-    subcategories: [],
-  });
-  const [selectedSubcategory, setSelectedSubcategory] = useState({ name: "" });
+  const [selectedCategory, setSelectedCategory] = useState("Todas");
 
   const filters = queryString.parse(search);
 
@@ -90,40 +84,18 @@ const Products = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const categoryClicked = (e, category = {}) => {
+  const categoryClicked = (e, category) => {
     e.preventDefault();
     setSelectedCategory(category);
-    setSelectedSubcategory({ name: "" });
-    push(`/products?category=${category.id}`);
+    push(`/products?category=${category}`);
   };
 
-  const subcategoryClicked = (e, subcategoryId, categoryList) => {
+  const subcategoryClicked = (e) => {
     e.preventDefault();
-    const category = categoryList.find((category) =>
-      category.subcategories.find(
-        (subcategory) => subcategory.id === subcategoryId
-      )
-    );
-
-    const query = {
-      category: category ? category.id : "",
-      subcategory: subcategoryId,
-    };
-
-    if (category) {
-      setSelectedCategory(category);
-      setSelectedSubcategory(
-        category.subcategories.find(
-          (subcategory) => subcategory.id === subcategoryId
-        )
-      );
-
-      push(`/products?${queryString.stringify(query)}`);
-    }
   };
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
+  const [postsPerPage] = useState(12);
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -166,44 +138,18 @@ const Products = () => {
               style={{ backgroundColor: "#11698E" }}
               className="bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10"
             >
-              <h2 className="text-4xl px-4 py-2 font-bold">Genéricos</h2>
+              <h2 className="text-4xl px-4 py-2 font-bold">Por tipo</h2>
             </div>
           )}
           {selectedFilter === "category" && (
-            <>
-              <div className="pl-8 lg:pl-2">
-                <div className="container items-center">
-                  <div className="w-full">
-                    <p className="text-text text-xl sm:text-2xl font-normal">
-                      <Link to="/"> Inicio / </Link>
-                      <Link to="/products"> Productos / </Link>
-                      <Link to={`products?category=${selectedCategory.id}`}>
-                        {" "}
-                        {selectedCategory?.name}{" "}
-                      </Link>
-                      / {selectedSubcategory?.name}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div
-                style={{ backgroundColor: "#11698E" }}
-                className="bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10"
-              >
-                <h2 className="text-4xl px-4 py-2 font-bold">
-                  {selectedCategory.name}{" "}
-                  {!!selectedSubcategory?.name &&
-                    `- ${selectedSubcategory.name}`}
-                </h2>
-              </div>
-              {!!selectedCategory.subcategories.length && (
-                <Slider
-                  categories={categories}
-                  data={selectedCategory.subcategories}
-                  itemClick={subcategoryClicked}
-                />
-              )}
-            </>
+            <div
+              style={{ backgroundColor: "#11698E" }}
+              className="bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10"
+            >
+              <h2 className="text-4xl px-4 py-2 font-bold">
+                Departamento {selectedCategory}
+              </h2>
+            </div>
           )}
           {selectedFilter === "manufacturer" && (
             <div
@@ -211,7 +157,7 @@ const Products = () => {
               className="bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10"
             >
               <h2 className="text-4xl max-w-full block overflow-hidden text-ellipsis px-4 py-2 font-bold">
-                Fabricantes
+                Por fecha
               </h2>
             </div>
           )}
@@ -230,7 +176,7 @@ const Products = () => {
                 ))}
               </div>
 
-              {currentProducts.length <= 10 || (
+              {currentProducts.length <= 12 || (
                 <Pagination
                   postsPerPage={postsPerPage}
                   totalPosts={currentProducts.length}

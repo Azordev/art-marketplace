@@ -1,8 +1,6 @@
 import authAxios from "../config/authAxios";
 import { STATUS_OK } from "../config/constants";
 import response from "../config/network/response";
-import { getCategoriasAsync } from "./categoriasActions";
-import { getMarcasAsync } from "./marcasActions";
 
 export const getProductoByIdAsync = async (idProducto, resolve) => {
   try {
@@ -11,12 +9,11 @@ export const getProductoByIdAsync = async (idProducto, resolve) => {
       resolve(null);
     }
 
-    console.log("Start request to db");
-    const res = await authAxios.get(`/product/${idProducto}`);
+    const res = await authAxios.get(`/artworks/${idProducto}`);
 
     console.log("response from db", res);
-    if (res.data.status === STATUS_OK) {
-      resolve(res.data.body);
+    if (res.status === STATUS_OK) {
+      resolve(res.data.data);
     } else {
       resolve(null);
     }
@@ -25,34 +22,18 @@ export const getProductoByIdAsync = async (idProducto, resolve) => {
   }
 };
 
-export const getDataFichaProducto = async (idProducto, resolve) => {
-  try {
-    const res = await Promise.all([
-      getCategoriasAsync(),
-      getMarcasAsync(),
-      getProductoByIdAsync(idProducto, resolve),
-    ]);
-
-    return {
-      plato: res[2] ? res[2] : {},
-      marcas: res[1],
-      categorias: res[0],
-    };
-  } catch (error) {
-    console.log(error);
-    response.error(null, "Opps... hubo un error inesperado");
-    return null;
-  }
-};
-
 export const getProductsAsync = async () => {
   try {
-    const res = await authAxios.get(`/product`);
+    console.log("Start request to db");
+    const res = await authAxios.get(`/artworks?true&has_image=1`);
 
-    if (res.data.status === STATUS_OK) {
-      return res.data.body.data;
+    console.log("response from db", res);
+    if (res.status === STATUS_OK) {
+      console.log("response from db", res);
+      return res.data.data;
     } else {
-      return response.error(null, res.data.message);
+      response.error(null, res.data.message);
+      return [];
     }
   } catch (error) {
     return response.error(error);
@@ -61,10 +42,15 @@ export const getProductsAsync = async () => {
 
 export const getLatestProducts = async (resolve) => {
   try {
-    const res = await authAxios.get(`/product`);
+    console.log("Start request to db");
+    const res = await authAxios.get(
+      `/artworks?recently_acquired=true&limit=5&has_image=1`
+    );
 
-    if (res.data.status === STATUS_OK) {
-      resolve(res.data.body.data.reverse().slice(0, 5));
+    console.log("response from db", res);
+    if (res.status === STATUS_OK) {
+      console.log("response from db", res);
+      resolve(res.data.data);
     } else {
       response.error(null, res.data.message);
       resolve([]);
@@ -77,14 +63,15 @@ export const getLatestProducts = async (resolve) => {
 
 export const getGenericProducts = async (resolve) => {
   try {
-    const res = await authAxios.get(`/product`);
+    console.log("Start request to db");
+    const res = await authAxios.get(
+      `/artworks?female_artists=true&limit=5&has_image=1`
+    );
 
-    if (res.data.status === STATUS_OK) {
-      resolve(
-        res.data.body.data
-          .filter((product) => product.categories.section_id === "2")
-          .slice(0, 5)
-      );
+    console.log("response from db", res);
+    if (res.status === STATUS_OK) {
+      console.log("response from db", res);
+      resolve(res.data.data);
     } else {
       response.error(null, res.data.message);
       resolve([]);
@@ -97,14 +84,15 @@ export const getGenericProducts = async (resolve) => {
 
 export const getManufacturerProducts = async (resolve) => {
   try {
-    const res = await authAxios.get(`/product`);
+    console.log("Start request to db");
+    const res = await authAxios.get(
+      `/artworks?currently_on_view=true&limit=5&has_image=1`
+    );
 
-    if (res.data.status === STATUS_OK) {
-      resolve(
-        res.data.body.data
-          .filter((product) => product.categories.section_id === "1")
-          .slice(0, 5)
-      );
+    console.log("response from db", res);
+    if (res.status === STATUS_OK) {
+      console.log("response from db", res);
+      resolve(res.data.data);
     } else {
       response.error(null, res.data.message);
       resolve([]);
