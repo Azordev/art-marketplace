@@ -12,7 +12,7 @@ const Prev = (props) => {
         ...style,
         background:
         pathname === '/'
-        ? "center no-repeat #FFF url('https://img.icons8.com/material-rounded/24/11698E/chevron-left.png')"
+        ? "center no-repeat #F8F1F1 url('https://img.icons8.com/material-rounded/24/11698E/chevron-left.png')"
         : "center no-repeat #11698E url('https://img.icons8.com/material-rounded/24/FFFFFF/chevron-left.png')"
         }}
         onClick={onClick}
@@ -30,7 +30,7 @@ const Next = (props) => {
         ...style,
         background:
         pathname === '/'
-        ? "center no-repeat #FFF url('https://img.icons8.com/material-rounded/24/11698E/chevron-right.png')"
+        ? "center no-repeat #F8F1F1 url('https://img.icons8.com/material-rounded/24/11698E/chevron-right.png')"
         : "center no-repeat #11698E url('https://img.icons8.com/material-rounded/24/FFFFFF/chevron-right.png')"
         }}
       onClick={onClick}
