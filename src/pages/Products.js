@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 import queryString from "query-string";
-
+import { Link } from "react-router-dom";
 import { MainNav, Footer } from "../components";
 import ProductItem from "../components/ProductItem";
 import Slider from "../components/Slider";
@@ -169,8 +169,11 @@ const Products = () => {
 							<div className="pl-8 lg:pl-2">
 								<div className="container items-center">
 									<div className="w-full">
-										<p className="text-black text-xl sm:text-2xl font-normal">
-											Inicio / Catálogo / {selectedCategory?.name} /{" "}
+										<p className="text-text text-xl sm:text-2xl font-normal">
+										<Link to="/"> Inicio / </Link>
+										<Link to="/products"> Productos / </Link>
+										<Link to={`products?category=${selectedCategory.id}` }> {selectedCategory?.name} </Link>
+											 /{" "}
 											{selectedSubcategory?.name}
 										</p>
 									</div>

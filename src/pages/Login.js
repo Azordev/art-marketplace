@@ -49,19 +49,19 @@ const Login = () => {
                 <div className="w-full">
                   {isForgottenPassword ? (
                     <div className="flex flex-col">
-                      <div className="flex flex-row gap-10">
-                        <div className="flex flex-col lg:flex-row items-center mb-8 justify-between">
+                      <div className="flex flex-col lg:flex-row items-center mb-8 justify-between">
+                        <div>
                           <div className="flex">
-                            <h2 className="mb-3 text-4xl font-bold">
+                            <h2 className="mb-3 text-4xl text-text font-bold">
                               Recuperar contraseña
                             </h2>
                           </div>
                         </div>
                         <div className="flex text-right">
-                          <p className="flex text-2xl text-black text-center lg:text-right">
+                          <p className="flex text-2xl text-center lg:text-right">
                             <a
                               href="#_"
-                              className="text-black inline underline text-right"
+                              className="text-tertiary mb-3 inline underline text-right"
                               onClick={(e) => {
                                 e.preventDefault();
                                 setIsForgottenPassword(false);
@@ -72,14 +72,14 @@ const Login = () => {
                           </p>
                         </div>
                       </div>
-                      <div className="w-full mb-8 font-semibold text-2xl">
+                      <div className="w-full mb-8 text-text font-semibold text-2xl">
                         Contacta al servicio técnico para recuperar tu
-                        contraseña:{" "}
+                        contraseña: {" "}
                         <a
-                          className="hover:no-underline underline text-blue-700"
+                          className="hover:no-underline text-tertiary underline"
                           href="mailto:contacto@sencico.gob.pe"
                         >
-                          contacto@sencico.gob.pe
+                          contacto@azordev.com
                         </a>
                       </div>
                     </div>
