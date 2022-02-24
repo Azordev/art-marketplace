@@ -1,10 +1,8 @@
 import React, { useState, useRef } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Notify } from "notiflix";
 import AuthInput from "../components/AuthInput";
 import LogosFooter from "../components/LogosFooter";
 import SecondNav from "../components/SecondNav";
-import { register } from "../actions/authActions";
 
 const Register = () => {
   const formRef = useRef(null);
@@ -14,17 +12,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    const formData = new FormData(formRef.current);
-
-    const res = await register(formData);
-    setIsSubmitting(false);
-
-    if (!res.status) {
-      return Notify.failure(res.message);
-    }
-
-    Notify.success(res.message);
+    // Your logic for register here
     history.push("/login");
   };
 

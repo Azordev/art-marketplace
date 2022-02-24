@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { login } from "../actions/authActions";
 import { AuthInput, LogosFooter, SecondNav } from "../components";
 import { Link, useHistory } from "react-router-dom";
 import { Notify } from "notiflix";
@@ -18,16 +17,8 @@ const Login = () => {
     if (!email || !password) {
       return Notify.failure("Todos los campos son requeridos");
     }
-
     setIsLoading(true);
-    const res = await login({ email, password });
-    setIsLoading(false);
-
-    if (!res.status) {
-      return Notify.failure(res.message);
-    }
-
-    Notify.success(res.message);
+    // your logic for login here
     return push("/");
   };
 
@@ -74,7 +65,7 @@ const Login = () => {
                       </div>
                       <div className="w-full mb-8 text-text font-semibold text-2xl">
                         Contacta al servicio técnico para recuperar tu
-                        contraseña: {" "}
+                        contraseña:{" "}
                         <a
                           className="hover:no-underline text-tertiary underline"
                           href="mailto:contacto@sencico.gob.pe"

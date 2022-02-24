@@ -100,7 +100,7 @@ const Footer = () => {
                   </ul>
                 </nav>
               </div>
-                {notLoggedButtons()}
+              {notLoggedButtons()}
             </div>
           </div>
         </div>

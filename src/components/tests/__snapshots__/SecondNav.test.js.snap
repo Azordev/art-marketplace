@@ -30,7 +30,7 @@ exports[`renders correctly 1`] = `
         ¿Ya tienes una cuenta?
       </span>
       <a
-        className="shadow-button hover-scale inline-flex items-center justify-center px-14 py-3.5 text-xl font-semibold leading-6 text-white whitespace-no-wrap bg-black rounded-md"
+        className="shadow-button hover-scale inline-flex items-center justify-center px-14 py-3.5 text-xl font-semibold leading-6 text-white whitespace-no-wrap bg-primary rounded-md"
         href="/login"
         onClick={[Function]}
       >

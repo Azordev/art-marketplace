@@ -1,11 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Notify } from "notiflix";
 import AuthInput from "../components/AuthInput";
 import Logo from "../assets/img/logo.png";
 import Footer from "../components/Footer";
-import { updateUser } from "../actions/authActions";
-import { getUserInformation } from "../actions/userActions";
+import userInformation from "../mock/user";
 
 const EditUser = () => {
   const [user, setUser] = useState({});
@@ -14,24 +12,14 @@ const EditUser = () => {
   const history = useHistory();
 
   useEffect(() => {
-    const info = getUserInformation();
+    const info = userInformation;
     setUser(info);
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    const formData = new FormData(formRef.current);
-
-    const res = await updateUser(user.id, formData);
-    setIsSubmitting(false);
-
-    if (!res.status) {
-      return Notify.failure(res.message);
-    }
-
-    Notify.success(res.message);
+    // Your logic for update user here
     history.push("/user-information");
   };
 

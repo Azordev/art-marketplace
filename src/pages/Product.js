@@ -32,7 +32,10 @@ const Product = () => {
             <p className="text-text text-xl sm:text-2xl font-bold">
               <Link to="/"> Inicio / </Link>
               <Link to="/products"> Catálogo / </Link>
-              <Link to={`/products?category=${product?.categories.id}` }> {product?.categories.name || "Categoría"} / </Link>
+              <Link to={`/products?category=${product?.categories.id}`}>
+                {" "}
+                {product?.categories.name || "Categoría"} /{" "}
+              </Link>
               {product?.name || "Producto"}
             </p>
           </div>
@@ -104,7 +107,7 @@ const Product = () => {
               <details className="relative overflow-hidden text-black bg-white rounded-lg">
                 <summary className="px-6 py-2 border border-complementary bg-complementary rounded-lg cursor-pointer">
                   <h4 className="inline-flex items-center justify-between py-4 text-xl font-bold text-tertiary cursor-pointer lg:text-2xl">
-                    <span >Información General</span>
+                    <span>Información General</span>
                   </h4>
                 </summary>
                 <p className="px-4 py-6 mt-1 text-black font-semibold lg:text-xl">
