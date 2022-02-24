@@ -40,7 +40,7 @@ const Home = () => {
 	const categoryClicked = (e, categoryId) => {
 		e.preventDefault();
 		const category = categories.find((category) => category.id === categoryId);
-		push(`/products?category=${categoryId}`);
+		push(`/artworks?category=${categoryId}`);
 	};
 
 	return (
@@ -58,17 +58,17 @@ const Home = () => {
 				<div className="max-w-screen-2xl mx-auto">
 					<ObjectList
 						title="Objetos genéricos"
-						seeMore="/products"
+						seeMore="/artworks"
 						items={genericProducts}
 					/>
 					<ObjectList
 						title="Objetos de fabricante"
-						seeMore="/products"
+						seeMore="/artworks"
 						items={manufacturerProducts}
 					/>
 					<ObjectList
 						title="Objetos nuevos"
-						seeMore="/products"
+						seeMore="/artworks"
 						items={newProducts}
 					/>
 					<PartnersSlider />
