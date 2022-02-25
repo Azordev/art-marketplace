@@ -11,7 +11,7 @@ const SearchInput = ({ page, query }) => {
 
 	const submitHandler = (e) => {
 		e.preventDefault();
-		push(`/products?q=${searchValue.toLowerCase()}`);
+		push(`/artworks?q=${searchValue.toLowerCase()}`);
 	};
 
 	return (
