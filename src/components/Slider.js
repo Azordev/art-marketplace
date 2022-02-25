@@ -7,7 +7,7 @@ const Prev = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`${className} arrow-custom-circle`}
+      className={`${className} arrow-custom-circle -left-8 p-7`}
       style={{
         ...style,
         background:
@@ -25,7 +25,7 @@ const Next = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`${className} arrow-custom-circle`}
+      className={`${className} arrow-custom-circle -right-8 p-7`}
       style={{
         ...style,
         background:
@@ -71,10 +71,10 @@ const ProductSlider = ({ data, categories, itemClick, className, title }) => {
     let query = useQuery();
     const blueElement = {
         backgroundColor: "#11698E",
-        color: "#FFF"
+        color: "#F8F1F1"
     }
     const whiteElement = {
-        backgroundColor: "#FFF",
+        backgroundColor: "#F8F1F1",
         color: "#000"
     }
 
