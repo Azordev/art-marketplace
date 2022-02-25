@@ -172,6 +172,13 @@
   color: #2b6cb0;  /*Set to match the Tailwind colour you want the active one to be */
 }
 
+@media (max-width: 1280px) {
+  .slick-list {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
 
 .slick-arrow.slick-next::before, .slick-arrow.slick-prev::before {
   content: '';
