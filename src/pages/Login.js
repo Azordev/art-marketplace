@@ -43,7 +43,7 @@ const Login = () => {
               </Link>
             </p>
           </div>
-          <section className="lg:w-4/5 2xl:w-1/2 max-w-3xl bg-white rounded-xl mx-2 sm:mx-5 md:mx-10 lg:mx-auto px-2 sm:px-14 py-20 border-opacity-50">
+          <section className="lg:w-4/5 2xl:w-1/2 max-w-3xl bg-white rounded-lg mx-2 sm:mx-5 md:mx-10 lg:mx-auto px-2 sm:px-14 py-20 border-opacity-50">
             <div className="mx-auto">
               <div className="container">
                 <div className="w-full">

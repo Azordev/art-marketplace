@@ -18,7 +18,7 @@ const Hero = () => (
             <div className="relative flex flex-col sm:flex-row sm:space-x-4 justify-center lg:justify-start">
               { isAuthenticated() ?
               <Link
-                to="/products"
+                to="/artworks"
                 className="shadow-button hover-scale inline-flex items-center justify-center px-11 py-3.5 text-xl font-semibold leading-6 text-white whitespace-nowrap bg-primary rounded-md shadow-sm tracking-add"
                 >
                 Descargar ahora
