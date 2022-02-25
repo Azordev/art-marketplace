@@ -43,7 +43,7 @@
 
 @layer components {
   .arrow-custom-circle {
-    @apply shadow-slider z-10 p-4 bg-no-repeat bg-center rounded-full bg-white;
+    @apply shadow-slider p-5 z-10 rounded-full;
     @apply xl:p-6;
   }
 }
@@ -170,6 +170,13 @@
 #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
 #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
   color: #2b6cb0;  /*Set to match the Tailwind colour you want the active one to be */
+}
+
+@media (max-width: 1280px) {
+  .slick-list {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 
 
