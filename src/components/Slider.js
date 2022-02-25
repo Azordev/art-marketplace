@@ -1,50 +1,28 @@
 import React from "react";
 import Slider from "react-slick";
+import { ArrowLeft, ArrowRight } from "./Arrows";
 
-const ArrowLeft = () => {
-	return (
-		<svg
-			style={{
-				position: "absolute",
-				transform: "translate(-50%, -50%)",
-			}}
-			xmlns="http://www.w3.org/2000/svg"
-			className="h-6 w-6"
-			fill="none"
-			viewBox="0 0 24 24"
-			stroke="currentColor"
-		>
-			<path
-				strokeLinecap="round"
-				strokeLinejoin="round"
-				strokeWidth={3}
-				d="M15 19l-7-7 7-7"
-			/>
-		</svg>
-	);
+const fontColor = {
+	blueElement: {
+		backgroundColor: "#11698E",
+		color: "#FFF",	
+	},
+	whiteElement: {
+		backgroundColor: "#F8F1F1",
+		color: "#000",
+	}
 };
-const ArrowRight = () => {
-	return (
-		<svg
-			style={{
-				position: "absolute",
-				transform: "translate(-50%, -50%)",
-			}}
-			xmlns="http://www.w3.org/2000/svg"
-			className="h-6 w-6"
-			fill="none"
-			viewBox="0 0 24 24"
-			stroke="currentColor"
-		>
-			<path
-				strokeLinecap="round"
-				strokeLinejoin="round"
-				strokeWidth={3}
-				d="M9 5l7 7-7 7"
-			/>
-		</svg>
-	);
+const arrowColor = {
+	blueElement: {
+		backgroundColor: "#F8F1F1",
+		color: "#11698E",
+	},
+	whiteElement: {
+		backgroundColor: "#11698E",
+		color: "#F8F1F1",
+	},
 };
+
 const Prev = (props) => {
 	const { className, style, onClick, home } = props;
 	return (
@@ -52,10 +30,7 @@ const Prev = (props) => {
 			className={`${className} arrow-custom-circle`}
 			style={{
 				...style,
-				color: !home ? "#FFF" : "#11698E",
-				background: !home
-					? "no-repeat center #11698E"
-					: "no-repeat center #F8F1F1",
+				...(home ? arrowColor.blueElement : arrowColor.whiteElement),
 			}}
 			onClick={onClick}
 		>
@@ -70,10 +45,7 @@ const Next = (props) => {
 			className={`${className} arrow-custom-circle`}
 			style={{
 				...style,
-				color: !home ? "#FFF" : "#11698E",
-				background: !home
-					? "no-repeat center #11698E"
-					: "no-repeat center #F8F1F1",
+				...(home ? arrowColor.blueElement : arrowColor.whiteElement),
 			}}
 			onClick={onClick}
 		>
@@ -115,15 +87,6 @@ const ProductSlider = ({
 		],
 	};
 
-	const blueElement = {
-		backgroundColor: "#11698E",
-		color: "#FFF",
-	};
-	const whiteElement = {
-		backgroundColor: "#F8F1F1",
-		color: "#000",
-	};
-
 	return (
 		<div className={`${className} px-8`}>
 			{title && (
@@ -139,12 +102,12 @@ const ProductSlider = ({
 							onClick={(e) => itemClick(e, item.id, categories)}
 						>
 							<div
-								style={home ? whiteElement : blueElement}
+								style={home ? fontColor.whiteElement : fontColor.blueElement}
 								className="flex flex-col flex-1 justify-between py-4 px-10"
 							>
 								<div className="flex-1">
 									<div className="block text-center">
-										<span className="text-xl font-bold leading-7">
+										<span className="text-xl font-normal leading-7">
 											{item.name}
 										</span>
 									</div>
