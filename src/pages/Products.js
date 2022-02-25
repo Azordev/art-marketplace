@@ -92,7 +92,7 @@ const Products = () => {
 		e.preventDefault();
 		setSelectedCategory(category);
 		setSelectedSubcategory({ name: "" });
-		push(`/products?category=${category.id}`);
+		push(`/artworks?category=${category.id}`);
 	};
 
 	const subcategoryClicked = (e, subcategoryId, categoryList) => {
@@ -116,7 +116,7 @@ const Products = () => {
 				)
 			);
 
-			push(`/products?${queryString.stringify(query)}`);
+			push(`/artworks?${queryString.stringify(query)}`);
 		}
 	};
 
@@ -171,8 +171,8 @@ const Products = () => {
 									<div className="w-full">
 										<p className="text-text text-xl sm:text-2xl font-normal">
 										<Link to="/"> Inicio / </Link>
-										<Link to="/products"> Productos / </Link>
-										<Link to={`products?category=${selectedCategory.id}` }> {selectedCategory?.name} </Link>
+										<Link to="/artworks"> Productos / </Link>
+										<Link to={`artworks?category=${selectedCategory.id}` }> {selectedCategory?.name} </Link>
 											 /{" "}
 											{selectedSubcategory?.name}
 										</p>

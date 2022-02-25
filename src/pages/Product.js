@@ -31,8 +31,8 @@ const Product = () => {
           <div className="w-full 2xl:pl-11">
             <p className="text-text text-xl sm:text-2xl font-bold">
               <Link to="/"> Inicio / </Link>
-              <Link to="/products"> Catálogo / </Link>
-              <Link to={`/products?category=${product?.categories.id}` }> {product?.categories.name || "Categoría"} / </Link>
+              <Link to="/artworks"> Catálogo / </Link>
+              <Link to={`/artworks?category=${product?.categories.id}` }> {product?.categories.name || "Categoría"} / </Link>
               {product?.name || "Producto"}
             </p>
           </div>
