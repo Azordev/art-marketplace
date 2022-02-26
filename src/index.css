@@ -187,3 +187,7 @@
   display: block;
 
 }
+
+.selected a {
+  background-color: #fff;
+}
