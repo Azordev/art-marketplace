@@ -140,7 +140,7 @@ const Products = () => {
 	return (
 		<>
 			<MainNav query={queryString.parse(search).q} />
-				<div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row px-20 pt-5 lg:pt-16 pb-20">
+				<div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row px-5 sm:px-20 pt-5 lg:pt-16 pb-20">
 				<Filters
 					categoryClicked={categoryClicked}
 					categories={categories}
