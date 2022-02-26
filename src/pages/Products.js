@@ -2,6 +2,7 @@ import React, { useState, useEffect, useLayoutEffect } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 import queryString from "query-string";
 import { Link } from "react-router-dom";
+import ReactPaginate from 'react-paginate';
 import { MainNav, Footer } from "../components";
 import ProductItem from "../components/ProductItem";
 import Slider from "../components/Slider";
