@@ -5,7 +5,7 @@ import { PUBLIC_URL } from "../config/constants";
 
 const ProductItem = ({ data }) => (
 	<Link
-		to={`/product/${data.id}`}
+		to={`/artwork/${data.id}`}
 		className="md:w-56 hover-scale--min relative p-0 sm:mx-16 md:mx-0 mb-10 xl:mb-0 shadow-lg border-grayed border border-solid rounded flex flex-col justify-between"
 	>
 		<img

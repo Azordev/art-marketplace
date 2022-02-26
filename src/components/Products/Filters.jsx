@@ -11,7 +11,7 @@ const Filters = ({ categoryClicked, categories, currentFilter, setFilter }) => {
 	const handleClick = (e, filter) => {
 		e.preventDefault();
 
-		push("/products/");
+		push("/artworks/");
 
 		if (currentFilter === filter) {
 			return setFilter("none");

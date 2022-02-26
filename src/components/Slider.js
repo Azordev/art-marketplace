@@ -7,13 +7,13 @@ const Prev = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`${className} arrow-custom-circle`}
+      className={`${className} arrow-custom-circle -left-8 p-7`}
       style={{
         ...style,
         background:
         pathname === '/'
-        ? "center no-repeat #FFF url('https://img.icons8.com/material-rounded/24/11698E/chevron-left.png')"
-        : "center no-repeat #11698E url('https://img.icons8.com/material-rounded/24/FFFFFF/chevron-left.png')"
+        ? "center no-repeat #F8F1F1 url('https://img.icons8.com/material-rounded/24/11698E/chevron-left.png')"
+        : "center no-repeat #11698E url('https://img.icons8.com/material-rounded/24/F8F1F1/chevron-left.png')"
         }}
         onClick={onClick}
         >
@@ -25,13 +25,13 @@ const Next = (props) => {
   const { className, style, onClick } = props;
   return (
     <div
-      className={`${className} arrow-custom-circle`}
+      className={`${className} arrow-custom-circle -right-8 p-7`}
       style={{
         ...style,
         background:
         pathname === '/'
-        ? "center no-repeat #FFF url('https://img.icons8.com/material-rounded/24/11698E/chevron-right.png')"
-        : "center no-repeat #11698E url('https://img.icons8.com/material-rounded/24/FFFFFF/chevron-right.png')"
+        ? "center no-repeat #F8F1F1 url('https://img.icons8.com/material-rounded/24/11698E/chevron-right.png')"
+        : "center no-repeat #11698E url('https://img.icons8.com/material-rounded/24/F8F1F1/chevron-right.png')"
         }}
       onClick={onClick}
     >
@@ -71,10 +71,10 @@ const ProductSlider = ({ data, categories, itemClick, className, title }) => {
     let query = useQuery();
     const blueElement = {
         backgroundColor: "#11698E",
-        color: "#FFF"
+        color: "#F8F1F1"
     }
     const whiteElement = {
-        backgroundColor: "#FFF",
+        backgroundColor: "#F8F1F1",
         color: "#000"
     }
 

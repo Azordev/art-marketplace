@@ -17,8 +17,8 @@ const Pages = () => {
 			<ScrollToTop />
 			<Switch>
 				<PublicRoute onlyPublic exact path="/" component={Home} />
-				<PublicRoute onlyPublic path="/products" component={Products} />
-				<PublicRoute onlyPublic path="/product/:id" component={Product} />
+				<PublicRoute onlyPublic path="/artworks" component={Products} />
+				<PublicRoute onlyPublic path="/artwork/:id" component={Product} />
 
 				<PublicRoute path="/login" component={Login} />
 				<PublicRoute path="/register" component={Register} />

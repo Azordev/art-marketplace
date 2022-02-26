@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 import queryString from "query-string";
-
+import { Link } from "react-router-dom";
 import { MainNav, Footer } from "../components";
 import ProductItem from "../components/ProductItem";
 import Slider from "../components/Slider";
@@ -92,7 +92,7 @@ const Products = () => {
 		e.preventDefault();
 		setSelectedCategory(category);
 		setSelectedSubcategory({ name: "" });
-		push(`/products?category=${category.id}`);
+		push(`/artworks?category=${category.id}`);
 	};
 
 	const subcategoryClicked = (e, subcategoryId, categoryList) => {
@@ -116,7 +116,7 @@ const Products = () => {
 				)
 			);
 
-			push(`/products?${queryString.stringify(query)}`);
+			push(`/artworks?${queryString.stringify(query)}`);
 		}
 	};
 
@@ -160,7 +160,7 @@ const Products = () => {
 						</p>
 					)}
 					{selectedFilter === "generic" && (
-						<div style={{backgroundColor: "#11698E"}} className="bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
+						<div style={{backgroundColor: "#11698E"}} className="w-full rounded-md bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
 							<h2 className="text-4xl px-4 py-2 font-bold">Genéricos</h2>
 						</div>
 					)}
@@ -169,14 +169,17 @@ const Products = () => {
 							<div className="pl-8 lg:pl-2">
 								<div className="container items-center">
 									<div className="w-full">
-										<p className="text-black text-xl sm:text-2xl font-normal">
-											Inicio / Catálogo / {selectedCategory?.name} /{" "}
+										<p className="text-text text-xl sm:text-2xl font-normal">
+										<Link to="/"> Inicio / </Link>
+										<Link to="/artworks"> Productos / </Link>
+										<Link to={`artworks?category=${selectedCategory.id}` }> {selectedCategory?.name} </Link>
+											 /{" "}
 											{selectedSubcategory?.name}
 										</p>
 									</div>
 								</div>
 							</div>
-							<div style={{backgroundColor: "#11698E"}} className="bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
+							<div style={{backgroundColor: "#11698E"}} className="w-full rounded-md  bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
 								<h2 className="text-4xl px-4 py-2 font-bold">
 									{selectedCategory.name}{" "}
 									{!!selectedSubcategory?.name &&
@@ -193,7 +196,7 @@ const Products = () => {
 						</>
 					)}
 					{selectedFilter === "manufacturer" && (
-						<div style={{backgroundColor: "#11698E"}} className="bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
+						<div style={{backgroundColor: "#11698E"}} className="w-full rounded-md bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10">
 							<h2 className="text-4xl max-w-full block overflow-hidden text-ellipsis px-4 py-2 font-bold">
 								Fabricantes
 							</h2>
