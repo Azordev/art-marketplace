@@ -7,9 +7,9 @@ export const getCategoryById = async (id) => {
 
     if (res.status === STATUS_OK) {
       return res.data.data;
-    } else {
-      return null;
     }
+    
+    return null;
   } catch (error) {
     return null;
   }
