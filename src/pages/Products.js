@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 import queryString from "query-string";
+import ReactPaginate from 'react-paginate';
 
 import { MainNav, Footer } from "../components";
 import ProductItem from "../components/ProductItem";
@@ -15,10 +16,7 @@ import {
 	filterManufacturer,
 	filterBySubcategory,
 } from "../utils/filters";
-import Pagination from "../components/Products/Pagination";
 import { getCategories } from "../actions/categoriasActions";
-
-import ReactPaginate from 'react-paginate';
 
 const Products = () => {
 	const { search } = useLocation();
@@ -132,7 +130,7 @@ const Products = () => {
 		const endOffset = itemOffset + postsPerPage;
 		setCurrentPosts(currentProducts.slice(itemOffset, endOffset))
 		setPageCount(Math.ceil(currentProducts.length / postsPerPage))
-	}, [itemOffset, postsPerPage])
+	}, [itemOffset, postsPerPage, currentProducts])
 
 	const handlePageClick = (event) => {
 	  const newOffset = (event.selected * postsPerPage) % currentProducts.length;
@@ -143,10 +141,6 @@ const Products = () => {
 	return (
 		<>
 			<MainNav query={queryString.parse(search).q} />
-				{
-			//<div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row px-5 lg:px-20 pt-5 lg:pt-16 pb-20">
-
-				}
 				<div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row px-20 pt-5 lg:pt-16 pb-20">
 				<Filters
 					categoryClicked={categoryClicked}
@@ -213,31 +207,26 @@ const Products = () => {
 									))
 								}
 							</div>
-
-							{
-								// currentPosts.length <= postsPerPage||
-								<ReactPaginate
-								  breakLabel="..."
-								  previousLabel="Anterior"
-								  nextLabel="Siguiente"
-								  onPageChange={handlePageClick}
-								  initialPage={1}
-								  marginPagesDisplayed={1}
-								  pageRangeDisplayed={1}
-								  pageCount={pageCount}
-								  renderOnZeroPageCount={null}
-								  breakClassName="bg-white px-3 py-2 cursor-pointer justify-self-end"
-								  containerClassName='py-3 flex justify-center text-center'
-								  activeLinkClassName='bg-white'
-								  activeClassName='px-0 py-0 bg-white'
-								  pageLinkClassName='cursor-pointer px-4 py-3 bg-complementary mx-0.5 relative inline-flex items-center text-sm font-medium'
-								  previousLinkClassName='truncate cursor-pointer bg-complementary relative inline-flex items-center px-3 py-2 text-sm font-medium'
-								  nextLinkClassName='truncate cursor-pointer bg-complementary relative inline-flex items-center px-3 py-2 text-sm font-medium'
-								  nextClassName='truncate cursor-pointer mr-0.5 bg-complementary relative inline-flex items-center'
-								  previousClassName='truncate cursor-pointer ml-0.5 bg-complementary relative inline-flex items-center'
-								  disabledLinkClassName='pointer-events-none'
-								/>
-							}
+							<ReactPaginate
+								breakLabel="..."
+								breakClassName="bg-white px-3 py-2 cursor-pointer justify-self-end"
+								previousLabel="Ant.."
+								nextLabel="Sig.."
+								onPageChange={handlePageClick}
+								initialPage={0}
+								marginPagesDisplayed={1}
+								pageCount={pageCount}
+								renderOnZeroPageCount={null}
+								containerClassName='py-3 flex justify-center text-center'
+								previousLinkClassName='cursor-pointer bg-complementary relative inline-flex items-center px-8 py-3 text-sm font-medium'
+								nextLinkClassName='cursor-pointer bg-complementary relative inline-flex items-center px-8 py-3 text-sm font-medium'
+								pageLinkClassName='cursor-pointer px-4 py-3 bg-complementary mx-0.5 relative inline-flex items-center text-sm font-medium rounded-sm'
+								pageClassName='truncate'
+								activeLinkClassName='pointer-events-none'
+								nextClassName='cursor-pointer mr-0.5 rounded-sm'
+								previousClassName='cursor-pointer ml-0.5 rounded-sm'
+								disabledClassName='pointer-events-none'
+							/>
 						</>
 					}
 				</div>
