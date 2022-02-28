@@ -73,7 +73,7 @@ const Home = () => {
 					/>
 					<PartnersSlider />
 				</div>
-			<Footer />
+			<Footer showButtons={true}/>
 		</>
 	);
 };
