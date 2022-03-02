@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getUserInformation } from "../actions/userActions";
-import { PUBLIC_URL } from "../config/constants";
 import Logo from "../assets/img/logo.png";
 import Profile from "../assets/img/perfil.png";
 import { Footer } from "../components";
@@ -107,7 +106,7 @@ const UserInformation = () => {
                         <img
                           src={
                             user.image
-                              ? `${PUBLIC_URL}${user.image}`
+                              ? `${user.image}`
                               : Profile
                           }
                           className="mx-auto"

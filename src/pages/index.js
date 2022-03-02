@@ -3,8 +3,8 @@ import { BrowserRouter, Switch } from "react-router-dom";
 import Home from "./Home";
 import Login from "./Login";
 import Register from "./Register";
-import Product from "./Product";
-import Products from "./Products";
+import Artwork from "./Artwork";
+import Artworks from "./Artworks";
 import UserInformation from "./UserInformation";
 import EditUser from "./EditUser";
 import PrivateRoute from "../components/PrivateRoute";
@@ -17,8 +17,8 @@ const Pages = () => {
 			<ScrollToTop />
 			<Switch>
 				<PublicRoute onlyPublic exact path="/" component={Home} />
-				<PublicRoute onlyPublic path="/artworks" component={Products} />
-				<PublicRoute onlyPublic path="/artwork/:id" component={Product} />
+				<PublicRoute onlyPublic path="/artworks" component={Artworks} />
+				<PublicRoute onlyPublic path="/artwork/:id" component={Artwork} />
 
 				<PublicRoute path="/login" component={Login} />
 				<PublicRoute path="/register" component={Register} />

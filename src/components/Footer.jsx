@@ -77,7 +77,7 @@ const Footer = (props) => {
                   </ul>
                 </nav>
               </div>
-                {props.showButtons ? notLoggedButtons() : ""}
+                {props.showButtons && notLoggedButtons()}
             </div>
           </div>
         </div>

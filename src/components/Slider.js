@@ -1,10 +1,9 @@
-import React, { useMemo } from "react";
+import React from "react";
 import Slider from "react-slick";
 import { useLocation } from 'react-router-dom';
 
-const Prev = (props) => {
-  const { pathname } = useLocation()
-  const { className, style, onClick } = props;
+const Prev = ({ className, style, onClick }) => {
+  const { pathname } = useLocation();
   return (
     <div
       className={`${className} arrow-custom-circle -left-8 p-7`}
@@ -20,9 +19,9 @@ const Prev = (props) => {
     </div>
   );
 };
-const Next = (props) => {
-  const { pathname } = useLocation()
-  const { className, style, onClick } = props;
+
+const Next = ({ className, style, onClick }) => {
+  const { pathname } = useLocation();
   return (
     <div
       className={`${className} arrow-custom-circle -right-8 p-7`}
@@ -39,46 +38,40 @@ const Next = (props) => {
   );
 };
 
-const ProductSlider = ({ data, categories, itemClick, className, title }) => {
-    const settings = {
-        className: "px-2 xl:px-10",
-        dots: false,
-        rows: 1,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        nextArrow: <Next />,
-        prevArrow: <Prev />,
-        speed: 600,
-        responsive: [{
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                }
-            },
-        ]
-    };
-
-    function useQuery() {
-        const { search } = useLocation();
-        return useMemo(() => new URLSearchParams(search), [search]);
-    }
-    let query = useQuery();
-    const blueElement = {
-        backgroundColor: "#11698E",
-        color: "#F8F1F1"
-    }
-    const whiteElement = {
-        backgroundColor: "#F8F1F1",
-        color: "#000"
-    }
-
-    const { pathname } = useLocation()
+const ProductSlider = ({ departments, itemClick, className, title }) => {
+  const settings = {
+    className: "px-2 xl:px-10",
+    dots: false,
+    rows: 1,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: <Next />,
+    prevArrow: <Prev />,
+    speed: 600,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+  const blueElement = {
+    backgroundColor: "#11698E",
+    color: "#FFF",
+  };
+  const whiteElement = {
+    backgroundColor: "#FFF",
+    color: "#000",
+  };
+  const { pathname } = useLocation();
 
     return (
         <div className={`${className} px-8`}>
@@ -88,22 +81,20 @@ const ProductSlider = ({ data, categories, itemClick, className, title }) => {
         </div>
       )}
       <Slider {...settings}>
-        {data.map((item) => (
-          <div className="p-1" key={item}>
+        {departments.map((department) => (
+          <div className="p-1" key={`slider-item-${department.id}`}>
             <div
               className="block mx-2 w-auto hover-scale--min overflow-hidden rounded-lg shadow-slider cursor-pointer"
-              onClick={(e) => itemClick(e, item.id, categories)}
+              onClick={(e) => itemClick(e, department.id)}
             >
               <div
-                style={
-                 item.id === parseInt(query.get("subcategory")) || pathname==='/'
-                  ?whiteElement:blueElement
-                 }
-                className="flex flex-col flex-1 justify-between py-4 px-10">
+                style={pathname === "/" ? whiteElement : blueElement}
+                className="flex flex-col flex-1 justify-between py-4 px-10"
+              >
                 <div className="flex-1">
                   <div className="block text-center">
                     <span className="text-xl font-bold leading-7">
-                      {item.name}
+                      {department.es}
                     </span>
                   </div>
                 </div>

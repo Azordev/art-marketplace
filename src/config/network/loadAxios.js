@@ -7,7 +7,6 @@ export default async function loadAxios({ url, body, method }) {
 
   if (method === '') {
     Loading.remove();
-    console.log('Falta especificar método.')
   }
 
   try {
