@@ -34,7 +34,7 @@ const Register = () => {
       <section className="max-w-screen-2xl mx-auto w-full bg-white">
         <div className="w-full">
           <p className="pt-10 text-2xl text-black text-center md:text-right px-9">
-            <Link to="/" className="text-black underline px-0 lg:px-14">
+            <Link to="/" className="text-tertiary underline px-0 lg:px-14">
               Volver a Inicio
             </Link>
           </p>
@@ -131,7 +131,7 @@ const Register = () => {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="shadow-button inline-block w-full sm:w-96 max-w-xs px-5 py-4 font-bold text-center text-white add-color-icon rounded-lg text-2xl disabled:opacity-50"
+                        className="shadow-button inline-block w-full sm:w-96 max-w-xs px-5 py-4 font-bold text-center text-white bg-primary rounded-lg rounded-lg text-2xl disabled:opacity-50"
                       >
                         Registrarse
                       </button>
