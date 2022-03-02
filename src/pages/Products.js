@@ -137,7 +137,6 @@ const Products = () => {
 	  setItemOffset(newOffset);
 	};
 
-
 	return (
 		<>
 			<MainNav query={queryString.parse(search).q} />
@@ -224,7 +223,7 @@ const Products = () => {
 								previousLinkClassName='cursor-pointer bg-complementary relative inline-flex items-center px-8 py-3 text-sm font-medium'
 								nextLinkClassName='cursor-pointer bg-complementary relative inline-flex items-center px-8 py-3 text-sm font-medium'
 								pageLinkClassName='cursor-pointer px-4 py-3 bg-complementary mx-0.5 relative inline-flex items-center text-sm font-medium rounded-sm'
-								pageClassName='truncate'
+								pageClassName='rounded-sm'
 								activeLinkClassName='pointer-events-none'
 								nextClassName='cursor-pointer mr-0.5 rounded-sm'
 								previousClassName='cursor-pointer ml-0.5 rounded-sm'
