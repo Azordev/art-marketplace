@@ -34,7 +34,11 @@ const PartnersSlider = () => (
             alt="Ayni Peru Logo"
             className="block w-auto object-contain"
           />
-          <img src={IWorkLogo} alt="IWork Logo" className="block w-auto object-contain" />
+          <img
+            src={IWorkLogo}
+            alt="IWork Logo"
+            className="block w-auto object-contain"
+          />
         </div>
 
         <input
@@ -52,7 +56,11 @@ const PartnersSlider = () => (
             alt="Ayni Peru Logo"
             className="block w-auto object-contain"
           />
-          <img src={IWorkLogo} alt="IWork Logo" className="block w-auto object-contain" />
+          <img
+            src={IWorkLogo}
+            alt="IWork Logo"
+            className="block w-auto object-contain"
+          />
         </div>
 
         <input
@@ -70,7 +78,11 @@ const PartnersSlider = () => (
             alt="Ayni Peru Logo"
             className="block w-auto object-contain"
           />
-          <img src={IWorkLogo} alt="IWork Logo" className="block w-auto object-contain" />
+          <img
+            src={IWorkLogo}
+            alt="IWork Logo"
+            className="block w-auto object-contain"
+          />
         </div>
 
         <ol className="carousel-indicators pt-40">
