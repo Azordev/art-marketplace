@@ -25,13 +25,13 @@ const Home = () => {
 
   useEffect(() => {
     getArtworks();
-    setDepartments(getDepartments())
+    setDepartments(getDepartments());
   }, []);
 
-	const categoryClicked = (e, categoryId) => {
-		e.preventDefault();
-		push(`/artworks?category=${categoryId}`);
-	};
+  const categoryClicked = (e, categoryId) => {
+    e.preventDefault();
+    push(`/artworks?category=${categoryId}`);
+  };
   return (
     <>
       <MainNav page="home" />

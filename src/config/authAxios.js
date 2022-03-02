@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { getToken } from '../utils/authHelper';
+import axios from "axios";
+import { getToken } from "../utils/authHelper";
 import { API_URL } from "../config/constants";
 
 const accessToken = getToken();
@@ -7,13 +7,13 @@ const accessToken = getToken();
 const authAxios = axios.create({
   baseURL: API_URL,
   headers: {
-    "access_token": `Bearer ${accessToken}`
-  }
+    access_token: `Bearer ${accessToken}`,
+  },
 });
 
 // authAxios.interceptors.response.use(
 //   (response) => {
-    
+
 //     if(response.data.msg === 'Expired token')
 //     {
 //       deleteToken();
@@ -21,7 +21,7 @@ const authAxios = axios.create({
 //     }
 
 //     return response;
-//   }, 
+//   },
 //   (error) => {
 //     if(error.response.status === 500)
 //     {

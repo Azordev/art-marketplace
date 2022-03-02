@@ -12,7 +12,7 @@ export const getArtworkById = async (id, callback) => {
     if (res.status === STATUS_OK) {
       callback(res.data?.data || []);
     } else {
-      response.error('Status not ok');
+      response.error("Status not ok");
       callback([]);
     }
   } catch (error) {
@@ -76,7 +76,10 @@ export const getFemaleArtistArtworks = async (callback) => {
     if (res.status === STATUS_OK) {
       callback(res.data.data);
     } else {
-      response.error(null, res.data?.message || "getFemaleArtistArtworks::Error");
+      response.error(
+        null,
+        res.data?.message || "getFemaleArtistArtworks::Error"
+      );
       callback([]);
     }
   } catch (error) {

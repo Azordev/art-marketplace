@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 const Prev = ({ className, style, onClick }) => {
   const { pathname } = useLocation();
@@ -10,13 +10,12 @@ const Prev = ({ className, style, onClick }) => {
       style={{
         ...style,
         background:
-        pathname === '/'
-        ? "center no-repeat #F8F1F1 url('https://img.icons8.com/material-rounded/24/11698E/chevron-left.png')"
-        : "center no-repeat #11698E url('https://img.icons8.com/material-rounded/24/F8F1F1/chevron-left.png')"
-        }}
-        onClick={onClick}
-        >
-    </div>
+          pathname === "/"
+            ? "center no-repeat #F8F1F1 url('https://img.icons8.com/material-rounded/24/11698E/chevron-left.png')"
+            : "center no-repeat #11698E url('https://img.icons8.com/material-rounded/24/F8F1F1/chevron-left.png')",
+      }}
+      onClick={onClick}
+    ></div>
   );
 };
 
@@ -28,13 +27,12 @@ const Next = ({ className, style, onClick }) => {
       style={{
         ...style,
         background:
-        pathname === '/'
-        ? "center no-repeat #F8F1F1 url('https://img.icons8.com/material-rounded/24/11698E/chevron-right.png')"
-        : "center no-repeat #11698E url('https://img.icons8.com/material-rounded/24/F8F1F1/chevron-right.png')"
-        }}
+          pathname === "/"
+            ? "center no-repeat #F8F1F1 url('https://img.icons8.com/material-rounded/24/11698E/chevron-right.png')"
+            : "center no-repeat #11698E url('https://img.icons8.com/material-rounded/24/F8F1F1/chevron-right.png')",
+      }}
       onClick={onClick}
-    >
-    </div>
+    ></div>
   );
 };
 
@@ -73,8 +71,8 @@ const ProductSlider = ({ departments, itemClick, className, title }) => {
   };
   const { pathname } = useLocation();
 
-    return (
-        <div className={`${className} px-8`}>
+  return (
+    <div className={`${className} px-8`}>
       {title && (
         <div className="w-full pb-4 flex justify-center md:justify-start items-end">
           <p className="text-4xl">{title}</p>
@@ -104,7 +102,7 @@ const ProductSlider = ({ departments, itemClick, className, title }) => {
         ))}
       </Slider>
     </div>
-    );
+  );
 };
 
 export default ProductSlider;

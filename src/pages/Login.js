@@ -74,7 +74,7 @@ const Login = ({ isLogin }) => {
                       </div>
                       <div className="w-full mb-8 text-text font-semibold text-2xl">
                         Contacta al servicio técnico para recuperar tu
-                        contraseña: {" "}
+                        contraseña:{" "}
                         <a
                           className="hover:no-underline text-tertiary underline"
                           href="mailto:contacto@sencico.gob.pe"

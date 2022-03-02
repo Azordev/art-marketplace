@@ -7,11 +7,11 @@ import Filters from "../components/Products/Filters";
 
 import { getArtworks } from "../actions/artworks";
 import {
-	filterByCategory,
-	filterBySearch,
-	filterGeneric,
-	filterManufacturer,
-	filterBySubcategory,
+  filterByCategory,
+  filterBySearch,
+  filterGeneric,
+  filterManufacturer,
+  filterBySubcategory,
 } from "../utils/filters";
 import Pagination from "../components/Products/Pagination";
 import { getDepartments } from "../actions/departments";
@@ -29,14 +29,12 @@ const Artworks = () => {
 
   const getProductsAndCategories = async () => {
     const data = await getArtworks();
-    setCategories(getDepartments())
+    setCategories(getDepartments());
 
     const categoryId = parseInt(filters.category);
 
     if (categoryId) {
-      categoryClicked(
-        { preventDefault: () => {} },
-      );
+      categoryClicked({ preventDefault: () => {} });
       setSelectedFilter("category");
     }
 
@@ -104,7 +102,7 @@ const Artworks = () => {
     setCurrentPage(pageNumber);
   };
 
-  console.log(categories)
+  console.log(categories);
   return (
     <>
       <MainNav query={queryString.parse(search).q} />

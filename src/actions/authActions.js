@@ -9,7 +9,7 @@ import deleteEmptyFields from "../utils/deleteEmptyFields";
  */
 export const login = async (data) => {
   try {
-    setInfo('mocked-token', data);
+    setInfo("mocked-token", data);
 
     return { status: true, message: "Inicio de sesión exitoso" };
   } catch (error) {

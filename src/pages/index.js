@@ -12,22 +12,26 @@ import PublicRoute from "../components/PublicRoute";
 import ScrollToTop from "../components/ScrollToTop";
 
 const Pages = () => {
-	return (
-		<BrowserRouter>
-			<ScrollToTop />
-			<Switch>
-				<PublicRoute onlyPublic exact path="/" component={Home} />
-				<PublicRoute onlyPublic path="/artworks" component={Artworks} />
-				<PublicRoute onlyPublic path="/artwork/:id" component={Artwork} />
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <Switch>
+        <PublicRoute onlyPublic exact path="/" component={Home} />
+        <PublicRoute onlyPublic path="/artworks" component={Artworks} />
+        <PublicRoute onlyPublic path="/artwork/:id" component={Artwork} />
 
-				<PublicRoute path="/login" component={Login} />
-				<PublicRoute path="/register" component={Register} />
+        <PublicRoute path="/login" component={Login} />
+        <PublicRoute path="/register" component={Register} />
 
-				<PrivateRoute component={UserInformation} exact path="/user-information" />
-				<PrivateRoute component={EditUser} path="/user-information/edit" />
-			</Switch>
-		</BrowserRouter>
-	);
+        <PrivateRoute
+          component={UserInformation}
+          exact
+          path="/user-information"
+        />
+        <PrivateRoute component={EditUser} path="/user-information/edit" />
+      </Switch>
+    </BrowserRouter>
+  );
 };
 
 export default Pages;
