@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 import queryString from "query-string";
 import { MainNav, Footer } from "../components";
-import ProductItem from "../components/ArtworkItem";
+import ArtworkItem from "../components/ArtworkItem";
 import Filters from "../components/Products/Filters";
 
 import { getArtworks } from "../actions/artworks";
@@ -157,7 +157,7 @@ const Artworks = () => {
             <>
               <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 w-full p-0 justify-evenly xl:justify-around">
                 {currentPosts.map((product) => (
-                  <ProductItem
+                  <ArtworkItem
                     data={product}
                     key={`product-item-${product.id}`}
                   />

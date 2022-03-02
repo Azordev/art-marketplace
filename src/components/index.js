@@ -1,7 +1,7 @@
 import AuthInput from "./AuthInput";
-import ProductItem from "./ArtworkItem";
+import ArtworkItem from "./ArtworkItem";
 import SecondNav from "./SecondNav";
 import MainNav from "./MainNav";
 import Footer from "./Footer";
 
-export { MainNav, AuthInput, ProductItem, SecondNav, Footer };
+export { MainNav, AuthInput, ArtworkItem, SecondNav, Footer };
