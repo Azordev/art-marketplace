@@ -222,7 +222,7 @@ const Products = () => {
 								containerClassName='py-3 flex justify-center text-center'
 								previousLinkClassName='cursor-pointer bg-complementary relative inline-flex items-center px-8 py-3 text-sm font-medium'
 								nextLinkClassName='cursor-pointer bg-complementary relative inline-flex items-center px-8 py-3 text-sm font-medium'
-								pageLinkClassName='cursor-pointer px-4 py-3 bg-complementary mx-0.5 relative inline-flex items-center text-sm font-medium rounded-sm'
+								pageLinkClassName='cursor-pointer px-4 py-3 bg-complementary mx-0.5 relative inline-flex items-center text-sm font-medium'
 								pageClassName='rounded-sm'
 								activeLinkClassName='pointer-events-none'
 								nextClassName='cursor-pointer mr-0.5 rounded-sm'
