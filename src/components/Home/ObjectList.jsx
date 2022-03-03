@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ProductItem from "../ProductItem";
+import ArtworkItem from "../ArtworkItem";
 
 const ObjectList = ({ title, seeMore, items }) => {
   return (
@@ -17,17 +17,13 @@ const ObjectList = ({ title, seeMore, items }) => {
         </Link>
       </div>
       <div className="w-full flex flex-col flex-wrap xl:flex-nowrap md:flex-row md:justify-evenly lg:justify-evenly xl:justify-between xl:space-x-3 2xl:space-x-0 px-5 md:px-0 lg:px-20 xl:px-12 py-6 xl:pb-20">
-      {
-          items.length ? (
-            items.map((item, i) => (
-              <ProductItem data={item} key={i} />
-            ))
-          ) : (
-            <span className="text-xl text-gray-500">
-              Actualmente no hay productos para mostrar en esta sección
-            </span>
-          )
-        }
+        {items.length ? (
+          items.map((item, i) => <ArtworkItem data={item} key={i} />)
+        ) : (
+          <span className="text-xl text-gray-500">
+            Actualmente no hay productos para mostrar en esta sección
+          </span>
+        )}
       </div>
     </div>
   );
