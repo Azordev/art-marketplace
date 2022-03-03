@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { login } from "../actions/authActions";
-import { AuthInput, LogosFooter, SecondNav } from "../components";
+import { AuthInput, Footer, SecondNav } from "../components";
 import { Link, useHistory } from "react-router-dom";
 import { Notify } from "notiflix";
 
-const Login = () => {
+const Login = ({ isLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -74,7 +74,7 @@ const Login = () => {
                       </div>
                       <div className="w-full mb-8 text-text font-semibold text-2xl">
                         Contacta al servicio técnico para recuperar tu
-                        contraseña: {" "}
+                        contraseña:{" "}
                         <a
                           className="hover:no-underline text-tertiary underline"
                           href="mailto:contacto@sencico.gob.pe"
@@ -142,7 +142,7 @@ const Login = () => {
           </section>
         </div>
       </section>
-      <LogosFooter />
+      <Footer showButtons={false} />
     </>
   );
 };

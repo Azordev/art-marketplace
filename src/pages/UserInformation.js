@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getUserInformation } from "../actions/userActions";
-import { PUBLIC_URL } from "../config/constants";
 import Logo from "../assets/img/logo.png";
 import Profile from "../assets/img/perfil.png";
 import { Footer } from "../components";
@@ -57,7 +56,9 @@ const UserInformation = () => {
                       </label>
                       <label className="text-2xl text-stone-700">
                         Compañía:{" "}
-                        <span className="text-2xl text-black">{user.company}</span>
+                        <span className="text-2xl text-black">
+                          {user.company}
+                        </span>
                       </label>
                       <label className="text-2xl text-stone-700">
                         Ocupación:{" "}
@@ -67,11 +68,15 @@ const UserInformation = () => {
                       </label>
                       <label className="text-2xl text-stone-700">
                         Teléfono:{" "}
-                        <span className="text-2xl text-black">{user.phone}</span>
+                        <span className="text-2xl text-black">
+                          {user.phone}
+                        </span>
                       </label>
                       <label className="text-2xl text-stone-700">
                         País:{" "}
-                        <span className="text-2xl text-black">{user.country}</span>
+                        <span className="text-2xl text-black">
+                          {user.country}
+                        </span>
                       </label>
                     </div>
                     <div className="flex flex-col">
@@ -105,11 +110,7 @@ const UserInformation = () => {
                     <div className="flex flex-col space-y-4">
                       <div className="flex w-48 h-48 bg-black rounded-full mx-auto lg:mx-0">
                         <img
-                          src={
-                            user.image
-                              ? `${PUBLIC_URL}${user.image}`
-                              : Profile
-                          }
+                          src={user.image ? `${user.image}` : Profile}
                           className="mx-auto"
                           alt={`Foto de ${user.name}`}
                         />

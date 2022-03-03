@@ -1,34 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import LogoFooter from "../assets/img/logo.png";
-import LogosFooter from "./LogosFooter";
-import { isAuthenticated } from "../utils/isAuthenticated";
+import notLoggedButtons from './isNotLogged';
 
-const notLoggedButtons = () => {
-  if (!isAuthenticated()) {
-    return (
-      <div className="justify-items-center sm:justify-items-start grid grid-cols-1 mx-auto sm:grid-cols-2 sm:col-span-2">
-        <Link
-          to="/login"
-          className="w-60 max-w-full sm:max-w-none text-center py-3.5 mb-5 md:mb-7 text-xl font-semibold leading-6 text-white whitespace-nowrap bg-primary rounded-md shadow-button hover-scale tracking-add mt-5 xl:mt-5"
-        >
-          Iniciar Sesión
-        </Link>
-        <Link
-          to="/register"
-          className="w-60 max-w-full sm:max-w-none text-center py-3.5 mb-5 md:mb-7 text-xl font-semibold leading-6 text-white whitespace-nowrap bg-tertiary rounded-md shadow-button hover-scale tracking-add mt-5 xl:mt-5"
-        >
-          Regístrate
-        </Link>
-      </div>
-    );
-  }
-};
+const Footer = (props) => {
 
-const Footer = () => {
   return (
     <>
-      <LogosFooter />
       <section className="bg-complementary px-5 lg:px-10 2xl:px-20 py-10 xl:py-16">
         <div className="max-w-screen-2xl mx-auto flex flex-col xl:flex-row px-0 pb-16 w-full border-solid border-black border-opacity-50">
           <div className="w-full xl:w-1/2">
@@ -100,7 +77,7 @@ const Footer = () => {
                   </ul>
                 </nav>
               </div>
-                {notLoggedButtons()}
+              {props.showButtons && notLoggedButtons()}
             </div>
           </div>
         </div>

@@ -2,9 +2,10 @@ import React, { useState, useRef } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Notify } from "notiflix";
 import AuthInput from "../components/AuthInput";
-import LogosFooter from "../components/LogosFooter";
 import SecondNav from "../components/SecondNav";
 import { register } from "../actions/authActions";
+import { Footer } from "../components";
+
 
 const Register = () => {
   const formRef = useRef(null);
@@ -134,7 +135,7 @@ const Register = () => {
           </div>
         </div>
       </section>
-      <LogosFooter />
+      <Footer showButtons={false} />
     </>
   );
 };
