@@ -23,8 +23,7 @@ const arrowColor = {
 	},
 };
 
-const Prev = (props) => {
-	const { className, style, onClick, home } = props;
+const Prev = ({ className, style, onClick, home }) => {
 	return (
 		<div
 			className={`${className} arrow-custom-circle`}
@@ -38,8 +37,7 @@ const Prev = (props) => {
 		</div>
 	);
 };
-const Next = (props) => {
-	const { className, style, onClick, home } = props;
+const Next = ({ className, style, onClick, home }) => {
 	return (
 		<div
 			className={`${className} arrow-custom-circle`}
@@ -56,7 +54,7 @@ const Next = (props) => {
 
 const ProductSlider = ({
 	data,
-	categories,
+	departments,
 	itemClick,
 	className,
 	title,
@@ -95,11 +93,11 @@ const ProductSlider = ({
 				</div>
 			)}
 			<Slider {...settings}>
-				{data.map((item) => (
-					<div className="p-1" key={item}>
+				{departments.map((department, index) => (
+					<div className="p-1" key={`slider-item-${index}`}>
 						<div
 							className="block mx-2 w-auto hover-scale--min overflow-hidden rounded-lg shadow-slider cursor-pointer"
-							onClick={(e) => itemClick(e, item.id, categories)}
+							onClick={(e) => itemClick(e, department.id)}
 						>
 							<div
 								style={home ? fontColor.whiteElement : fontColor.blueElement}
@@ -107,8 +105,8 @@ const ProductSlider = ({
 							>
 								<div className="flex-1">
 									<div className="block text-center">
-										<span className="text-xl font-normal leading-7">
-											{item.name}
+										<span className="text-xl leading-7 text-slider">
+											{department.es}
 										</span>
 									</div>
 								</div>

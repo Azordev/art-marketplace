@@ -3,21 +3,38 @@
 @tailwind utilities;
 
 @layer base {
+  details {
+    margin-top: 0 !important;
+    margin-bottom: 1.5rem !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  }
+
   details summary {
-    list-style-type: none;  
+    list-style-type: none;
     position: relative;
   }
-  
+
   details summary::after {
-    content: url('https://img.icons8.com/material-rounded/24/000000/chevron-right.png');
+    width: 30px;
+    height: 20px;
+    content: url("https://img.icons8.com/material-rounded/24/11698E/chevron-right.png");
     position: absolute;
-    right: 0px;
+    right: 5%;
     top: 50%;
     transform: translateY(-50%);
+    transition: transform ease 0.5s;
   }
-  
+
+  details[open] {
+    margin-bottom: 0 !important;
+  }
+
+  details[open] summary {
+    border: #11698e 1px solid;
+  }
+
   details[open] summary::after {
-    content: url('https://img.icons8.com/material-rounded/24/000000/chevron-down.png');
+    transform: rotate(90deg);
   }
 
   button:disabled {
@@ -27,22 +44,22 @@
 
 @layer components {
   .arrow-custom-circle {
-    @apply shadow-slider z-10 p-4 bg-no-repeat bg-center rounded-full bg-white;
+    @apply shadow-slider p-5 z-10 rounded-full;
     @apply xl:p-6;
   }
 }
 
 @layer utilities {
   .shadow-box {
-    box-shadow: -1px 4px 10px -1px rgba(150,150,150,0.5);
+    box-shadow: -1px 4px 10px -1px rgba(150, 150, 150, 0.5);
   }
-  
+
   .shadow-dropdown {
-    box-shadow: 1px 0px 15px -1px rgba(100,100,100,1);
+    box-shadow: 1px 0px 15px -1px rgba(100, 100, 100, 1);
   }
 
   .shadow-button {
-    box-shadow: 1px 0px 10px -1px rgba(15,18,22,0.5);
+    box-shadow: 1px 0px 10px -1px rgba(15, 18, 22, 0.5);
   }
 
   .hover-scale {
@@ -52,9 +69,9 @@
   .hover-scale--min {
     @apply xl:hover:scale-105 duration-200;
   }
-  
+
   .shadow-slider {
-    box-shadow: 3px 2px 6px -2px rgba(15,18,22,0.5);
+    box-shadow: 3px 2px 6px -2px rgba(15, 18, 22, 0.5);
   }
 
   .vertical-ellipsis {
@@ -65,66 +82,66 @@
 }
 
 :root {
-  --add-color: #F0F0F0;
+  --add-color: #f0f0f0;
 }
-.bg-add{
+.bg-add {
   background-color: var(--add-color);
 }
-.bg-add-back-img-1{
+.bg-add-back-img-1 {
   background-image: url("./assets/img/1.png");
   background-repeat: no-repeat;
 }
-.bg-add-back-img-2{
+.bg-add-back-img-2 {
   background-image: url("./assets/img/fondo.png");
   background-repeat: no-repeat;
 }
-.w-17-4{
+.w-17-4 {
   width: 17.4rem;
 }
-.mx-w-17-4{
+.mx-w-17-4 {
   max-width: 17.4rem;
 }
-.h-4-6{
+.h-4-6 {
   height: 4.6rem;
 }
-.mx-h-4-6{
+.mx-h-4-6 {
   max-height: 4.6rem;
 }
-.flex-basis-search{
+.flex-basis-search {
   flex-basis: calc(80%-1rem);
 }
-.tracking-add{
+.tracking-add {
   letter-spacing: -1.5%;
 }
-@media (min-width:1536px) {
-  .leading-add{
-      line-height: 73px;
+@media (min-width: 1536px) {
+  .leading-add {
+    line-height: 73px;
   }
 }
-.px-11-5{
+.px-11-5 {
   padding-left: 2.875rem;
   padding-right: 2.875rem;
 }
-@media (min-width:1536px) {
-  .py-34{
-      padding-top: 8.5rem;
-      padding-bottom: 8.5rem;
+@media (min-width: 1536px) {
+  .py-34 {
+    padding-top: 8.5rem;
+    padding-bottom: 8.5rem;
   }
 }
 
-.h-add{
+.h-add {
   height: 652px;
 }
-.border-add{
+.border-add {
   border-right-width: 1px;
   border-left-width: 1px;
   border-bottom-width: 1px;
 }
-.border-add-2{
+.border-add-2 {
   border-bottom-width: 1px;
 }
-.add-color-icon{
-  background-color: #D11D1B;
+.add-color-icon {
+  background-color: #d11d1b;
 }
 .carousel-open:checked + .carousel-item {
   position: static;
@@ -150,17 +167,39 @@
   text-align: center;
   z-index: 10;
 }
-#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
-#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
-#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
-  color: #2b6cb0;  /*Set to match the Tailwind colour you want the active one to be */
+#carousel-1:checked
+  ~ .control-1
+  ~ .carousel-indicators
+  li:nth-child(1)
+  .carousel-bullet,
+#carousel-2:checked
+  ~ .control-2
+  ~ .carousel-indicators
+  li:nth-child(2)
+  .carousel-bullet,
+#carousel-3:checked
+  ~ .control-3
+  ~ .carousel-indicators
+  li:nth-child(3)
+  .carousel-bullet {
+  color: #2b6cb0; /*Set to match the Tailwind colour you want the active one to be */
 }
 
+@media (max-width: 1280px) {
+  .slick-list {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
 
-.slick-arrow.slick-next::before, .slick-arrow.slick-prev::before {
-  content: '';
+.slick-arrow.slick-next::before,
+.slick-arrow.slick-prev::before {
+  content: "";
 }
 .dropdown:hover .dropdown-menu {
   display: block;
-
+}
+.text-slider {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
 }

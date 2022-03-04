@@ -2,61 +2,49 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const SearchInput = ({ page, query }) => {
-	const { push } = useHistory();
-	const [searchValue, setSearchValue] = useState(query ? query : "");
+  const { push } = useHistory();
+  const [searchValue, setSearchValue] = useState(query ? query : "");
 
-	const searchMargin = page === "home" ? "lg:mx-7" : "lg:ml-7";
+  const searchMargin = page === "home" ? "lg:mx-7" : "lg:ml-7";
 
-	const changeHandler = (e) => setSearchValue(e.target.value);
+  const changeHandler = (e) => setSearchValue(e.target.value);
 
-	const submitHandler = (e) => {
-		e.preventDefault();
-		push(`/products?q=${searchValue.toLowerCase()}`);
-	};
+  const submitHandler = (e) => {
+    e.preventDefault();
+    push(`/artworks?q=${searchValue.toLowerCase()}`);
+  };
 
-	return (
-		<nav className="flex items-center lg:w-full">
-			<div className={`relative w-full my-7 ${searchMargin}`}>
-				<div className="absolute inset-y-0 pl-3 flex items-center pointer-events-none">
-					<svg
-						className="w-5 h-5 text-gray-500"
-						fill="currentColor"
-						viewBox="0 0 20 20"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path
-							fillRule="evenodd"
-							d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-							clipRule="evenodd"
-						></path>
-					</svg>
-				</div>
-				<form onSubmit={submitHandler}>
-					<input
-						type="text"
-						autoComplete="off"
-						className="bg-add text-gray-900 rounded-full block pl-10 pr-10 py-3.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white w-full"
-						value={searchValue}
-						onChange={changeHandler}
-					/>
-				</form>
-				<div className="absolute right-2 inset-y-0 flex items-center pointer-events-none">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						className="h-5 w-5"
-						viewBox="0 0 20 20"
-						fill="currentColor"
-					>
-						<path
-							fillRule="evenodd"
-							d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-							clipRule="evenodd"
-						/>
-					</svg>
-				</div>
-			</div>
-		</nav>
-	);
+  return (
+    <nav className="flex items-center lg:w-full">
+      <div className={`relative w-full my-7 ${searchMargin}`}>
+        <form onSubmit={submitHandler}>
+          <input
+            type="text"
+            autoComplete="off"
+            className="bg-secondComplementary text-gray-900 rounded-normal block pl-5 pr-10 py-3.5 w-full focus:outline-1 focus:outline-primary"
+            value={searchValue}
+            onChange={changeHandler}
+          />
+        </form>
+        <div className="absolute right-4 inset-y-0 flex items-center pointer-events-none">
+          <svg
+            width="25"
+            height="25"
+            viewBox="0 0 25 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M15.7794 17.2379C12.1353 20.1565 6.80108 19.9268 3.423 16.5487C-0.201548 12.9242 -0.201548 7.04762 3.423 3.42307C7.04756 -0.201488 12.9241 -0.201487 16.5487 3.42307C19.9267 6.80114 20.1565 12.1354 17.2378 15.7795L24.3268 22.8685C24.7296 23.2712 24.7296 23.9241 24.3268 24.3269C23.9241 24.7296 23.2711 24.7296 22.8684 24.3269L15.7794 17.2379ZM4.88141 15.0903C2.06232 12.2712 2.06232 7.70057 4.88141 4.88147C7.70051 2.06238 12.2712 2.06238 15.0903 4.88147C17.9073 7.6985 17.9094 12.2645 15.0965 15.0841C15.0944 15.0862 15.0923 15.0882 15.0902 15.0903C15.0882 15.0924 15.0861 15.0944 15.0841 15.0965C12.2645 17.9094 7.69844 17.9074 4.88141 15.0903Z"
+              fill="#11698E"
+            />
+          </svg>
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default SearchInput;
