@@ -90,7 +90,7 @@ const ProductSlider = ({ departments, itemClick, className, title }) => {
                 className="flex flex-col flex-1 justify-between py-4 px-10"
               >
                 <div className="flex-1">
-                  <div className="block text-center">
+                  <div className="block text-center truncate">
                     <span className="text-xl font-bold leading-7">
                       {department.es}
                     </span>

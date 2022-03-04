@@ -199,3 +199,7 @@
 .dropdown:hover .dropdown-menu {
   display: block;
 }
+
+.selected a {
+  background-color: #fff;
+}
