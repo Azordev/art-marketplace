@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
 	ObjectList,
-	Hero,
-	PartnersSlider,
+	Hero
 } from "../components/Home";
 import {
 	getLatestProducts,
@@ -71,7 +70,6 @@ const Home = () => {
 						seeMore="/artworks"
 						items={newProducts}
 					/>
-					<PartnersSlider />
 				</div>
 			<Footer />
 		</>
