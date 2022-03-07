@@ -1,6 +1,8 @@
-import HomeSlider from "./HomeSlider";
 import ObjectList from "./ObjectList";
 import Hero from "./Hero";
-import PartnersSlider from "./PartnersSlider";
 
+<<<<<<< HEAD
 export { Hero, HomeSlider, ObjectList, PartnersSlider };
+=======
+export { Hero, ObjectList };
+>>>>>>> removed homeSlider too
