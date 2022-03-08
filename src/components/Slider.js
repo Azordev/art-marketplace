@@ -3,10 +3,6 @@ import Slider from "react-slick";
 import { ArrowLeft, ArrowRight } from "./Arrows";
 
 const fontColor = {
-  blueElement: {
-    backgroundColor: "#11698E",
-    color: "#FFF",
-  },
   whiteElement: {
     backgroundColor: "#F8F1F1",
     color: "#000",
@@ -14,8 +10,8 @@ const fontColor = {
 };
 const arrowColor = {
   whiteElement: {
-    backgroundColor: "#11698E",
-    color: "#F8F1F1",
+    backgroundColor: "#F8F1F1",
+    color: "#11698E",
   },
 };
 
@@ -48,7 +44,13 @@ const Next = ({ className, style, onClick }) => {
   );
 };
 
-const ProductSlider = ({ departments, itemClick, className, title }) => {
+const ProductSlider = ({
+  data,
+  departments,
+  itemClick,
+  className,
+  title
+}) => {
   const settings = {
     className: "px-2 xl:px-10",
     dots: false,
@@ -89,7 +91,7 @@ const ProductSlider = ({ departments, itemClick, className, title }) => {
               onClick={(e) => itemClick(e, department.id)}
             >
               <div
-                style={fontColor.blueElement}
+                style={fontColor.whiteElement}
                 className="flex flex-col flex-1 justify-between py-4 px-10"
               >
                 <div className="flex-1">
