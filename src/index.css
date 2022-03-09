@@ -192,6 +192,11 @@
   }
 }
 
+.slick-track {
+  display: flex;
+  align-items: center;
+}
+
 .slick-arrow.slick-next::before,
 .slick-arrow.slick-prev::before {
   content: "";
@@ -200,6 +205,16 @@
   display: block;
 }
 
+.text-slider {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+}
+
 .selected a {
   background-color: #fff;
+}
+
+.text-slider {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
 }
