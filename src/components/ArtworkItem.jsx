@@ -10,7 +10,7 @@ const ArtworkItem = ({ data }) => (
     <img
       className="w-full h-64 py-4 px-4"
       src={data?.images?.web ? `${data.images?.web?.url}` : Desing1}
-      alt={data.title ? data.title : "Item"}
+      alt={data.title ? data.title : "Nombre de la obra"}
     />
     <div>
       <div className="font-extrabold vertical-ellipsis overflow-hidden text-center text-ellipsis block mx-6 text-2xl xl:text-xl 2xl:text-2xl my-4 leading-6">
