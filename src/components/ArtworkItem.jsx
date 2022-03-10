@@ -14,7 +14,7 @@ const ArtworkItem = ({ data }) => (
     />
     <div>
       <div className="font-extrabold vertical-ellipsis overflow-hidden text-center text-ellipsis block mx-6 text-2xl xl:text-xl 2xl:text-2xl my-4 leading-6">
-        {data.title ? data.title : "Item"}
+        {data.title ? data.title : "Nombre de la obra"}
       </div>
       <div className="overflow-hidden w-full">
         <p className="text-black text-center text-xl overflow-hidden text-ellipsis xl:text-base 2xl:text-xl mx-6 pb-5 leading-6">
