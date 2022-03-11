@@ -2,7 +2,7 @@ const deleteEmptyFields = (data) => {
   const keys = [];
 
   for (const [key, value] of data.entries()) {
-    if (value === '') {
+    if (value === "") {
       keys.push(key);
     }
   }

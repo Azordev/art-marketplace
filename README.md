@@ -10,10 +10,10 @@
 
 <!-- PROJECT LOGO -->
 
-|                                                   Art Marketplace                                                |
+|                                             Art Marketplace                                              |
 | :------------------------------------------------------------------------------------------------------: |
 |                                              ![app-icon][]                                               |
-|Azordev's art markeplace|
+|                                         Azordev's art markeplace                                         |
 |                          [🐞 Report a bug or 🙋‍♂️ request a feature][issues-url]                           |
 | [![contributions welcome][contributions-welcome]][issues-url] [![License][badge-apache]][apache-license] |
 
@@ -141,7 +141,7 @@ The project has been developed using various technologies. Some of them are:
 For the front, React has been used, which is a powerful framework that allows us to interact dynamically with the DOM and encapsulate tons of functionalities through components. [React Docs](https://reactjs.org/docs/getting-started.html).
 
 **TailwindCSS:**
-Too we have used TailwindCSS, which is a CSS framework that help a lot with the CSS giving utilities classes and other tools to do the CSS more friendly for developers. [Tailwind Docs](https://tailwindcss.com/docs/installation) 
+Too we have used TailwindCSS, which is a CSS framework that help a lot with the CSS giving utilities classes and other tools to do the CSS more friendly for developers. [Tailwind Docs](https://tailwindcss.com/docs/installation)
 
 **Axios:**
 Axios is a library that serves to create HTTP requests that are present externally. This ease the way to get data that isn't at the website else that is get from some API.
@@ -259,26 +259,23 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Collaborators
 
-| [Israel Laguan][author-github] | ![email-icon][] Email me to [contact@israellaguan.com][author-email] / ![linkedin-icon][] Connect to [my Linkedin][author-linkedin] |
-| :----------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
-|        ![author-pic][]         |                                                                                                                          |
-|  [Victor Peña][victor-github]  |  ![email-icon][] Email me to [victordev2002@gmail.com][victor-email] / ![linkedin-icon][] Connect to [my Linkedin][victor-linkedin]    |
-|        ![victor-pic][]         |                                                                                                                          |
-|[Emmanuel Azócar][emmanuel-github]|                          ![email-icon][] Email me to [azocarmel@gmail.com][emmanuel-email]                                       |
-|        ![emmanuel-pic][]        |                                                                                                                          |
-| [Angelica Molina][ange-github] |                              ![email-icon][] Email me to [angeli.molina1@gmail.com][ange-email]                                     |
-|         ![ange-pic][]         |                                                                                                                          |
-|[Roman Rodriguez][roman-github] |                            ![email-icon][] Email me to [romanrodri192@gmail.com][roman-email]                                       |
-|         ![roman-pic][]          |                                                                                                                          |
-|    [Tony Tarco][tony-github]   |                              ![email-icon][] Email me to [tonytarco@hotmail.com][tony-email]                                        |
-|          ![tony-pic][]         |                                                                                                                          |
-|[Ildebrando Quinchoa][ild-github]|                           ![email-icon][] Email me to [ildebrandoefrain@gmail.com][ild-email]                                      |
-|          ![ild-pic][]          |                                                                                                                          |
-|  [Eghinner Hernandez][eghinner-github]  |  ![email-icon][] Email me to [eghinner@gmail.com][eghinner-email] / ![linkedin-icon][] Connect to [my Linkedin][eghinner-linkedin]    |
-|        ![eghinner-pic][]         |                                                             ![banner-eghinner][]                                                             |
-
-
-
+|    [Israel Laguan][author-github]     | ![email-icon][] Email me to [contact@israellaguan.com][author-email] / ![linkedin-icon][] Connect to [my Linkedin][author-linkedin] |
+| :-----------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------: |
+|            ![author-pic][]            |                                                                                                                                     |
+|     [Victor Peña][victor-github]      | ![email-icon][] Email me to [victordev2002@gmail.com][victor-email] / ![linkedin-icon][] Connect to [my Linkedin][victor-linkedin]  |
+|            ![victor-pic][]            |                                                                                                                                     |
+|  [Emmanuel Azócar][emmanuel-github]   |                                  ![email-icon][] Email me to [azocarmel@gmail.com][emmanuel-email]                                  |
+|           ![emmanuel-pic][]           |                                                                                                                                     |
+|    [Angelica Molina][ange-github]     |                                 ![email-icon][] Email me to [angeli.molina1@gmail.com][ange-email]                                  |
+|             ![ange-pic][]             |                                                                                                                                     |
+|    [Roman Rodriguez][roman-github]    |                                 ![email-icon][] Email me to [romanrodri192@gmail.com][roman-email]                                  |
+|            ![roman-pic][]             |                                                                                                                                     |
+|       [Tony Tarco][tony-github]       |                                   ![email-icon][] Email me to [tonytarco@hotmail.com][tony-email]                                   |
+|             ![tony-pic][]             |                                                                                                                                     |
+|   [Ildebrando Quinchoa][ild-github]   |                                 ![email-icon][] Email me to [ildebrandoefrain@gmail.com][ild-email]                                 |
+|             ![ild-pic][]              |                                                                                                                                     |
+| [Eghinner Hernandez][eghinner-github] |  ![email-icon][] Email me to [eghinner@gmail.com][eghinner-email] / ![linkedin-icon][] Connect to [my Linkedin][eghinner-linkedin]  |
+|           ![eghinner-pic][]           |                                                        ![banner-eghinner][]                                                         |
 
 ## Contributing
 
@@ -310,45 +307,33 @@ Feel free to fork this project and improve it!
 [victor-pic]: https://avatars.githubusercontent.com/u/66505715?v=4
 [victor-email]: mailto:victordev2002@gmail.com
 [victor-linkedin]: https://www.linkedin.com/in/v%C3%ADctor-pe%C3%B1a-348a3918a/
-
 [emmanuel-github]: https://github.com/e-azocar
 [emmanuel-pic]: https://avatars.githubusercontent.com/u/61360270?v=4
 [emmanuel-email]: mailto:azocarmel@gmail.com
-
 [roman-github]: https://github.com/romanrguez192
 [roman-pic]: https://avatars.githubusercontent.com/u/69876913?s=200&v=4
 [roman-email]: mailto:romanrodri192@gmail.com
-
 [tony-github]: https://github.com/Tonytarco
 [tony-pic]: https://avatars.githubusercontent.com/u/37258801?s=200&v=4
 [tony-email]: mailto:tonytarco@hotmail.com
-
 [ange-github]: https://github.com/angelik0828
 [ange-pic]: https://avatars.githubusercontent.com/u/4030477?s=200&v=4
 [ange-email]: mailto:angeli.molina1@gmail.com
-
 [ild-github]: https://github.com/ildebr
 [ild-pic]: https://avatars.githubusercontent.com/u/73916430?v=4
 [ild-email]: mailto:ildebrandoefrain@gmail.com
-
 [eghinner-github]: https://github.com/Eghinner
 [eghinner-pic]: https://avatars.githubusercontent.com/u/71513679?v=4
 [eghinner-email]: mailto:eghinner@gmail.com
 [eghinner-linkedin]: https://www.linkedin.com/in/eghinner
-
-
 [contributors-shield]: https://img.shields.io/github/contributors/Azordev/art-marketplace?style=for-the-badge
 [contributors-url]: https://github.com/Azordev/art-marketplace/graphs/contributors
-
 [forks-shield]: https://img.shields.io/github/forks/Azordev/art-marketplace?style=for-the-badge
 [forks-url]: https://github.com/Azordev/art-marketplace/network/members
-
 [stars-shield]: https://img.shields.io/github/stars/Azordev/art-marketplace?style=for-the-badge
 [stars-url]: https://github.com/Azordev/art-marketplace/stargazers
-
 [issues-open-shield]: https://img.shields.io/github/issues/Azordev/art-marketplace?style=for-the-badge
 [issues-closed-shield]: https://img.shields.io/github/issues-closed/Azordev/art-marketplace?style=for-the-badge
-
 [react]: https://img.shields.io/badge/React-16+-61DAFB?style=for-the-badge&logo=react
 [javascript]: https://img.shields.io/badge/JAVASCRIPT-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript
 [css]: https://img.shields.io/badge/style-CSS-1572B6?style=for-the-badge&logo=css3

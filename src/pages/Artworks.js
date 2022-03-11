@@ -1,28 +1,28 @@
-import React, {useState, useEffect} from 'react';
-import {useLocation, useHistory} from 'react-router-dom';
-import queryString from 'query-string';
-import {MainNav, Footer} from '../components';
-import ArtworkItem from '../components/ArtworkItem';
-import Filters from '../components/Products/Filters';
-import ReactPaginate from 'react-paginate';
-import {getArtworks} from '../actions/artworks';
+import React, { useState, useEffect } from "react";
+import { useLocation, useHistory } from "react-router-dom";
+import queryString from "query-string";
+import { MainNav, Footer } from "../components";
+import ArtworkItem from "../components/ArtworkItem";
+import Filters from "../components/Products/Filters";
+import ReactPaginate from "react-paginate";
+import { getArtworks } from "../actions/artworks";
 import {
   filterByCategory,
   filterBySearch,
   filterGeneric,
   filterManufacturer,
   filterBySubcategory,
-} from '../utils/filters';
-import {getDepartments} from '../actions/departments';
+} from "../utils/filters";
+import { getDepartments } from "../actions/departments";
 
 const Artworks = () => {
-  const {search} = useLocation();
-  const {push} = useHistory();
+  const { search } = useLocation();
+  const { push } = useHistory();
   const [products, setProducts] = useState([]);
   const [currentProducts, setCurrentProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [selectedFilter, setSelectedFilter] = useState('none');
-  const [selectedCategory, setSelectedCategory] = useState('Todas');
+  const [selectedFilter, setSelectedFilter] = useState("none");
+  const [selectedCategory, setSelectedCategory] = useState("Todas");
 
   const filters = queryString.parse(search);
 
@@ -33,8 +33,8 @@ const Artworks = () => {
     const categoryId = parseInt(filters.category);
 
     if (categoryId) {
-      categoryClicked({preventDefault: () => {}});
-      setSelectedFilter('category');
+      categoryClicked({ preventDefault: () => {} });
+      setSelectedFilter("category");
     }
 
     setProducts(data);
@@ -44,7 +44,7 @@ const Artworks = () => {
   const filterAll = async () => {
     if (filters.subcategory) {
       return setCurrentProducts(
-          filterBySubcategory(products, filters.subcategory),
+        filterBySubcategory(products, filters.subcategory)
       );
     }
     if (filters.category) {
@@ -53,10 +53,10 @@ const Artworks = () => {
     if (filters.q) {
       return setCurrentProducts(filterBySearch(products, filters.q));
     }
-    if (selectedFilter === 'generic') {
+    if (selectedFilter === "generic") {
       return setCurrentProducts(filterGeneric(products));
     }
-    if (selectedFilter === 'manufacturer') {
+    if (selectedFilter === "manufacturer") {
       return setCurrentProducts(filterManufacturer(products));
     }
 
@@ -107,23 +107,23 @@ const Artworks = () => {
           currentFilter={selectedFilter}
         />
         <div className="w-full lg:w-4/5 space-y-8">
-          {selectedFilter === 'none' && (
+          {selectedFilter === "none" && (
             <p>
               <b>Pro Tip: </b>Usa un filtro a la izquierda para limitar la
               búsqueda
             </p>
           )}
-          {selectedFilter === 'generic' && (
+          {selectedFilter === "generic" && (
             <div
-              style={{backgroundColor: '#11698E'}}
+              style={{ backgroundColor: "#11698E" }}
               className="bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10"
             >
               <h2 className="text-4xl px-4 py-2 font-bold">Por tipo</h2>
             </div>
           )}
-          {selectedFilter === 'category' && (
+          {selectedFilter === "category" && (
             <div
-              style={{backgroundColor: '#11698E'}}
+              style={{ backgroundColor: "#11698E" }}
               className="bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10"
             >
               <h2 className="text-4xl px-4 py-2 font-bold">
@@ -131,9 +131,9 @@ const Artworks = () => {
               </h2>
             </div>
           )}
-          {selectedFilter === 'manufacturer' && (
+          {selectedFilter === "manufacturer" && (
             <div
-              style={{backgroundColor: '#11698E'}}
+              style={{ backgroundColor: "#11698E" }}
               className="bg-add text-white md:mr-8 lg:mr-20 xl:mr-3 2xl:mr-10"
             >
               <h2 className="text-4xl max-w-full block overflow-hidden text-ellipsis px-4 py-2 font-bold">
@@ -165,14 +165,14 @@ const Artworks = () => {
                 marginPagesDisplayed={1}
                 pageCount={pageCount}
                 renderOnZeroPageCount={null}
-                containerClassName='py-3 flex justify-center text-center'
-                previousLinkClassName='cursor-pointer bg-complementary relative inline-flex items-center px-8 py-3 text-sm font-medium'
-                nextLinkClassName='cursor-pointer bg-complementary relative inline-flex items-center px-8 py-3 text-sm font-medium'
-                pageLinkClassName='cursor-pointer px-4 py-3 bg-complementary mx-0.5 relative inline-flex items-center text-sm font-medium rounded-sm'
-                activeLinkClassName='pointer-events-none'
-                nextClassName='cursor-pointer mr-0.5 rounded-sm truncate'
-                previousClassName='cursor-pointer ml-0.5 rounded-sm truncate'
-                disabledClassName='pointer-events-none'
+                containerClassName="py-3 flex justify-center text-center"
+                previousLinkClassName="cursor-pointer bg-complementary relative inline-flex items-center px-8 py-3 text-sm font-medium"
+                nextLinkClassName="cursor-pointer bg-complementary relative inline-flex items-center px-8 py-3 text-sm font-medium"
+                pageLinkClassName="cursor-pointer px-4 py-3 bg-complementary mx-0.5 relative inline-flex items-center text-sm font-medium rounded-sm"
+                activeLinkClassName="pointer-events-none"
+                nextClassName="cursor-pointer mr-0.5 rounded-sm truncate"
+                previousClassName="cursor-pointer ml-0.5 rounded-sm truncate"
+                disabledClassName="pointer-events-none"
               />
             </>
           )}

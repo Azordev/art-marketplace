@@ -1,7 +1,7 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import BannerHome from '../../assets/img/banner-2.png';
-import {isAuthenticated} from '../../utils/isAuthenticated';
+import React from "react";
+import { Link } from "react-router-dom";
+import BannerHome from "../../assets/img/banner-2.png";
+import { isAuthenticated } from "../../utils/isAuthenticated";
 
 const Hero = () => (
   <section className="bg-white w-full">

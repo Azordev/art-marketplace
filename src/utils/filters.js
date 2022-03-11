@@ -23,9 +23,9 @@ export const filterByCategory = (products, categoryId) => {
  */
 export const filterBySearch = (products, search) => {
   return products.filter(
-      ({name, description}) =>
-        name.toLowerCase().includes(search.toLowerCase()) ||
-      description.toLowerCase().includes(search.toLowerCase()),
+    ({ name, description }) =>
+      name.toLowerCase().includes(search.toLowerCase()) ||
+      description.toLowerCase().includes(search.toLowerCase())
   );
 };
 
@@ -34,7 +34,7 @@ export const filterBySearch = (products, search) => {
  * @return Returns all products with the brand selected
  */
 export const filterGeneric = (products) => {
-  return products.filter((product) => product.categories.section_id === '2');
+  return products.filter((product) => product.categories.section_id === "2");
 };
 
 /**
@@ -42,5 +42,5 @@ export const filterGeneric = (products) => {
  * @return Returns all products with the brand selected
  */
 export const filterManufacturer = (products) => {
-  return products.filter((product) => product.categories.section_id === '1');
+  return products.filter((product) => product.categories.section_id === "1");
 };

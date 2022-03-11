@@ -1,6 +1,6 @@
-import React from 'react';
-import LogoFooter from '../assets/img/logo.png';
-import notLoggedButtons from './isNotLogged';
+import React from "react";
+import LogoFooter from "../assets/img/logo.png";
+import notLoggedButtons from "./isNotLogged";
 
 const Footer = (props) => {
   return (

@@ -1,4 +1,4 @@
-import {TOKEN_NAME, USER} from '../config/constants';
+import { TOKEN_NAME, USER } from "../config/constants";
 
 export const getToken = () => {
   return JSON.parse(sessionStorage.getItem(TOKEN_NAME));

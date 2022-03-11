@@ -1,3 +1,3 @@
 export const isAuthenticated = () => {
-  return !!sessionStorage.getItem('jwt-tk');
+  return !!sessionStorage.getItem("jwt-tk");
 };

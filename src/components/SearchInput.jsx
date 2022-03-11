@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
-import {useHistory} from 'react-router-dom';
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
-const SearchInput = ({page, query}) => {
-  const {push} = useHistory();
-  const [searchValue, setSearchValue] = useState(query ? query : '');
+const SearchInput = ({ page, query }) => {
+  const { push } = useHistory();
+  const [searchValue, setSearchValue] = useState(query ? query : "");
 
-  const searchMargin = page === 'home' ? 'lg:mx-7' : 'lg:ml-7';
+  const searchMargin = page === "home" ? "lg:mx-7" : "lg:ml-7";
 
   const changeHandler = (e) => setSearchValue(e.target.value);
 

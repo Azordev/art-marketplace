@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 export const ArrowLeft = () => {
   return (
     <svg
       style={{
-        position: 'absolute',
-        transform: 'translate(-50%, -50%)',
+        position: "absolute",
+        transform: "translate(-50%, -50%)",
       }}
       xmlns="http://www.w3.org/2000/svg"
       className="h-6 w-6"
@@ -27,8 +27,8 @@ export const ArrowRight = () => {
   return (
     <svg
       style={{
-        position: 'absolute',
-        transform: 'translate(-50%, -50%)',
+        position: "absolute",
+        transform: "translate(-50%, -50%)",
       }}
       xmlns="http://www.w3.org/2000/svg"
       className="h-6 w-6"

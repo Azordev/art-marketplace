@@ -1,6 +1,6 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import {isAuthenticated} from '../utils/isAuthenticated';
+import React from "react";
+import { Link } from "react-router-dom";
+import { isAuthenticated } from "../utils/isAuthenticated";
 
 const notLoggedButtons = () => {
   if (!isAuthenticated()) {

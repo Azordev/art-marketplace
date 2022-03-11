@@ -1,17 +1,17 @@
-import React, {useEffect, useState} from 'react';
-import {useHistory} from 'react-router-dom';
-import {ObjectList, Hero} from '../components/Home';
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import { ObjectList, Hero } from "../components/Home";
 import {
   getLatestArtworks,
   getOnViewArtworks,
   getFemaleArtistArtworks,
-} from '../actions/artworks';
-import {MainNav, Footer} from '../components';
-import Slider from '../components/Slider';
-import {getDepartments} from '../actions/departments';
+} from "../actions/artworks";
+import { MainNav, Footer } from "../components";
+import Slider from "../components/Slider";
+import { getDepartments } from "../actions/departments";
 
 const Home = () => {
-  const {push} = useHistory();
+  const { push } = useHistory();
   const [latestArtworks, setLatestArtworks] = useState([]);
   const [onViewArtworks, setOnViewArtworks] = useState([]);
   const [femaleArtistArtworks, setFemaleArtistArtworks] = useState([]);
@@ -61,7 +61,7 @@ const Home = () => {
           items={latestArtworks}
         />
       </div>
-      <Footer showButtons={true}/>
+      <Footer showButtons={true} />
     </>
   );
 };
