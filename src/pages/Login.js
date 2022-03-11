@@ -1,26 +1,26 @@
-import { useState } from "react";
-import { login } from "../actions/authActions";
-import { AuthInput, Footer, SecondNav } from "../components";
-import { Link, useHistory } from "react-router-dom";
-import { Notify } from "notiflix";
+import {useState} from 'react';
+import {login} from '../actions/authActions';
+import {AuthInput, Footer, SecondNav} from '../components';
+import {Link, useHistory} from 'react-router-dom';
+import {Notify} from 'notiflix';
 
-const Login = ({ isLogin }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const Login = ({isLogin}) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isForgottenPassword, setIsForgottenPassword] = useState(false);
-  const { push } = useHistory();
+  const {push} = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     // We could remove this validation or we can keep it to double check
     if (!email || !password) {
-      return Notify.failure("Todos los campos son requeridos");
+      return Notify.failure('Todos los campos son requeridos');
     }
 
     setIsLoading(true);
-    const res = await login({ email, password });
+    const res = await login({email, password});
     setIsLoading(false);
 
     if (!res.status) {
@@ -28,7 +28,7 @@ const Login = ({ isLogin }) => {
     }
 
     Notify.success(res.message);
-    return push("/");
+    return push('/');
   };
 
   return (
@@ -74,7 +74,7 @@ const Login = ({ isLogin }) => {
                       </div>
                       <div className="w-full mb-8 text-text font-semibold text-2xl">
                         Contacta al servicio técnico para recuperar tu
-                        contraseña:{" "}
+                        contraseña:{' '}
                         <a
                           className="hover:no-underline text-tertiary underline"
                           href="mailto:contacto@sencico.gob.pe"

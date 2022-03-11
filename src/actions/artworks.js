@@ -1,6 +1,6 @@
-import authAxios from "../config/authAxios";
-import { STATUS_OK } from "../config/constants";
-import response from "../config/network/response";
+import authAxios from '../config/authAxios';
+import {STATUS_OK} from '../config/constants';
+import response from '../config/network/response';
 
 export const getArtworkById = async (id, callback) => {
   try {
@@ -12,7 +12,7 @@ export const getArtworkById = async (id, callback) => {
     if (res.status === STATUS_OK) {
       callback(res.data?.data || []);
     } else {
-      response.error("Status not ok");
+      response.error('Status not ok');
       callback([]);
     }
   } catch (error) {
@@ -52,13 +52,13 @@ export const getArtworksQuery = async (query) => {
 export const getLatestArtworks = async (callback) => {
   try {
     const res = await authAxios.get(
-      `/artworks?recently_acquired=true&limit=5&has_image=1`
+        `/artworks?recently_acquired=true&limit=5&has_image=1`,
     );
 
     if (res.status === STATUS_OK) {
       callback(res.data.data);
     } else {
-      response.error(null, res.data?.message || "getLatestArtworks::Error");
+      response.error(null, res.data?.message || 'getLatestArtworks::Error');
       callback([]);
     }
   } catch (error) {
@@ -70,15 +70,15 @@ export const getLatestArtworks = async (callback) => {
 export const getFemaleArtistArtworks = async (callback) => {
   try {
     const res = await authAxios.get(
-      `/artworks?female_artists=true&limit=5&has_image=1`
+        `/artworks?female_artists=true&limit=5&has_image=1`,
     );
 
     if (res.status === STATUS_OK) {
       callback(res.data.data);
     } else {
       response.error(
-        null,
-        res.data?.message || "getFemaleArtistArtworks::Error"
+          null,
+          res.data?.message || 'getFemaleArtistArtworks::Error',
       );
       callback([]);
     }
@@ -91,7 +91,7 @@ export const getFemaleArtistArtworks = async (callback) => {
 export const getOnViewArtworks = async (callback) => {
   try {
     const res = await authAxios.get(
-      `/artworks?currently_on_view=true&limit=5&has_image=1`
+        `/artworks?currently_on_view=true&limit=5&has_image=1`,
     );
 
     if (res.status === STATUS_OK) {

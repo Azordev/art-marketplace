@@ -1,6 +1,6 @@
-import { removeHeaders } from "../config/network/authToken";
-import { deleteInfo, setInfo } from "../utils/authHelper";
-import deleteEmptyFields from "../utils/deleteEmptyFields";
+import {removeHeaders} from '../config/network/authToken';
+import {deleteInfo, setInfo} from '../utils/authHelper';
+import deleteEmptyFields from '../utils/deleteEmptyFields';
 
 /**
  *
@@ -9,12 +9,12 @@ import deleteEmptyFields from "../utils/deleteEmptyFields";
  */
 export const login = async (data) => {
   try {
-    setInfo("mocked-token", data);
+    setInfo('mocked-token', data);
 
-    return { status: true, message: "Inicio de sesión exitoso" };
+    return {status: true, message: 'Inicio de sesión exitoso'};
   } catch (error) {
     // TODO: Improve error handling when the backend allows it
-    return { status: false, message: "Error al iniciar sesión" };
+    return {status: false, message: 'Error al iniciar sesión'};
   }
 };
 
@@ -30,10 +30,10 @@ export const register = async (data) => {
     // Patching the weird backend error that doesn't allow empty strings
     deleteEmptyFields(data);
 
-    return { status: true, message: "Usuario registrado exitosamente" };
+    return {status: true, message: 'Usuario registrado exitosamente'};
   } catch (error) {
     // TODO: Improve error handling when the backend allows it
-    return { status: false, message: "Error en el servidor al registrarse" };
+    return {status: false, message: 'Error en el servidor al registrarse'};
   }
 };
 
@@ -42,9 +42,9 @@ export const updateUser = async (id, data) => {
     // Patching the weird backend error that doesn't allow empty strings
     deleteEmptyFields(data);
 
-    return { status: true, message: "Usuario actualizado exitosamente" };
+    return {status: true, message: 'Usuario actualizado exitosamente'};
   } catch (error) {
     // TODO: Improve error handling when the backend allows it
-    return { status: false, message: "Error en el servidor al actualizar" };
+    return {status: false, message: 'Error en el servidor al actualizar'};
   }
 };

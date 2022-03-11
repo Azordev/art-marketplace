@@ -1,6 +1,6 @@
-import axios from "axios";
-import { getToken } from "../utils/authHelper";
-import { API_URL } from "../config/constants";
+import axios from 'axios';
+import {getToken} from '../utils/authHelper';
+import {API_URL} from '../config/constants';
 
 const accessToken = getToken();
 

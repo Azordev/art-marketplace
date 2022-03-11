@@ -1,4 +1,4 @@
-import { USER } from "../config/constants";
+import {USER} from '../config/constants';
 
 export const getUserInformation = () => {
   if (sessionStorage.getItem(USER)) {
@@ -8,17 +8,17 @@ export const getUserInformation = () => {
 
   return {
     id: null,
-    name: "",
-    last_name: "",
-    email: "",
+    name: '',
+    last_name: '',
+    email: '',
     email_verified_at: null,
-    phone: "",
-    image: "",
-    status: "",
-    company: "",
-    occupation: "",
-    country: "",
-    created_at: "",
-    updated_at: "",
+    phone: '',
+    image: '',
+    status: '',
+    company: '',
+    occupation: '',
+    country: '',
+    created_at: '',
+    updated_at: '',
   };
 };

@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import {Link} from 'react-router-dom';
 
-import Logo from "../assets/img/logo.png";
+import Logo from '../assets/img/logo.png';
 
-const SecondNav = ({ isLogin }) => {
+const SecondNav = ({isLogin}) => {
   return (
     <>
       <section className="relative w-full sm:px-9 text-gray-700 bg-white body-font">

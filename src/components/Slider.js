@@ -1,21 +1,21 @@
-import React from "react";
-import Slider from "react-slick";
-import { ArrowLeft, ArrowRight } from "./Arrows";
+import React from 'react';
+import Slider from 'react-slick';
+import {ArrowLeft, ArrowRight} from './Arrows';
 
 const fontColor = {
   whiteElement: {
-    backgroundColor: "#F8F1F1",
-    color: "#000",
+    backgroundColor: '#F8F1F1',
+    color: '#000',
   },
 };
 const arrowColor = {
   whiteElement: {
-    backgroundColor: "#F8F1F1",
-    color: "#11698E",
+    backgroundColor: '#F8F1F1',
+    color: '#11698E',
   },
 };
 
-const Prev = ({ className, style, onClick }) => {
+const Prev = ({className, style, onClick}) => {
   return (
     <div
       className={`${className} arrow-custom-circle`}
@@ -29,7 +29,7 @@ const Prev = ({ className, style, onClick }) => {
     </div>
   );
 };
-const Next = ({ className, style, onClick }) => {
+const Next = ({className, style, onClick}) => {
   return (
     <div
       className={`${className} arrow-custom-circle`}
@@ -49,10 +49,10 @@ const ProductSlider = ({
   departments,
   itemClick,
   className,
-  title
+  title,
 }) => {
   const settings = {
-    className: "px-2 xl:px-10",
+    className: 'px-2 xl:px-10',
     dots: false,
     rows: 1,
     slidesToShow: 3,

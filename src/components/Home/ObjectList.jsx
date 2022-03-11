@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import ArtworkItem from "../ArtworkItem";
+import React from 'react';
+import {Link} from 'react-router-dom';
+import ArtworkItem from '../ArtworkItem';
 
-const ObjectList = ({ title, seeMore, items }) => {
+const ObjectList = ({title, seeMore, items}) => {
   return (
     <div>
       <div className="w-full font-bold flex justify-start items-end px-10 lg:px-20 xl:px-10 pt-2 pb-6 flex-wrap">

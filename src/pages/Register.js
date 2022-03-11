@@ -1,10 +1,10 @@
-import React, { useState, useRef } from "react";
-import { Link, useHistory } from "react-router-dom";
-import { Notify } from "notiflix";
-import AuthInput from "../components/AuthInput";
-import SecondNav from "../components/SecondNav";
-import { register } from "../actions/authActions";
-import { Footer } from "../components";
+import React, {useState, useRef} from 'react';
+import {Link, useHistory} from 'react-router-dom';
+import {Notify} from 'notiflix';
+import AuthInput from '../components/AuthInput';
+import SecondNav from '../components/SecondNav';
+import {register} from '../actions/authActions';
+import {Footer} from '../components';
 
 
 const Register = () => {
@@ -26,7 +26,7 @@ const Register = () => {
     }
 
     Notify.success(res.message);
-    history.push("/login");
+    history.push('/login');
   };
 
   return (
@@ -97,7 +97,7 @@ const Register = () => {
                       placeholder="Teléfono"
                       autoComplete="tel"
                       required
-                      
+
                     />
                     <AuthInput
                       className="block w-full px-4 py-3 mb-4 border border-tertiary border-opacity-100 bg-complementary rounded-lg focus:ring focus:ring-blue-500 focus:outline-none placeholder-text text-2xl"
