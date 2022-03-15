@@ -1,5 +1,3 @@
-import React from "react";
-
 const AuthInput = (props) => (
   <div className="relative">
     <input

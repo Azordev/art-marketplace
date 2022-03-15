@@ -1,7 +1,6 @@
-import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory } from 'react-router-dom';
 
-import FilterIcon from "../../assets/icons/filtro.png";
+import FilterIcon from '../../assets/icons/filtro.png';
 
 const Filters = ({
   categoryClicked,
@@ -14,10 +13,10 @@ const Filters = ({
   const handleClick = (e, filter) => {
     e.preventDefault();
 
-    push("/artworks/");
+    push('/artworks/');
 
     if (currentFilter === filter) {
-      return setFilter("none");
+      return setFilter('none');
     }
     return setFilter(filter);
   };
@@ -38,15 +37,15 @@ const Filters = ({
             to="#"
             className="text-center block w-full py-3.5 text-xl font-bold leading-6 text-black whitespace-no-wrap bg-add rounded-md shadow-sm"
             style={
-              currentFilter === "category"
-                ? { backgroundColor: "#11698E", color: "#FFF" }
-                : { backgroundColor: "#F8F1F1", color: "#000" }
+              currentFilter === 'category'
+                ? { backgroundColor: '#11698E', color: '#FFF' }
+                : { backgroundColor: '#F8F1F1', color: '#000' }
             }
-            onClick={(e) => handleClick(e, "category")}
+            onClick={(e) => handleClick(e, 'category')}
           >
             Departamentos
           </Link>
-          {currentFilter === "category" && (
+          {currentFilter === 'category' && (
             <div className="border border-black rounded-md w-full pl-2">
               {departments.map((department) => (
                 <div
@@ -63,11 +62,11 @@ const Filters = ({
             to="#"
             className="text-center block w-full py-3.5 text-xl font-bold leading-6 text-black whitespace-no-wrap bg-add rounded-md shadow-sm"
             style={
-              currentFilter === "generic"
-                ? { backgroundColor: "#11698E", color: "#FFF" }
-                : { backgroundColor: "#F8F1F1", color: "#000" }
+              currentFilter === 'generic'
+                ? { backgroundColor: '#11698E', color: '#FFF' }
+                : { backgroundColor: '#F8F1F1', color: '#000' }
             }
-            onClick={(e) => handleClick(e, "generic")}
+            onClick={(e) => handleClick(e, 'generic')}
           >
             Por Tipo
           </Link>
@@ -75,11 +74,11 @@ const Filters = ({
             to="#"
             className="text-center block w-full py-3.5 text-xl font-bold leading-6 text-black whitespace-no-wrap bg-add rounded-md shadow-sm"
             style={
-              currentFilter === "manufacturer"
-                ? { backgroundColor: "#11698E", color: "#FFF" }
-                : { backgroundColor: "#F8F1F1", color: "#000" }
+              currentFilter === 'manufacturer'
+                ? { backgroundColor: '#11698E', color: '#FFF' }
+                : { backgroundColor: '#F8F1F1', color: '#000' }
             }
-            onClick={(e) => handleClick(e, "manufacturer")}
+            onClick={(e) => handleClick(e, 'manufacturer')}
           >
             Por Fecha
           </Link>

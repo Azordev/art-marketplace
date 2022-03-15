@@ -1,9 +1,7 @@
-import React from "react";
-import LogoFooter from "../assets/img/logo.png";
+import LogoFooter from '../assets/img/logo.png';
 import notLoggedButtons from './isNotLogged';
 
 const Footer = (props) => {
-
   return (
     <>
       <section className="bg-complementary px-5 lg:px-10 2xl:px-20 py-10 xl:py-16">

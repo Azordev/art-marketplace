@@ -17,7 +17,7 @@
   details summary::after {
     width: 30px;
     height: 20px;
-    content: url("https://img.icons8.com/material-rounded/24/11698E/chevron-right.png");
+    content: url('https://img.icons8.com/material-rounded/24/11698E/chevron-right.png');
     position: absolute;
     right: 5%;
     top: 50%;
@@ -88,11 +88,11 @@
   background-color: var(--add-color);
 }
 .bg-add-back-img-1 {
-  background-image: url("./assets/img/1.png");
+  background-image: url('./assets/img/1.png');
   background-repeat: no-repeat;
 }
 .bg-add-back-img-2 {
-  background-image: url("./assets/img/fondo.png");
+  background-image: url('./assets/img/fondo.png');
   background-repeat: no-repeat;
 }
 .w-17-4 {
@@ -199,7 +199,7 @@
 
 .slick-arrow.slick-next::before,
 .slick-arrow.slick-prev::before {
-  content: "";
+  content: '';
 }
 .dropdown:hover .dropdown-menu {
   display: block;

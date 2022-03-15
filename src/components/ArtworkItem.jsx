@@ -1,6 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Desing1 from "../assets/img/design-1.png";
+import { Link } from 'react-router-dom';
+import Desing1 from '../assets/img/design-1.png';
 
 const ArtworkItem = ({ data }) => (
   <Link
@@ -9,12 +8,18 @@ const ArtworkItem = ({ data }) => (
   >
     <img
       className="w-full h-64 py-4 px-4"
-      src={data?.images?.web ? `${data.images?.web?.url}` : Desing1}
-      alt={data.title ? data.title : "Nombre de la obra"}
+      src={data?.images?.web
+        ? `${data.images?.web?.url}`
+        : Desing1}
+      alt={data.title
+        ? data.title
+        : 'Nombre de la obra'}
     />
     <div>
       <div className="font-extrabold vertical-ellipsis overflow-hidden text-center text-ellipsis block mx-6 text-2xl xl:text-xl 2xl:text-2xl my-4 leading-6">
-        {data.title ? data.title : "Nombre de la obra"}
+        {data.title
+          ? data.title
+          : 'Nombre de la obra'}
       </div>
       <div className="overflow-hidden w-full">
         <p className="text-black text-center text-xl overflow-hidden text-ellipsis xl:text-base 2xl:text-xl mx-6 pb-5 leading-6">

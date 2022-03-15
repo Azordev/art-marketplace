@@ -1,5 +1,5 @@
 export const loadFunction = (callback) => {
-  return new Promise((reject, resolve) => {
+  return new Promise(() => {
     callback();
   });
 };

@@ -1,17 +1,16 @@
-import React from "react";
-import Slider from "react-slick";
-import { ArrowLeft, ArrowRight } from "./Arrows";
+import Slider from 'react-slick';
+import { ArrowLeft, ArrowRight } from './Arrows';
 
 const fontColor = {
   whiteElement: {
-    backgroundColor: "#F8F1F1",
-    color: "#000",
+    backgroundColor: '#F8F1F1',
+    color: '#000',
   },
 };
 const arrowColor = {
   whiteElement: {
-    backgroundColor: "#F8F1F1",
-    color: "#11698E",
+    backgroundColor: '#F8F1F1',
+    color: '#11698E',
   },
 };
 
@@ -44,15 +43,9 @@ const Next = ({ className, style, onClick }) => {
   );
 };
 
-const ProductSlider = ({
-  data,
-  departments,
-  itemClick,
-  className,
-  title
-}) => {
+const ProductSlider = ({ data, departments, itemClick, className, title }) => {
   const settings = {
-    className: "px-2 xl:px-10",
+    className: 'px-2 xl:px-10',
     dots: false,
     rows: 1,
     slidesToShow: 3,
@@ -80,7 +73,7 @@ const ProductSlider = ({
     <div className={`${className} px-8`}>
       {title && (
         <div className="w-full pb-4 flex justify-center md:justify-start items-end">
-          <p className={`text-4xl mt-4 text-white`}>{title}</p>
+          <p className={'text-4xl mt-4 text-white'}>{title}</p>
         </div>
       )}
       <Slider {...settings}>
