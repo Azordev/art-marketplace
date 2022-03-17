@@ -5,25 +5,25 @@ import Desing1 from "../assets/img/design-1.png";
 const ArtworkItem = ({ data }) => (
   <Link
     to={`/artwork/${data.accession_number}`}
-    className="md:w-56 hover-scale--min relative p-0 sm:mx-16 md:mx-0 mb-10 xl:mb-0 shadow-lg border-grayed border border-solid rounded flex flex-col justify-between"
+    className="relative flex flex-col justify-between p-0 mb-10 border border-solid rounded shadow-lg md:w-56 hover-scale--min sm:mx-16 md:mx-0 xl:mb-0 border-grayed"
   >
     <img
-      className="w-full h-64 py-4 px-4"
+      className="object-contain w-full h-64 px-4 py-4"
       src={data?.images?.web ? `${data.images?.web?.url}` : Desing1}
       alt={data.title ? data.title : "Nombre de la obra"}
     />
     <div>
-      <div className="font-extrabold vertical-ellipsis overflow-hidden text-center text-ellipsis block mx-6 text-2xl xl:text-xl 2xl:text-2xl my-4 leading-6">
+      <div className="block mx-6 my-4 overflow-hidden text-2xl font-extrabold leading-6 text-center vertical-ellipsis text-ellipsis xl:text-xl 2xl:text-2xl">
         {data.title ? data.title : "Nombre de la obra"}
       </div>
-      <div className="overflow-hidden w-full">
-        <p className="text-black text-center text-xl overflow-hidden text-ellipsis xl:text-base 2xl:text-xl mx-6 pb-5 leading-6">
+      <div className="w-full overflow-hidden">
+        <p className="pb-5 mx-6 overflow-hidden text-xl leading-6 text-center text-black text-ellipsis xl:text-base 2xl:text-xl">
           {data.creation_date}
         </p>
       </div>
     </div>
-    <div className="relative flex flex-col justify-center pb-5 sm:flex-row sm:space-x-4 mx-5 sm:mx-0 ">
-      <span className="shadow-button inline-flex items-center justify-center px-11 sm:px-16 md:px-11 xl:px-8 2xl:px-11 py-2 text-xl xl:text-base 2xl:text-xl font-semibold leading-6 text-white whitespace-nowrap bg-black rounded-md shadow-sm tracking-add bg-primary">
+    <div className="relative flex flex-col justify-center pb-5 mx-5 sm:flex-row sm:space-x-4 sm:mx-0 ">
+      <span className="inline-flex items-center justify-center py-2 text-xl font-semibold leading-6 text-white bg-black rounded-md shadow-sm shadow-button px-11 sm:px-16 md:px-11 xl:px-8 2xl:px-11 xl:text-base 2xl:text-xl whitespace-nowrap tracking-add bg-primary">
         Ver
       </span>
     </div>
