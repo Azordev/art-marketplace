@@ -14,6 +14,7 @@ import {
   filterBySubcategory,
 } from "../utils/filters";
 import { getDepartments } from "../actions/departments";
+import { getTypes } from "../actions/types";
 
 const Artworks = () => {
   const { search } = useLocation();
@@ -21,6 +22,7 @@ const Artworks = () => {
   const [products, setProducts] = useState([]);
   const [currentProducts, setCurrentProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [types, setTypes] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState("none");
   const [selectedCategory, setSelectedCategory] = useState("Todas");
 
@@ -29,6 +31,7 @@ const Artworks = () => {
   const getProductsAndCategories = async () => {
     const data = await getArtworks();
     setCategories(getDepartments());
+    setTypes(getTypes());
 
     const categoryId = parseInt(filters.category);
 
@@ -103,6 +106,7 @@ const Artworks = () => {
         <Filters
           categoryClicked={categoryClicked}
           categories={categories}
+          types={types}
           setFilter={setSelectedFilter}
           currentFilter={selectedFilter}
         />

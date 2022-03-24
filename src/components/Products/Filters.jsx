@@ -6,6 +6,7 @@ import FilterIcon from "../../assets/icons/filtro.png";
 const Filters = ({
   categoryClicked,
   categories: departments,
+  types,
   currentFilter,
   setFilter,
 }) => {
@@ -71,6 +72,19 @@ const Filters = ({
           >
             Por Tipo
           </Link>
+          {currentFilter === "generic" && (
+            <div className="border border-black rounded-md w-full pl-2">
+              {types.map((type) => (
+                <div
+                  key={`${type.id}-key`}
+                  onClick={(e) => categoryClicked(e, type.en)}
+                  className="py-2 cursor-pointer text-black underline hover:no-underline"
+                >
+                  {type.es}
+                </div>
+              ))}
+            </div>
+          )}
           <Link
             to="#"
             className="text-center block w-full py-3.5 text-xl font-bold leading-6 text-black whitespace-no-wrap bg-add rounded-md shadow-sm"
