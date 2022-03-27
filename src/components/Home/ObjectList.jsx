@@ -11,7 +11,7 @@ const ObjectList = ({ title, seeMore, items }) => {
         </p>
         <Link
           to={seeMore}
-          className="text-2xl tracking-tighter font-normal text-gray-600 underline"
+          className="text-2xl tracking-tighter font-normal text-gray-600 underline hover:no-underline hover-scale--min"
         >
           Ver más
         </Link>
