@@ -4,23 +4,42 @@ import { Link, useHistory } from "react-router-dom";
 import FilterIcon from "../../assets/icons/filtro.png";
 
 const Filters = ({
-  categoryClicked,
-  categories: departments,
+  departments,
   types,
-  currentFilter,
+  selectedFilter,
   setFilter,
+
+  setSelectedDepartment,
+  setSelectedTypes,
+  addQuery
 }) => {
   const { push } = useHistory();
 
   const handleClick = (e, filter) => {
     e.preventDefault();
 
-    push("/artworks/");
+    // push("/artworks/");
 
-    if (currentFilter === filter) {
+    if (selectedFilter === filter) {
       return setFilter("none");
     }
     return setFilter(filter);
+  };
+
+  const handleTypes = (e, type) => {
+    e.preventDefault();
+
+    setSelectedTypes(type);
+
+    addQuery('type', type)
+  }
+
+  const handleDepartment = (e, department) => {
+    e.preventDefault();
+
+    setSelectedDepartment(department);
+
+    addQuery('department', department)
   };
 
   return (
@@ -39,20 +58,20 @@ const Filters = ({
             to="#"
             className="text-center block w-full py-3.5 text-xl font-bold leading-6 text-black whitespace-no-wrap bg-add rounded-md shadow-sm"
             style={
-              currentFilter === "category"
+              selectedFilter === "department"
                 ? { backgroundColor: "#11698E", color: "#FFF" }
                 : { backgroundColor: "#F8F1F1", color: "#000" }
             }
-            onClick={(e) => handleClick(e, "category")}
+            onClick={(e) => handleClick(e, "department")}
           >
             Departamentos
           </Link>
-          {currentFilter === "category" && (
-            <div className="border border-black rounded-md w-full pl-2">
+          {selectedFilter === "department" && (
+            <div className="border border-black rounded-md w-full pl-2 max-h-96 overflow-y-scroll">
               {departments.map((department) => (
                 <div
                   key={department.id}
-                  onClick={(e) => categoryClicked(e, department.en)}
+                  onClick={(e) => handleDepartment(e, department.en)}
                   className="py-2 cursor-pointer text-black underline hover:no-underline"
                 >
                   {department.es}
@@ -64,20 +83,20 @@ const Filters = ({
             to="#"
             className="text-center block w-full py-3.5 text-xl font-bold leading-6 text-black whitespace-no-wrap bg-add rounded-md shadow-sm"
             style={
-              currentFilter === "generic"
+              selectedFilter === "types"
                 ? { backgroundColor: "#11698E", color: "#FFF" }
                 : { backgroundColor: "#F8F1F1", color: "#000" }
             }
-            onClick={(e) => handleClick(e, "generic")}
+            onClick={(e) => handleClick(e, "types")}
           >
             Por Tipo
           </Link>
-          {currentFilter === "generic" && (
-            <div className="border border-black rounded-md w-full pl-2">
+          {selectedFilter === "types" && (
+            <div className="border border-black rounded-md w-full pl-2  max-h-96 overflow-y-scroll">
               {types.map((type) => (
                 <div
                   key={`${type.id}-key`}
-                  onClick={(e) => categoryClicked(e, type.en)}
+                  onClick={ (e) => handleTypes(e, type.en) }
                   className="py-2 cursor-pointer text-black underline hover:no-underline"
                 >
                   {type.es}
@@ -85,18 +104,6 @@ const Filters = ({
               ))}
             </div>
           )}
-          <Link
-            to="#"
-            className="text-center block w-full py-3.5 text-xl font-bold leading-6 text-black whitespace-no-wrap bg-add rounded-md shadow-sm"
-            style={
-              currentFilter === "manufacturer"
-                ? { backgroundColor: "#11698E", color: "#FFF" }
-                : { backgroundColor: "#F8F1F1", color: "#000" }
-            }
-            onClick={(e) => handleClick(e, "manufacturer")}
-          >
-            Por Fecha
-          </Link>
         </div>
       </div>
     </>
