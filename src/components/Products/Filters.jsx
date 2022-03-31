@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 
 import FilterIcon from "../../assets/icons/filtro.png";
 
@@ -8,17 +8,24 @@ const Filters = ({
   types,
   selectedFilter,
   setFilter,
-
   setSelectedDepartment,
-  setSelectedTypes,
-  addQuery
+  setSelectedTypes
 }) => {
+  const { search } = useLocation();
   const { push } = useHistory();
+
+  const updateQueryParams = (key, value) => {
+    const searchParams = new URLSearchParams(search);
+    searchParams.delete('page');
+    searchParams.set(key, value);
+    push({
+      pathname: 'artworks',
+      search: searchParams.toString()
+    });
+  };
 
   const handleClick = (e, filter) => {
     e.preventDefault();
-
-    // push("/artworks/");
 
     if (selectedFilter === filter) {
       return setFilter("none");
@@ -28,18 +35,14 @@ const Filters = ({
 
   const handleTypes = (e, type) => {
     e.preventDefault();
-
     setSelectedTypes(type);
-
-    addQuery('type', type)
+    updateQueryParams('type', type);
   }
 
   const handleDepartment = (e, department) => {
     e.preventDefault();
-
     setSelectedDepartment(department);
-
-    addQuery('department', department)
+    updateQueryParams('department', department);
   };
 
   return (

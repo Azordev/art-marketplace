@@ -21,48 +21,15 @@ export const getArtworkById = async (id, callback) => {
   }
 };
 
-export const getArtworks = async () => {
-  try {
-    // const res = await authAxios.get(`/artworks?has_image=1&limit=25`);
-    const res = await authAxios.get(`/artworks?has_image=1&limit=16&skip=100`);
-    if (res.status === STATUS_OK) {
-      return res.data?.data || [];
-    } else {
-      return [];
-    }
-  } catch (error) {
-    response.error(error);
-    return [];
-  }
-};
-
-export const getArtworksByDepartment = async (department) => {
-  try {
-    const res = await authAxios.get(`/artworks?has_image=1&department=${department}&limit=25`);
-    if (res.status === STATUS_OK) {
-      return res.data?.data || [];
-    } else {
-      return [];
-    }
-  } catch (error) {
-    response.error(error);
-    return [];
-  }
-};
-
-export const getArtworkswithFilter = async ( {department, type, skip} ) => {
-  let offset;
-  if (skip) {
-    offset = (parseInt(skip) - 1) * 16;
-  }
-  console.log(offset)
-  console.log(skip)
+export const getArtworks = async ( {department, type, page: skip, q} ) => {
+  const offset = skip ? (parseInt(skip) - 1) * 16 : undefined;
   try {
     const res = await authAxios
-      .get(`/artworks?has_image=1&limit=16${department ? `&department=${department}` : ''}${type ? `&type=${type}` : ''}${skip ? `&skip=${offset}` : ''}`);
-    
+      .get(`/artworks?has_image=1&limit=16${q ? `&q=${q}` : ''}${department ? `&department=${department}` : ''}${type ? `&type=${type}` : ''}${skip ? `&skip=${offset}` : ''}`);
     if (res.status === STATUS_OK) {
-      return res.data?.data || [];
+      const total = res.data.info.total;
+      const data = res.data.data
+      return {total, data};
     } else {
       return [];
     }

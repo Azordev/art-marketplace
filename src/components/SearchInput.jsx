@@ -1,9 +1,20 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 const SearchInput = ({ page, query }) => {
   const { push } = useHistory();
+  const { search } = useLocation();
   const [searchValue, setSearchValue] = useState(query ? query : "");
+
+  const addQuery = (key, value) => {
+    const searchParams = new URLSearchParams(search); 
+    searchParams.set(key, value);
+    searchParams.delete('page');
+    push({
+      pathname: 'artworks',
+      search: searchParams.toString()
+    });
+  };
 
   const searchMargin = page === "home" ? "lg:mx-7" : "lg:ml-7";
 
@@ -11,7 +22,7 @@ const SearchInput = ({ page, query }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    push(`/artworks?q=${searchValue.toLowerCase()}`);
+    addQuery('q', searchValue.toLowerCase());
   };
 
   return (
