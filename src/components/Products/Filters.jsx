@@ -1,7 +1,8 @@
 import React from "react";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import FilterIcon from "../../assets/icons/filtro.png";
+import { useSearchParams } from '../../hooks/useSearchParams';
 
 const Filters = ({
   departments,
@@ -11,18 +12,7 @@ const Filters = ({
   setSelectedDepartment,
   setSelectedTypes
 }) => {
-  const { search } = useLocation();
-  const { push } = useHistory();
-
-  const updateQueryParams = (key, value) => {
-    const searchParams = new URLSearchParams(search);
-    searchParams.delete('page');
-    searchParams.set(key, value);
-    push({
-      pathname: 'artworks',
-      search: searchParams.toString()
-    });
-  };
+  const { updateQueryParams } = useSearchParams();
 
   const handleClick = (e, filter) => {
     e.preventDefault();

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback } from "react";
-import { useLocation, useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import queryString from "query-string";
 import { MainNav, Footer } from "../components";
 import ArtworkItem from "../components/ArtworkItem";
@@ -8,6 +8,7 @@ import ReactPaginate from 'react-paginate';
 import { getArtworks } from "../actions/artworks";
 import { getDepartments } from "../actions/departments";
 import { getTypes } from "../actions/types";
+import { useSearchParams } from '../hooks/useSearchParams';
 
 const Artworks = () => {
     const [artworks, setArtworks] = useState([]);
@@ -17,18 +18,9 @@ const Artworks = () => {
     const [selectedDepartment, setSelectedDepartment] = useState();
     const [selectedType, setSelectedTypes] = useState();
     const [totalArtworks, setTotalArtworks] = useState(0);
+    const { addQuery } = useSearchParams();
 
     const { search } = useLocation();
-    const { push } = useHistory();
-
-    const addQuery = (key, value) => {
-      const searchParams = new URLSearchParams(search); 
-      searchParams.set(key, value);
-      push({
-        pathname: 'artworks',
-        search: searchParams.toString()
-      });
-    };
 
     const filters = useMemo(() =>  queryString.parse(search), [search]);
 
