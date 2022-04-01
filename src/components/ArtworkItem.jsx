@@ -21,20 +21,6 @@ const ArtworkItem = ({ data }) => (
           {data.creation_date}
         </p>
       </div>
-      {
-        // Para el testo
-      }
-      <div className="w-full overflow-hidden">
-        <p className="pb-5 mx-6 overflow-hidden text-xl leading-6 text-center text-black text-ellipsis xl:text-base 2xl:text-xl">
-          {data.department}
-        </p>
-      </div>
-      <div className="w-full overflow-hidden">
-        <p className="pb-5 mx-6 overflow-hidden text-xl leading-6 text-center text-black text-ellipsis xl:text-base 2xl:text-xl">
-          {data.type}
-        </p>
-      </div>
-
     </div>
     <div className="relative flex flex-col justify-center pb-5 mx-5 sm:flex-row sm:space-x-4 sm:mx-0 ">
       <span className="inline-flex items-center justify-center py-2 text-xl font-semibold leading-6 text-white bg-black rounded-md shadow-sm shadow-button px-11 sm:px-16 md:px-11 xl:px-8 2xl:px-11 xl:text-base 2xl:text-xl whitespace-nowrap tracking-add bg-primary">

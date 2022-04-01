@@ -32,15 +32,15 @@ const Artworks = () => {
 
     const filters = useMemo(() =>  queryString.parse(search), [search]);
 
-    const getSomeArtworks = useCallback(async () => {
+    const fetchArtworks = useCallback(async () => {
       const { total, data } = await getArtworks(filters);
       setTotalArtworks(total)
       setArtworks(data);
     }, [ filters ]);
 
     useEffect(() => {
-      getSomeArtworks();
-    }, [ filters, getSomeArtworks ]);
+      fetchArtworks();
+    }, [ filters, fetchArtworks ]);
 
     useEffect(() => {
         setDepartments(getDepartments());
@@ -63,7 +63,7 @@ const Artworks = () => {
       <>
         <MainNav query={queryString.parse(search).q} />
 
-        <div className = "max-w-screen-2xl mx-auto flex flex-col lg:flex-row px-5 sm:px-20 pt-5 lg:pt-16 pb-20" >
+        <div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row px-5 sm:px-20 pt-5 lg:pt-16 pb-20">
         <Filters
           departments={departments}
           types={types}
@@ -72,7 +72,7 @@ const Artworks = () => {
           setSelectedDepartment={setSelectedDepartment}
           setSelectedTypes={setSelectedTypes}
         /> 
-        <div className = "w-full lg:w-4/5 space-y-8" > 
+        <div className="w-full lg:w-4/5 space-y-8"> 
           {
             selectedFilter === "none" && 
             <p>
@@ -106,9 +106,9 @@ const Artworks = () => {
               <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 w-full p-0 justify-evenly xl:justify-around">
                 {
                   artworks.map((product) => 
-                  <ArtworkItem
-                    data={product}
-                    key={`product-item-${product.id}`}
+                    <ArtworkItem
+                      data={product}
+                      key={`product-item-${product.id}`}
                   />)
                 }
               </div>
@@ -138,7 +138,7 @@ const Artworks = () => {
           }
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
