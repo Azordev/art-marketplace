@@ -21,11 +21,16 @@ export const getArtworkById = async (id, callback) => {
   }
 };
 
-export const getArtworks = async ( {department, type, page: skip, q} ) => {
-  const offset = skip ? (parseInt(skip) - 1) * 16 : undefined;
+export const getArtworks = async ( {department, type, page: skip, q}, limit ) => {
+  const departmentString = department ? `&department=${department}` : '';
+  const typeString = type ? `&type=${type}` : '';
+  const skipString = skip ? `&skip=${(parseInt(skip) - 1) * limit}` : '';
+  const searchString = q ? `&q=${q}` : '';
+  const params = [departmentString, typeString, skipString, searchString].join('');
+
   try {
     const res = await authAxios
-      .get(`/artworks?has_image=1&limit=16${q ? `&q=${q}` : ''}${department ? `&department=${department}` : ''}${type ? `&type=${type}` : ''}${skip ? `&skip=${offset}` : ''}`);
+      .get(`/artworks?has_image=1&limit=${limit}${params}`);
     if (res.status === STATUS_OK) {
       const total = res.data.info.total;
       const data = res.data.data

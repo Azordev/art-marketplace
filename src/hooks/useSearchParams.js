@@ -6,21 +6,21 @@ export const useSearchParams = () => {
     const searchParams = new URLSearchParams(search);
 
     const addQuery = (key, value) => {
-      searchParams.set(key, value);
-      push({
-        pathname: 'artworks',
-        search: searchParams.toString()
-      });
+        searchParams.set(key, value);
+        push({
+            pathname: 'artworks',
+            search: searchParams.toString()
+        });
     };
 
     const updateQueryParams = (key, value) => {
-      searchParams.delete('page');
-      searchParams.set(key, value);
-      push({
-        pathname: 'artworks',
-        search: searchParams.toString()
-      });
+        searchParams.delete('page');
+        searchParams.set(key, value);
+        push({
+            pathname: 'artworks',
+            search: searchParams.toString()
+        });
     };
-	
-	return { addQuery, updateQueryParams };
+
+    return { addQuery, updateQueryParams };
 };

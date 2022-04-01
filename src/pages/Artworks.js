@@ -18,6 +18,7 @@ const Artworks = () => {
     const [selectedDepartment, setSelectedDepartment] = useState();
     const [selectedType, setSelectedTypes] = useState();
     const [totalArtworks, setTotalArtworks] = useState(0);
+    const [postsPerPage] = useState(16)
     const { addQuery } = useSearchParams();
 
     const { search } = useLocation();
@@ -25,10 +26,10 @@ const Artworks = () => {
     const filters = useMemo(() =>  queryString.parse(search), [search]);
 
     const fetchArtworks = useCallback(async () => {
-      const { total, data } = await getArtworks(filters);
+      const { total, data } = await getArtworks(filters, postsPerPage);
       setTotalArtworks(total)
       setArtworks(data);
-    }, [ filters ]);
+    }, [ filters, postsPerPage ]);
 
     useEffect(() => {
       fetchArtworks();
@@ -39,7 +40,6 @@ const Artworks = () => {
         setTypes(getTypes());
     }, []);
 
-    const postsPerPage = 16;
     const [pageCount, setPageCount] = useState(0);
 
     useEffect(() => {
