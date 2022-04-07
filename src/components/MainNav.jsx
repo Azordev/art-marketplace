@@ -74,20 +74,19 @@ const MainNav = ({ page, query }) => {
             ></path>
           </svg>
         </div>
-        <div className="dropdown-menu z-10 top-full right-1/2 transform translate-x-1/2 absolute hidden h-auto pt-4 sm:right-auto sm:left-0 sm:translate-x-0 lg:right-0 lg:left-auto">
+        <div className="dropdown-menu z-10 top-full right-1/2 transform translate-x-1/2 absolute hidden h-auto pt-4 sm:right-0 sm:translate-x-0 lg:left-auto">
           <div className="block w-full bg-white shadow-dropdown px-4 py-4 rounded-md text-align-left">
-            <div className="pb-6 w-60">
+            <div className="pb-6 w-60 sm:w-96">
               <span className="block mb-2 font-bold text-black text-2xl">
                 Mi Historial
               </span>
-              {userArtworkHistory ? 
-              (
+              {userArtworkHistory ? (
                 userArtworkHistory.map((artwork) => (
                   <Link 
                     to={`/artwork/${artwork.id}`} 
                     className="flex items-center justify-between py-1 hover:underline" key={`historial-item-${artwork.id}`}
                   >
-                    <p className="text-xl truncate mr-1">{artwork.title}</p>
+                    <p className="text-xl truncate mr-2">{artwork.title}</p>
                     <img
                       alt="Arte"
                       src={artwork?.images?.web?.url}
@@ -95,14 +94,11 @@ const MainNav = ({ page, query }) => {
                     />
                   </Link>
                 ))
-              )
-              :
-              (
-                <div className="pb-4 text-black">
+              ) : (
+                <div className="pb-4 text-black whitespace-normal sm:whitespace-nowrap">
                   Todavia no se ha descargado archivos
                 </div>
-              ) 
-              }
+              )}
             </div>
             <Link
               to={'/artworks'}
