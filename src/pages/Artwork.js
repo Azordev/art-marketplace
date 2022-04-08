@@ -13,6 +13,7 @@ const Artwork = () => {
       let array = [...JSON.parse(localStorage.getItem("historial") || "[]")];
       const { title, images } = artwork;
 
+      // To avoid showing this same artwork as is pointless to navigate to the same artwork I am seeing
       if (array.some(elem => elem.id === id )) return null;
 
       array.length > 4 && array.shift();

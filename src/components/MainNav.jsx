@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import SearchInput from "./SearchInput";
+import HistoryItem from './HistoryItem'
 import Logo from "../assets/img/logo.png";
 import perfil from "../assets/img/perfil.png";
 import { getToken } from "../utils/authHelper";
@@ -81,19 +82,14 @@ const MainNav = ({ page, query }) => {
                 Mi Historial
               </span>
               {userArtworkHistory ? (
-                userArtworkHistory.map((artwork) => (
-                  <Link 
-                    to={`/artwork/${artwork.id}`} 
-                    className="flex items-center justify-between py-1 hover:underline" key={`historial-item-${artwork.id}`}
-                  >
-                    <p className="text-xl truncate mr-2">{artwork.title}</p>
-                    <img
-                      alt="Arte"
-                      src={artwork?.images?.web?.url}
-                      className="object-cover w-20 h-20"
-                    />
-                  </Link>
-                ))
+                userArtworkHistory.map((artwork) => 
+                  <HistoryItem 
+                    key={`historial-item-${artwork.id}`}
+                    id={artwork.id}
+                    title={artwork.title}
+                    image={artwork?.images?.web?.url}
+                  />
+                )
               ) : (
                 <div className="pb-4 text-black whitespace-normal sm:whitespace-nowrap">
                   Todavia no se ha descargado archivos
