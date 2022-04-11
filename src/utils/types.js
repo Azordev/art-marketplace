@@ -1,284 +1,355 @@
-const types = {
-  amulets: {
+const types = [
+  {
+    id: 'amulets',
     en: 'Amulets',
     es: 'Amuletos',
   },
-  apparatus: {
+  {
+    id: 'apparatus',
     en: 'Apparatus',
     es: 'Aparatos',
   },
-  'arms-and-armor': {
+  {
+    id: 'arms-and-armor',
     en: 'Arms and Armor',
     es: 'Armas y Armaduras',
   },
-  basketry: {
+  {
+    id: 'basketry',
     en: 'Basketry',
     es: 'Cestas y Cajas',
   },
-  'book-binding': {
+  {
+    id: 'book-binding',
     en: 'Book Binding',
     es: 'Cosido, pegado y fijado de libros',
   },
-  'bound-volume': {
+  {
+    id: 'bound-volume',
     en: 'Bound Volume',
     es: 'Encuadernacion o entapado de libros',
   },
-  calligraphy: {
+  {
+    id: 'calligraphy',
     en: 'Calligraphy',
     es: 'Caligrafía',
   },
-  carpet: {
+  {
+    id: 'carpet',
     en: 'Carpet',
     es: 'Carpetas',
   },
-  ceramic: {
+  {
+    id: 'ceramic',
     en: 'Ceramic',
     es: 'Cerámica',
   },
-  coins: {
+  {
+    id: 'coins',
     en: 'Coins',
     es: 'Monedas',
   },
-  'cosmetic-objects': {
+  {
+    id: 'cosmetic-objects',
     en: 'Cosmetic Objects',
     es: 'Objetos de Cosmética',
   },
-  drawing: {
+  {
+    id: 'drawing',
     en: 'Drawing',
     es: 'Dibujos',
   },
-  embroidery: {
+  {
+    id: 'embroidery',
     en: 'Embroidery',
     es: 'Tejido',
   },
-  enamel: {
+  {
+    id: 'enamel',
     en: 'Enamel',
     es: 'Arte con Esmaltes',
   },
-  forgery: {
+  {
+    id: 'forgery',
     en: 'Forgery',
     es: 'Forjas',
   },
-  frame: {
+  {
+    id: 'frame',
     en: 'Frame',
     es: 'Marco',
   },
-  'funerary-equipment': {
+  {
+    id: 'funerary-equipment',
     en: 'Funerary Equipment',
     es: 'Equipo Funerario',
   },
-  'furniture-and-woodwork': {
+  {
+    id: 'furniture-and-woodwork',
     en: 'Furniture and woodwork',
     es: 'Muebles y madera',
   },
-  garment: {
+
+  {
+    id: 'garment',
     en: 'Garment',
     es: 'Ropa',
   },
-  glass: {
+  {
+    id: 'glass',
     en: 'Glass',
     es: 'Vidrio',
   },
-  glyptic: {
+  {
+    id: 'glyptic',
     en: 'Glyptic',
     es: 'Glíptica o tallo fino',
   },
-  illumination: {
+  {
+    id: 'illumination',
     en: 'Illumination',
     es: 'Iluminación',
   },
-  implements: {
+  {
+    id: 'implements',
     en: 'Implements',
     es: 'Implementos',
   },
-  inlays: {
+  {
+    id: 'inlays',
     en: 'Inlays',
     es: 'Incrustaciones inlay',
   },
-  ivory: {
+  {
+    id: 'ivory',
     en: 'Ivory',
     es: 'Marfil',
   },
-  jade: {
+  {
+    id: 'jade',
     en: 'Jade',
     es: 'Jade',
   },
-  jewelry: {
+  {
+    id: 'jewelry',
     en: 'Jewelry',
     es: 'Joyería',
   },
-  knitting: {
+  {
+    id: 'knitting',
     en: 'Knitting',
     es: 'Tejido',
   },
-  lace: {
+  {
+    id: 'lace',
     en: 'Lace',
     es: 'Lacés o cordones',
   },
-  lacquer: {
+  {
+    id: 'lacquer',
     en: 'Lacquer',
     es: 'Barniz',
   },
-  leather: {
+  {
+    id: 'leather',
     en: 'Leather',
     es: 'Cuero',
   },
-  'linoleum-block': {
+  {
+    id: 'linoleum-block',
     en: 'Linoleum Block',
     es: 'Bloque de Linoleum',
   },
-  'lithographic-stone': {
+  {
+    id: 'lithographic-stone',
     en: 'Lithographic Stone',
     es: 'Piedra lítográfica',
   },
-  manuscript: {
+  {
+    id: 'manuscript',
     en: 'Manuscript',
     es: 'Manuscrito',
   },
-  metalwork: {
+  {
+    id: 'metalwork',
     en: 'Metalwork',
     es: 'Metal',
   },
-  miniature: {
+  {
+    id: 'miniature',
     en: 'Miniature',
     es: 'Miniatura',
   },
-  miscellaneous: {
+  {
+    id: 'miscellaneous',
     en: 'Miscellaneous',
     es: 'Misceláneo',
   },
-  'mixed-media': {
+  {
+    id: 'mixed-media',
     en: 'Mixed Media',
     es: 'Medios Mixtos',
   },
-  monotype: {
+  {
+    id: 'monotype',
     en: 'Monotype',
     es: 'Monotipo',
   },
-  mosaic: {
+  {
+    id: 'mosaic',
     en: 'Mosaic',
     es: 'Mosaico',
   },
-  'musical-instrument': {
+  {
+    id: 'musical-instrument',
     en: 'Musical Instrument',
     es: 'Instrumento Musical',
   },
-  netsuke: {
+  {
+    id: 'netsuke',
     en: 'Netsuke',
     es: 'Netsuke',
   },
-  painting: {
+  {
+    id: 'painting',
     en: 'Painting',
     es: 'Pintura',
   },
-  paper: {
+  {
+    id: 'paper',
     en: 'Paper',
     es: 'Papel',
   },
-  papyri: {
+  {
+    id: 'papyri',
     en: 'Papyri',
     es: 'Papiro',
   },
-  photograph: {
+  {
+    id: 'photograph',
     en: 'Photograph',
     es: 'Fotografía',
   },
-  plaque: {
+  {
+    id: 'plaque',
     en: 'Plaque',
     es: 'Placa',
   },
-  plate: {
+  {
+    id: 'plate',
     en: 'Plate',
     es: 'Placa',
   },
-  portfolio: {
+  {
+    id: 'portfolio',
     en: 'Portfolio',
     es: 'Portafolio',
   },
-  'portrait-miniature': {
+  {
+    id: 'portrait-miniature',
     en: 'Portrait Miniature',
     es: 'Miniatura de retrato',
   },
-  print: {
+  {
+    id: 'print',
     en: 'Print',
     es: 'Impresión',
   },
-  relief: {
+  {
+    id: 'relief',
     en: 'Relief',
     es: 'Relieve',
   },
-  'rock-crystal': {
+  {
+    id: 'rock-crystal',
     en: 'Rock Crystal',
     es: 'Cristal de roca',
   },
-  rubbing: {
+  {
+    id: 'rubbing',
     en: 'Rubbing',
     es: 'Rugosidad',
   },
-  sampler: {
+  {
+    id: 'sampler',
     en: 'Sampler',
     es: 'Muestras',
   },
-  scarabs: {
+  {
+    id: 'scarabs',
     en: 'Scarabs',
     es: 'Escarabajos',
   },
-  sculpture: {
+  {
+    id: 'sculpture',
     en: 'Sculpture',
     es: 'Escultura',
   },
-  seals: {
+  {
+    id: 'seals',
     en: 'Seals',
     es: 'Sellos',
   },
-  silver: {
+  {
+    id: 'silver',
     en: 'Silver',
     es: 'Plata',
   },
-  'spindle-whorl': {
+  {
+    id: 'spindle-whorl',
     en: 'Spindle Whorl',
     es: 'Espiral',
   },
-  stencil: {
+  {
+    id: 'stencil',
     en: 'Stencil',
     es: 'Estuche',
   },
-  stone: {
+  {
+    id: 'stone',
     en: 'Stone',
     es: 'Piedra',
   },
-  tapestry: {
+  {
+    id: 'tapestry',
     en: 'Tapestry',
     es: 'Tela',
   },
-  textile: {
+  {
+    id: 'textile',
     en: 'Textile',
     es: 'Tela',
   },
-  'time-based-media': {
+  {
+    id: 'time-based-media',
     en: 'Time-based Media',
     es: 'Medios temporales',
   },
-  tool: {
+  {
+    id: 'tool',
     en: 'Tool',
     es: 'Herramienta',
   },
-  velvet: {
+  {
+    id: 'velvet',
     en: 'Velvet',
     es: 'Terciopelo',
   },
-  vessels: {
+  {
+    id: 'vessels',
     en: 'Vessels',
     es: 'Vasos',
   },
-  wood: {
+  {
+    id: 'wood',
     en: 'Wood',
     es: 'Madera',
   },
-  woodblock: {
+  {
+    id: 'woodblock',
     en: 'Woodblock',
     es: 'Bloque de madera',
   },
-};
+];
 
 export default types;

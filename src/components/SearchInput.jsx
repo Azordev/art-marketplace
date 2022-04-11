@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useSearchParams } from '../hooks/useSearchParams';
 
 const SearchInput = ({ page, query }) => {
-  const { push } = useHistory();
   const [searchValue, setSearchValue] = useState(query || '');
+  const { updateQueryParams } = useSearchParams();
 
   const searchMargin = page === 'home'
     ? 'lg:mx-7'
@@ -13,7 +13,7 @@ const SearchInput = ({ page, query }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    push(`/artworks?q=${searchValue.toLowerCase()}`);
+    updateQueryParams('q', searchValue.toLowerCase());
   };
 
   return (

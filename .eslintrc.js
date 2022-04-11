@@ -40,6 +40,7 @@ module.exports = {
     }],
     'multiline-ternary': ['error', 'always'],
     'react/prop-types': 0,
+    "react/jsx-uses-react": "error",
     'node/no-callback-literal': 'off'
   },
 };

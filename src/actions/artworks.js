@@ -21,11 +21,28 @@ export const getArtworkById = async (id, callback) => {
   }
 };
 
-export const getArtworks = async () => {
+export const getArtworks = async ({ department, type, page: skip, q }, limit) => {
+  const departmentString = department
+    ? `&department=${department}`
+    : '';
+  const typeString = type
+    ? `&type=${type}`
+    : '';
+  const skipString = skip
+    ? `&skip=${(parseInt(skip) - 1) * limit}`
+    : '';
+  const searchString = q
+    ? `&q=${q}`
+    : '';
+  const params = [departmentString, typeString, skipString, searchString].join('');
+
   try {
-    const res = await authAxios.get('/artworks?has_image=1&limit=25');
+    const res = await authAxios
+      .get(`/artworks?has_image=1&limit=${limit}${params}`);
     if (res.status === STATUS_OK) {
-      return res.data?.data || [];
+      const total = res.data.info.total;
+      const data = res.data.data;
+      return { total, data };
     } else {
       return [];
     }

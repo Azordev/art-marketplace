@@ -8,12 +8,12 @@ export const filterBySubcategory = (products, subcategoryId) => {
 };
 
 /**
- * @param {Array<{category_id: String}>} products
- * @param {String} categoryId
+ * @param {Array<{department: String}>} products
+ * @param {String} department
  * @returns Returns all products with the category selected
  */
-export const filterByCategory = (products, categoryId) => {
-  return products.filter((product) => product.category_id === categoryId);
+export const filterByDepartment = (products, department) => {
+  return products.filter((product) => product.department === department);
 };
 
 /**
@@ -33,8 +33,8 @@ export const filterBySearch = (products, search) => {
  * @param {Array<{categories: {section_id: String}}>} products
  * @returns Returns all products with the brand selected
  */
-export const filterGeneric = (products) => {
-  return products.filter((product) => product.categories.section_id === '2');
+export const filterByType = (products, type) => {
+  return products.filter((product) => product.type === type);
 };
 
 /**

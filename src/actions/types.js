@@ -17,4 +17,4 @@ export const getArtworksByType = async (department, type) => {
   }
 };
 
-export const getTypes = async () => types;
+export const getTypes = () => types;
