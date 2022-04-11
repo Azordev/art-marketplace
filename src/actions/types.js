@@ -1,6 +1,6 @@
-import authAxios from "../config/authAxios";
-import { STATUS_OK } from "../config/constants";
-import types from "../utils/types";
+import authAxios from '../config/authAxios';
+import { STATUS_OK } from '../config/constants';
+import types from '../utils/types';
 
 export const getArtworksByType = async (department, type) => {
   try {

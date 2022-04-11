@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { useSearchParams } from '../hooks/useSearchParams';
 
 const SearchInput = ({ page, query }) => {
-  const [searchValue, setSearchValue] = useState(query ? query : "");
+  const [searchValue, setSearchValue] = useState(query || '');
   const { updateQueryParams } = useSearchParams();
 
-  const searchMargin = page === "home" ? "lg:mx-7" : "lg:ml-7";
+  const searchMargin = page === 'home'
+    ? 'lg:mx-7'
+    : 'lg:ml-7';
 
   const changeHandler = (e) => setSearchValue(e.target.value);
 

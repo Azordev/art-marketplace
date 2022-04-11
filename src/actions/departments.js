@@ -1,6 +1,6 @@
-import authAxios from "../config/authAxios";
-import { STATUS_OK } from "../config/constants";
-import departments from "../utils/departments";
+import authAxios from '../config/authAxios';
+import { STATUS_OK } from '../config/constants';
+import departments from '../utils/departments';
 
 export const getArtworkByDepartment = async (department) => {
   try {

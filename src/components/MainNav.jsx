@@ -1,11 +1,9 @@
-import { Notify } from "notiflix";
-import React from "react";
-import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
-import SearchInput from "./SearchInput";
-import Logo from "../assets/img/logo.png";
-import perfil from "../assets/img/perfil.png";
-import { getToken } from "../utils/authHelper";
+import { Notify } from 'notiflix';
+import { useHistory, Link } from 'react-router-dom';
+import SearchInput from './SearchInput';
+import Logo from '../assets/img/logo.png';
+import perfil from '../assets/img/perfil.png';
+import { getToken } from '../utils/authHelper';
 
 const MainNav = ({ page, query }) => {
   const token = getToken();
@@ -13,7 +11,7 @@ const MainNav = ({ page, query }) => {
   const AccessButtons = () => {
     return (
       <div className="relative sm:w-max sm:mx-auto lg:w-auto lg:mx-0 justify-center mb-4 gap-4 flex-col sm:flex-row lg:mb-0 lg:flex-row inline-flex items-center lg:justify-around lg:space-x-3">
-        {page !== "home" && (
+        {page !== 'home' && (
           <div className="text-center w-1/2">
             <Link
               to="/"
@@ -71,17 +69,19 @@ const MainNav = ({ page, query }) => {
               <span className="block mb-2 font-bold text-black text-2xl">
                 Mis Descargas
               </span>
-              {userProductsHistory ? (
-                <div className="pb-4 text-black">
+              {userProductsHistory
+                ? (
+                  <div className="pb-4 text-black">
                   Todavia no se ha descargado archivos
-                </div>
-              ) : (
-                userProductsHistory.map((product) => (
-                  <ul>
-                    <li className="py-1 text-xl">{product.name}</li>
-                  </ul>
-                ))
-              )}
+                  </div>
+                )
+                : (
+                  userProductsHistory.map((product) => (
+                    <ul key={product.id}>
+                      <li className="py-1 text-xl">{product.name}</li>
+                    </ul>
+                  ))
+                )}
             </div>
             <Link
               to="products"
@@ -102,8 +102,8 @@ const MainNav = ({ page, query }) => {
       e.preventDefault();
 
       sessionStorage.clear();
-      Notify.success("Saliste de la sesión exitosamente");
-      history.push("/");
+      Notify.success('Saliste de la sesión exitosamente');
+      history.push('/');
     };
 
     return (
@@ -126,7 +126,7 @@ const MainNav = ({ page, query }) => {
           </div>
           <img
             src={perfil}
-            style={{ marginRight: ".5rem" }}
+            style={{ marginRight: '.5rem' }}
             className="w-14 h-14"
             alt="User Avatar"
           />
@@ -154,7 +154,7 @@ const MainNav = ({ page, query }) => {
   const LoggedAccessButtons = () => {
     return (
       <div className="relative w-auto space-y-5 sm:space-y-0 flex flex-col sm:flex-row inline-flex items-center sm:justify-around sm:space-x-3 xl:space-x-2 whitespace-nowrap">
-        {page !== "home" && (
+        {page !== 'home' && (
           <div className="mx-auto text-center w-1/2">
             <Link
               to="/"
@@ -186,7 +186,9 @@ const MainNav = ({ page, query }) => {
           <SearchInput page={page} query={query} />
         </div>
 
-        {token ? LoggedAccessButtons() : AccessButtons()}
+        {token
+          ? LoggedAccessButtons()
+          : AccessButtons()}
       </div>
     </section>
   );

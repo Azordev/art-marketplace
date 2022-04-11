@@ -1,6 +1,6 @@
-import authAxios from "../config/authAxios";
-import { STATUS_OK } from "../config/constants";
-import response from "../config/network/response";
+import authAxios from '../config/authAxios';
+import { STATUS_OK } from '../config/constants';
+import response from '../config/network/response';
 
 export const getArtworkById = async (id, callback) => {
   try {
@@ -12,7 +12,7 @@ export const getArtworkById = async (id, callback) => {
     if (res.status === STATUS_OK) {
       callback(res.data?.data || []);
     } else {
-      response.error("Status not ok");
+      response.error('Status not ok');
       callback([]);
     }
   } catch (error) {
@@ -21,11 +21,19 @@ export const getArtworkById = async (id, callback) => {
   }
 };
 
-export const getArtworks = async ( {department, type, page: skip, q}, limit ) => {
-  const departmentString = department ? `&department=${department}` : '';
-  const typeString = type ? `&type=${type}` : '';
-  const skipString = skip ? `&skip=${(parseInt(skip) - 1) * limit}` : '';
-  const searchString = q ? `&q=${q}` : '';
+export const getArtworks = async ({ department, type, page: skip, q }, limit) => {
+  const departmentString = department
+    ? `&department=${department}`
+    : '';
+  const typeString = type
+    ? `&type=${type}`
+    : '';
+  const skipString = skip
+    ? `&skip=${(parseInt(skip) - 1) * limit}`
+    : '';
+  const searchString = q
+    ? `&q=${q}`
+    : '';
   const params = [departmentString, typeString, skipString, searchString].join('');
 
   try {
@@ -33,8 +41,8 @@ export const getArtworks = async ( {department, type, page: skip, q}, limit ) =>
       .get(`/artworks?has_image=1&limit=${limit}${params}`);
     if (res.status === STATUS_OK) {
       const total = res.data.info.total;
-      const data = res.data.data
-      return {total, data};
+      const data = res.data.data;
+      return { total, data };
     } else {
       return [];
     }
@@ -61,13 +69,13 @@ export const getArtworksQuery = async (query) => {
 export const getLatestArtworks = async (callback) => {
   try {
     const res = await authAxios.get(
-      `/artworks?recently_acquired=true&limit=5&has_image=1`
+      '/artworks?recently_acquired=true&limit=5&has_image=1'
     );
 
     if (res.status === STATUS_OK) {
       callback(res.data.data);
     } else {
-      response.error(null, res.data?.message || "getLatestArtworks::Error");
+      response.error(null, res.data?.message || 'getLatestArtworks::Error');
       callback([]);
     }
   } catch (error) {
@@ -79,7 +87,7 @@ export const getLatestArtworks = async (callback) => {
 export const getFemaleArtistArtworks = async (callback) => {
   try {
     const res = await authAxios.get(
-      `/artworks?female_artists=true&limit=5&has_image=1`
+      '/artworks?female_artists=true&limit=5&has_image=1'
     );
 
     if (res.status === STATUS_OK) {
@@ -87,7 +95,7 @@ export const getFemaleArtistArtworks = async (callback) => {
     } else {
       response.error(
         null,
-        res.data?.message || "getFemaleArtistArtworks::Error"
+        res.data?.message || 'getFemaleArtistArtworks::Error'
       );
       callback([]);
     }
@@ -100,7 +108,7 @@ export const getFemaleArtistArtworks = async (callback) => {
 export const getOnViewArtworks = async (callback) => {
   try {
     const res = await authAxios.get(
-      `/artworks?currently_on_view=true&limit=5&has_image=1`
+      '/artworks?currently_on_view=true&limit=5&has_image=1'
     );
 
     if (res.status === STATUS_OK) {

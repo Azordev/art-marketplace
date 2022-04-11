@@ -1,9 +1,8 @@
-import React from "react";
-import { MemoryRouter } from "react-router";
-import renderer from "react-test-renderer";
-import ObjectList from "../ObjectList";
+import { MemoryRouter } from 'react-router';
+import renderer from 'react-test-renderer';
+import ObjectList from '../ObjectList';
 
-it("renders correctly", () => {
+it('renders correctly', () => {
   const tree = renderer
     .create(
       <MemoryRouter>

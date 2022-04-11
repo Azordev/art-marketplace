@@ -42,5 +42,5 @@ export const filterByType = (products, type) => {
  * @returns Returns all products with the brand selected
  */
 export const filterManufacturer = (products) => {
-  return products.filter((product) => product.categories.section_id === "1");
+  return products.filter((product) => product.categories.section_id === '1');
 };

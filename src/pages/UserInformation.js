@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { getUserInformation } from "../actions/userActions";
-import Logo from "../assets/img/logo.png";
-import Profile from "../assets/img/perfil.png";
-import { Footer } from "../components";
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { getUserInformation } from '../actions/userActions';
+import Logo from '../assets/img/logo.png';
+import Profile from '../assets/img/perfil.png';
+import { Footer } from '../components';
 
 const UserInformation = () => {
   const [user, setUser] = useState({});
@@ -49,31 +49,31 @@ const UserInformation = () => {
                     </h2>
                     <div className="flex flex-col">
                       <label className="text-2xl text-stone-700">
-                        Nombre y apellidos:{" "}
+                        Nombre y apellidos:{' '}
                         <span className="text-2xl text-black">
                           {user.name} {user.last_name}
                         </span>
                       </label>
                       <label className="text-2xl text-stone-700">
-                        Compañía:{" "}
+                        Compañía:{' '}
                         <span className="text-2xl text-black">
                           {user.company}
                         </span>
                       </label>
                       <label className="text-2xl text-stone-700">
-                        Ocupación:{" "}
+                        Ocupación:{' '}
                         <span className="text-2xl text-black">
                           {user.occupation}
                         </span>
                       </label>
                       <label className="text-2xl text-stone-700">
-                        Teléfono:{" "}
+                        Teléfono:{' '}
                         <span className="text-2xl text-black">
                           {user.phone}
                         </span>
                       </label>
                       <label className="text-2xl text-stone-700">
-                        País:{" "}
+                        País:{' '}
                         <span className="text-2xl text-black">
                           {user.country}
                         </span>
@@ -110,7 +110,9 @@ const UserInformation = () => {
                     <div className="flex flex-col space-y-4">
                       <div className="flex w-48 h-48 bg-black rounded-full mx-auto lg:mx-0">
                         <img
-                          src={user.image ? `${user.image}` : Profile}
+                          src={user.image
+                            ? `${user.image}`
+                            : Profile}
                           className="mx-auto"
                           alt={`Foto de ${user.name}`}
                         />
