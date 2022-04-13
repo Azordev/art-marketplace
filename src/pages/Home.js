@@ -1,32 +1,32 @@
-import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import { ObjectList, Hero } from "../components/Home";
+import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { ObjectList, Hero } from '../components/Home';
 import {
-	getLatestArtworks,
-	getOnViewArtworks,
-	getFemaleArtistArtworks,
-} from "../actions/artworks";
-import { MainNav, Footer } from "../components";
-import Slider from "../components/Slider";
-import { getDepartments } from "../actions/departments";
+  getLatestArtworks,
+  getOnViewArtworks,
+  getFemaleArtistArtworks
+} from '../actions/artworks';
+import { MainNav, Footer } from '../components';
+import Slider from '../components/Slider';
+import { getDepartments } from '../actions/departments';
 
 const Home = () => {
-	const { push } = useHistory();
-	const [latestArtworks, setLatestArtworks] = useState([]);
-	const [onViewArtworks, setOnViewArtworks] = useState([]);
-	const [femaleArtistArtworks, setFemaleArtistArtworks] = useState([]);
-	const [departments, setDepartments] = useState([]);
+  const { push } = useHistory();
+  const [latestArtworks, setLatestArtworks] = useState([]);
+  const [onViewArtworks, setOnViewArtworks] = useState([]);
+  const [femaleArtistArtworks, setFemaleArtistArtworks] = useState([]);
+  const [departments, setDepartments] = useState([]);
 
-	const getArtworks = async () => {
-		await getLatestArtworks(setLatestArtworks);
-		await getOnViewArtworks(setOnViewArtworks);
-		await getFemaleArtistArtworks(setFemaleArtistArtworks);
-	};
+  const getArtworks = async () => {
+    await getLatestArtworks(setLatestArtworks);
+    await getOnViewArtworks(setOnViewArtworks);
+    await getFemaleArtistArtworks(setFemaleArtistArtworks);
+  };
 
-	useEffect(() => {
-		getArtworks();
-		setDepartments(getDepartments());
-	}, []);
+  useEffect(() => {
+    getArtworks();
+    setDepartments(getDepartments());
+  }, []);
 
   const categoryClicked = (e, categoryId) => {
     e.preventDefault();
@@ -61,7 +61,7 @@ const Home = () => {
           items={latestArtworks}
         />
       </div>
-      <Footer showButtons={true}/>
+      <Footer showButtons={true} />
     </>
   );
 };

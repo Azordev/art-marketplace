@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import FilterIcon from "../../assets/icons/filtro.png";
+import FilterIcon from '../../assets/icons/filtro.png';
 import { useSearchParams } from '../../hooks/useSearchParams';
 
 const Filters = ({
@@ -18,7 +18,7 @@ const Filters = ({
     e.preventDefault();
 
     if (selectedFilter === filter) {
-      return setFilter("none");
+      return setFilter('none');
     }
     return setFilter(filter);
   };
@@ -27,7 +27,7 @@ const Filters = ({
     e.preventDefault();
     setSelectedTypes(type);
     updateQueryParams('type', type);
-  }
+  };
 
   const handleDepartment = (e, department) => {
     e.preventDefault();
@@ -51,15 +51,15 @@ const Filters = ({
             to="#"
             className="text-center block w-full py-3.5 text-xl font-bold leading-6 text-black whitespace-no-wrap bg-add rounded-md shadow-sm"
             style={
-              selectedFilter === "department"
-                ? { backgroundColor: "#11698E", color: "#FFF" }
-                : { backgroundColor: "#F8F1F1", color: "#000" }
+              selectedFilter === 'department'
+                ? { backgroundColor: '#11698E', color: '#FFF' }
+                : { backgroundColor: '#F8F1F1', color: '#000' }
             }
-            onClick={(e) => handleClick(e, "department")}
+            onClick={(e) => handleClick(e, 'department')}
           >
             Departamentos
           </Link>
-          {selectedFilter === "department" && (
+          {selectedFilter === 'department' && (
             <div className="border border-black rounded-md w-full pl-2 max-h-96 overflow-y-scroll">
               {departments.map((department) => (
                 <div
@@ -76,15 +76,15 @@ const Filters = ({
             to="#"
             className="text-center block w-full py-3.5 text-xl font-bold leading-6 text-black whitespace-no-wrap bg-add rounded-md shadow-sm"
             style={
-              selectedFilter === "types"
-                ? { backgroundColor: "#11698E", color: "#FFF" }
-                : { backgroundColor: "#F8F1F1", color: "#000" }
+              selectedFilter === 'types'
+                ? { backgroundColor: '#11698E', color: '#FFF' }
+                : { backgroundColor: '#F8F1F1', color: '#000' }
             }
-            onClick={(e) => handleClick(e, "types")}
+            onClick={(e) => handleClick(e, 'types')}
           >
             Por Tipo
           </Link>
-          {selectedFilter === "types" && (
+          {selectedFilter === 'types' && (
             <div className="border border-black rounded-md w-full pl-2  max-h-96 overflow-y-scroll">
               {types.map((type) => (
                 <div

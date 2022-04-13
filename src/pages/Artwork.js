@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { MainNav, Footer } from "../components";
 import { getArtworkById } from "../actions/artworks";
-import { Link } from "react-router-dom";
 
 const Artwork = () => {
   const [artwork, setArtwork] = useState(null);
@@ -41,10 +40,10 @@ const Artwork = () => {
               <Link to="/"> Inicio / </Link>
               <Link to="/artworks"> Catálogo / </Link>
               <Link to={`/artworks?category=${artwork?.department}`}>
-                {" "}
-                {artwork?.department || "Departamento"} /{" "}
+                {' '}
+                {artwork?.department || 'Departamento'} /{' '}
               </Link>
-              {artwork?.title || "Titulo"}
+              {artwork?.title || 'Titulo'}
             </p>
           </div>
         </div>
@@ -55,11 +54,11 @@ const Artwork = () => {
             <div className="xl:w-1/2 h-full mt-10 px-2 sm:px-4 xl:my-0 md:px-8 lg:px-20 xl:px-5 2xl:pl-11 order-last xl:order-first">
               <div className="flex px-5 flex-col w-full pb-6 space-y-8 2xl:pr-20">
                 <h1 className="text-center xl:text-left text-3xl md:text-4xl font-bold tracking-add text-black leading-add">
-                  <span className="block">{artwork?.title || "Titulo"}</span>
+                  <span className="block">{artwork?.title || 'Titulo'}</span>
                 </h1>
                 <div className="pl-1 py-2 pr-9">
                   <p className="mx-auto text-base text-black mb-2 lg:text-lg">
-                    {artwork?.tombstone || "Description"}
+                    {artwork?.tombstone || 'Description'}
                   </p>
                 </div>
               </div>
@@ -69,7 +68,7 @@ const Artwork = () => {
                 {artwork && (
                   <img
                     alt="Arte"
-                    style={{ maxHeight: "450px" }}
+                    style={{ maxHeight: '450px' }}
                     src={artwork?.images?.web?.url}
                     className="block object-contain h-96 md:h-full"
                   />
@@ -100,7 +99,7 @@ const Artwork = () => {
                   </h4>
                 </summary>
                 <p className="px-4 py-6 mt-1 text-black font-semibold lg:text-xl">
-                  Departamento {artwork?.department || "Otros"}
+                  Departamento {artwork?.department || 'Otros'}
                 </p>
               </details>
 
