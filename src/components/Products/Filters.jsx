@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import FilterIcon from '../../assets/icons/filtro.png';
 import { useSearchParams } from '../../hooks/useSearchParams';
-import { SelectedItemFilter } from '../SelectedItemFilter';
 import { ItemFilter } from '../ItemFilter';
 
 const Filters = ({
@@ -70,10 +69,7 @@ const Filters = ({
                   key={department.id}
                   onClick={(e) => handleDepartment(e, department.en)}
                 >
-                  {department.en === selectedDepartment
-                    ? <SelectedItemFilter item={department.es} />
-                    : <ItemFilter item={department.es} />
-                  }
+                  <ItemFilter element={department} selectedElement={selectedDepartment} />
                 </div>
               ))}
             </div>
@@ -97,10 +93,7 @@ const Filters = ({
                   key={`${type.id}-key`}
                   onClick={ (e) => handleTypes(e, type.en) }
                 >
-                  {type.en === selectedTypes
-                    ? <SelectedItemFilter item={type.es} />
-                    : <ItemFilter item={type.es} />
-                  }
+                  <ItemFilter element={type} selectedElement={selectedTypes} />
                 </div>
               ))}
             </div>
