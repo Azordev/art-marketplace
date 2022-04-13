@@ -1,17 +1,34 @@
-import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { MainNav, Footer } from '../components';
-import { getArtworkById } from '../actions/artworks';
+import React, { useState, useEffect, useCallback } from "react";
+import { useParams, Link } from "react-router-dom";
+import { MainNav, Footer } from "../components";
+import { getArtworkById } from "../actions/artworks";
 
 const Artwork = () => {
   const [artwork, setArtwork] = useState(null);
   const { id } = useParams();
+
+  const historialStorage = useCallback( 
+    () => {
+      let array = [...JSON.parse(localStorage.getItem("historial") || "[]")];
+      const { title, images } = artwork;
+
+      // To avoid showing this same artwork as is pointless to navigate to the same artwork I am seeing
+      if (array.some(elem => elem.id === id )) return null;
+
+      array.length > 4 && array.shift();
+      array.push({ id, title, images });
+      localStorage.setItem("historial", JSON.stringify(array));
+    }, [artwork, id]);
 
   useEffect(() => {
     // Since we're only fetching the product and doing nothing else after that,
     // There's no need to await for the promise to resolve
     getArtworkById(id, setArtwork);
   }, [id]);
+
+  useEffect(() => {
+    artwork && historialStorage();
+  }, [artwork, historialStorage])
 
   return (
     <>

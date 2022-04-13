@@ -1,9 +1,11 @@
-import { Notify } from 'notiflix';
-import { useHistory, Link } from 'react-router-dom';
-import SearchInput from './SearchInput';
-import Logo from '../assets/img/logo.png';
-import perfil from '../assets/img/perfil.png';
-import { getToken } from '../utils/authHelper';
+import { Notify } from "notiflix";
+import React, { useState, useEffect } from "react";
+import { useHistory, Link } from "react-router-dom";
+import SearchInput from "./SearchInput";
+import HistoryItem from './HistoryItem'
+import Logo from "../assets/img/logo.png";
+import perfil from "../assets/img/perfil.png";
+import { getToken } from "../utils/authHelper";
 
 const MainNav = ({ page, query }) => {
   const token = getToken();
@@ -41,13 +43,22 @@ const MainNav = ({ page, query }) => {
     );
   };
 
-  const userProductsHistory = [];
+  const MyHistory = () => {
+    const storage = localStorage.getItem("historial");
+    const [userArtworkHistory, setHistorial] = useState(
+      storage ?
+      Array.from(JSON.parse(storage || "[]")) :
+      []
+    );
 
-  const MyDownloads = () => {
+    useEffect(() => {
+      setHistorial(JSON.parse(storage));
+    }, [storage]);
+
     return (
       <div className="w-auto flex flex-row relative dropdown tracking-wide">
         <button className="inline-flex ml-2 items-center justify-center pl-5 py-3.5 text-xl font-semibold leading-6 text-black whitespace-no-wrap">
-          Mis descargas
+          Mi historial
         </button>
         <div className="flex items-center mt-1 mr-2">
           <svg
@@ -63,28 +74,29 @@ const MainNav = ({ page, query }) => {
             ></path>
           </svg>
         </div>
-        <div className="dropdown-menu z-10 top-full right-1/2 transform translate-x-1/2 absolute hidden h-auto pt-4 sm:right-auto sm:left-0 sm:translate-x-0 lg:right-0 lg:left-auto">
+        <div className="dropdown-menu z-10 top-full right-1/2 transform translate-x-1/2 absolute hidden h-auto pt-4 sm:right-0 sm:translate-x-0 lg:left-auto">
           <div className="block w-full bg-white shadow-dropdown px-4 py-4 rounded-md text-align-left">
-            <div className="pb-6">
+            <div className="pb-6 w-60 sm:w-96">
               <span className="block mb-2 font-bold text-black text-2xl">
-                Mis Descargas
+                Mi Historial
               </span>
-              {userProductsHistory
-                ? (
-                  <div className="pb-4 text-black">
-                  Todavia no se ha descargado archivos
-                  </div>
+              {userArtworkHistory ? (
+                userArtworkHistory.map((artwork) => 
+                  <HistoryItem 
+                    key={`historial-item-${artwork.id}`}
+                    id={artwork.id}
+                    title={artwork.title}
+                    image={artwork?.images?.web?.url}
+                  />
                 )
-                : (
-                  userProductsHistory.map((product) => (
-                    <ul key={product.id}>
-                      <li className="py-1 text-xl">{product.name}</li>
-                    </ul>
-                  ))
-                )}
+              ) : (
+                <div className="pb-4 text-black whitespace-normal sm:whitespace-nowrap">
+                  Todavia no se ha descargado archivos
+                </div>
+              )}
             </div>
             <Link
-              to="products"
+              to={'/artworks'}
               className="block text-center py-2 text-xl font-semibold leading-6 text-white whitespace-nowrap bg-black rounded-md shadow-sm tracking-add"
             >
               Ver Catalogo
@@ -164,7 +176,7 @@ const MainNav = ({ page, query }) => {
             </Link>
           </div>
         )}
-        <MyDownloads />
+        <MyHistory />
         <MyAccount />
       </div>
     );
