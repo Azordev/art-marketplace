@@ -1,11 +1,11 @@
-import { Notify } from "notiflix";
-import React, { useState, useEffect } from "react";
-import { useHistory, Link } from "react-router-dom";
-import SearchInput from "./SearchInput";
-import HistoryItem from './HistoryItem'
-import Logo from "../assets/img/logo.png";
-import perfil from "../assets/img/perfil.png";
-import { getToken } from "../utils/authHelper";
+import { Notify } from 'notiflix';
+import React, { useState, useEffect } from 'react';
+import { useHistory, Link } from 'react-router-dom';
+import SearchInput from './SearchInput';
+import HistoryItem from './HistoryItem';
+import Logo from '../assets/img/logo.png';
+import perfil from '../assets/img/perfil.png';
+import { getToken } from '../utils/authHelper';
 
 const MainNav = ({ page, query }) => {
   const token = getToken();
@@ -44,11 +44,11 @@ const MainNav = ({ page, query }) => {
   };
 
   const MyHistory = () => {
-    const storage = localStorage.getItem("historial");
+    const storage = localStorage.getItem('historial');
     const [userArtworkHistory, setHistorial] = useState(
-      storage ?
-      Array.from(JSON.parse(storage || "[]")) :
-      []
+      storage
+        ? Array.from(JSON.parse(storage || '[]'))
+        : []
     );
 
     useEffect(() => {
@@ -80,20 +80,22 @@ const MainNav = ({ page, query }) => {
               <span className="block mb-2 font-bold text-black text-2xl">
                 Mi Historial
               </span>
-              {userArtworkHistory ? (
-                userArtworkHistory.map((artwork) => 
-                  <HistoryItem 
-                    key={`historial-item-${artwork.id}`}
-                    id={artwork.id}
-                    title={artwork.title}
-                    image={artwork?.images?.web?.url}
-                  />
+              {userArtworkHistory
+                ? (
+                  userArtworkHistory.map((artwork) =>
+                    <HistoryItem
+                      key={`historial-item-${artwork.id}`}
+                      id={artwork.id}
+                      title={artwork.title}
+                      image={artwork?.images?.web?.url}
+                    />
+                  )
                 )
-              ) : (
-                <div className="pb-4 text-black whitespace-normal sm:whitespace-nowrap">
+                : (
+                  <div className="pb-4 text-black whitespace-normal sm:whitespace-nowrap">
                   Todavia no se ha descargado archivos
-                </div>
-              )}
+                  </div>
+                )}
             </div>
             <Link
               to={'/artworks'}
