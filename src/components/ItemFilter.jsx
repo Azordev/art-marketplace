@@ -5,12 +5,9 @@ export const ItemFilter = ({ element, selectedElement }) => {
     ? {
       color: 'white',
       backgroundColor: '#11698E',
-      paddingLeft: '0.5rem',
     }
-    : {
-      paddingLeft: '0.5rem',
-    };
+    : {};
   return (
-    <div style={selectedStyles} className='py-2 cursor-pointer text-black hover:no-underline'>{element.es}</div>
+    <div style={selectedStyles} className='py-2 pl-2 cursor-pointer text-black hover:no-underline'>{element.es}</div>
   );
 };
