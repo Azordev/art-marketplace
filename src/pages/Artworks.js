@@ -62,7 +62,9 @@ const Artworks = () => {
           setFilter={setSelectedFilter}
           selectedFilter={selectedFilter}
           setSelectedDepartment={setSelectedDepartment}
+          selectedDepartment={selectedDepartment}
           setSelectedTypes={setSelectedTypes}
+          selectedTypes={selectedType}
         />
         <div className="w-full lg:w-4/5 space-y-8">
           {

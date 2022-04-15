@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import FilterIcon from '../../assets/icons/filtro.png';
 import { useSearchParams } from '../../hooks/useSearchParams';
+import { ItemFilter } from '../ItemFilter';
 
 const Filters = ({
   departments,
@@ -10,7 +11,9 @@ const Filters = ({
   selectedFilter,
   setFilter,
   setSelectedDepartment,
-  setSelectedTypes
+  selectedDepartment,
+  setSelectedTypes,
+  selectedTypes
 }) => {
   const { updateQueryParams } = useSearchParams();
 
@@ -60,14 +63,13 @@ const Filters = ({
             Departamentos
           </Link>
           {selectedFilter === 'department' && (
-            <div className="border border-black rounded-md w-full pl-2 max-h-96 overflow-y-scroll">
+            <div className="border border-black rounded-md w-full max-h-96 overflow-y-scroll">
               {departments.map((department) => (
                 <div
                   key={department.id}
                   onClick={(e) => handleDepartment(e, department.en)}
-                  className="py-2 cursor-pointer text-black underline hover:no-underline"
                 >
-                  {department.es}
+                  <ItemFilter element={department} selectedElement={selectedDepartment} />
                 </div>
               ))}
             </div>
@@ -85,14 +87,13 @@ const Filters = ({
             Por Tipo
           </Link>
           {selectedFilter === 'types' && (
-            <div className="border border-black rounded-md w-full pl-2  max-h-96 overflow-y-scroll">
+            <div className="border border-black rounded-md w-full max-h-96 overflow-y-scroll">
               {types.map((type) => (
                 <div
                   key={`${type.id}-key`}
                   onClick={ (e) => handleTypes(e, type.en) }
-                  className="py-2 cursor-pointer text-black underline hover:no-underline"
                 >
-                  {type.es}
+                  <ItemFilter element={type} selectedElement={selectedTypes} />
                 </div>
               ))}
             </div>
