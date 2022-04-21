@@ -20,7 +20,6 @@ const SearchInput = ({ page, query }) => {
 
   const clearHandler = () => {
     setSearchValue('');
-    updateQueryParams('q', '');
   };
 
   return (
