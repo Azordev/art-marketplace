@@ -5,22 +5,30 @@ about: It is a necessary task to do in the project
 ---
 
 ### Explanation
- A clear and concise explication about the task.
+(A clear and concise explication about the task.)
+
+**Actual result:** (write how it is now)
+
+**Expected result:** (I write how I want to see it)
+
+*Screen size:* (Add the size of your screen )
 
 ### Screenshots
- If applicable, add screenshots to help explain.
+(Add screenshots to help explain where's and which is the bug.)
+
+Original: (image)
+Our: (image)
 
 ### Checklist
- Describe the key points to complete the task. This points will help in the pull request test.
+ (Describe the key points to complete the task. This points will help in the pull request test.)
 
- This issue can be closed when the following tasks are complete:
- 
- - [ ] Form is validating if email exists
- - [ ] Submit button don't work when email is invalid or already exist
- - [ ] Show error in the form 
- 
+ This issue can be closed when the following tasks are complete:
+ 
+ - [ ] Example 1
+ - [ ] Example 2
+ 
 ### References
- If applicable, add documentation references
- 
-#### Related issues
- A list of related issues or issues that are dependencies of this issue.
+ (Add the links: Original and Gatsby, where you've find the bug)
+
+Original: (link)
+Our: (link)
