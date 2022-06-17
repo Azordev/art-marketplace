@@ -39,7 +39,7 @@ const SearchInput = ({ page, query }) => {
             <img src={ inputclear } alt="Input clear" />
           </div>
         )}
-        <div className="absolute right-4 inset-y-0 flex items-center pointer-events-none">
+        <div onClick={ submitHandler }className="absolute right-4 inset-y-0 flex items-center hover:cursor-pointer">
           <img src={ inputsearch } alt="Input search" />
         </div>
       </div>
