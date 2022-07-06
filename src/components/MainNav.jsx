@@ -193,7 +193,7 @@ const MainNav = ({ page, query }) => {
               <img
                 src={Logo}
                 alt="logo"
-                className="block max-w-full object-contain mx-h-4-6 lg:w-17-4"
+                className="block max-w-full mt-7 object-contain mx-h-4-6 lg:w-17-4 sm:mt-7 lg:my-0 md:mt-7"
               />
             </Link>
           </div>

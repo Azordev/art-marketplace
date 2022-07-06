@@ -26,7 +26,7 @@ const Hero = () => (
                 : (
                   <Link
                     to="/register"
-                    className="shadow-button hover-scale inline-flex items-center justify-center px-11 py-3.5 text-xl font-semibold leading-6 text-white whitespace-nowrap bg-primary rounded-md shadow-sm tracking-add"
+                    className="shadow-button invisible lg:visible hover-scale inline-flex items-center justify-center px-11 py-3.5 text-xl font-semibold leading-6 text-white whitespace-nowrap bg-primary rounded-md shadow-sm tracking-add"
                   >
                   Regístrate ahora
                   </Link>
