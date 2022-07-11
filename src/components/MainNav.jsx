@@ -185,7 +185,7 @@ const MainNav = ({ page, query }) => {
   };
 
   return (
-    <section className="sm:sticky top-0 z-50 w-full text-gray-700 bg-white body-font shadow-bottom shadow-box">
+    <section className="lg:sticky block top-0 z-50 w-full text-gray-700 bg-white body-font shadow-bottom shadow-box">
       <div className="flex max-w-screen-2xl px-8 mx-auto flex-col sm:flex-col lg:flex-row justify-between">
         <div className="flex flex-col lg:flex-row w-full">
           <div className="flex items-center mx-auto sm:mx-0 sm:justify-center lg:justify-start">
